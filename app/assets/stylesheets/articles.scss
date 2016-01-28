@@ -1,3 +1,21 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.article{
+
+    .card{
+
+        .card-content{
+
+        }
+        .card-action{
+            a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating){
+                color:#c62828 ;
+            }
+            a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating):hover{
+                color:#ef5350 ;
+            }
+        }
+    }
+}
