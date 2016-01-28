@@ -29,6 +29,12 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    text-align: center;
+
+    img{
+        display: block;
+        margin: auto;
+    }
 }
 body{
     display: flex;
