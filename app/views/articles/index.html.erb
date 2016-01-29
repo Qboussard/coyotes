@@ -1,19 +1,16 @@
 <div class="row article">
     <div class="col s12 m12 l9">
-        <div class="card">
-            <div class="card-content">
-                <span class="card-title">Card Title</span>
-                <p class='truncate'>Quibus occurrere bene pertinax miles explicatis ordinibus parans hastisque
-                    feriens scuta qui habitus iram pugnantium concitat et dolorem proximos iam gestu terrebat
-                    sed eum in certamen alacriter consurgentem revocavere ductores rati intempestivum anceps
-                    subire certamen cum haut longe muri distarent, quorum tutela securitas poterat in solido
-                    locari cunctorum.</p>
+        <% @news.each do |new| %>
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title red-text text-darken-2"><%= new.title.capitalize%></span>
+                    <p class='truncate'><%= new.content.html_safe %></p>
+                </div>
+                <div class="card-action right-align">
+                    <%= link_to 'Lire la suite', article_path(new.id)%>
+                </div>
             </div>
-            <div class="card-action right-align">
-                <a href="#">Lire la suite</a>
-            </div>
-        </div>
-
+        <% end %>
     </div>
     <%= render :template => 'layouts/right' %>
  </div>

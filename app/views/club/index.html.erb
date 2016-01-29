@@ -8,65 +8,36 @@
     </div>
     <div id="test1" class="col s12">
 
-        <ul class="collection">
-            <li class="collection-item avatar">
-                <i class="material-icons circle green">folder</i>
-                <span class="title">Prénom / Nom</span>
-                <p>Attaque <br> 08</p>
-            </li>
-            <li class="collection-item avatar">
-                <i class="material-icons circle green">folder</i>
-                <span class="title">Prénom / Nom</span>
-                <p>Attaque <br> 08</p>
-            </li>
-            <li class="collection-item avatar">
-                <i class="material-icons circle green">folder</i>
-                <span class="title">Prénom / Nom</span>
-                <p>Attaque <br> 08</p>
-            </li>
-            <li class="collection-item avatar">
-                <i class="material-icons circle green">folder</i>
-                <span class="title">Prénom / Nom</span>
-                <p>Attaque <br> 08</p>
-            </li>
-            <li class="collection-item avatar">
-                <i class="material-icons circle green">folder</i>
-                <span class="title">Prénom / Nom</span>
-                <p>Attaque <br> 08</p>
-            </li>
-            <li class="collection-item avatar">
-                <i class="material-icons circle green">folder</i>
-                <span class="title">Prénom / Nom</span>
-                <p>Attaque <br> 08</p>
-            </li>
-        </ul>
+
+        <% @players.each do |player|%>
+            <% if(player.adult == true) %>
+                <ul class="collection">
+                    <li class="collection-item avatar">
+                        <i class="circle black"><%= image_tag( "players/#{player.lastname}.png", :alt => "picture player") %></i>
+                        <span class="title"><%= player.lastname %></span>
+                        <p><%= player.firstname %> <br><%= player.place %></p>
+                    </li>
+                </ul>
+            <% end %>
+        <% end %>
+
 
 
     </div>
     <div id="test2" class="col s12">
 
-        <ul class="collection">
-            <li class="collection-item avatar">
-                <i class="material-icons circle red">folder</i>
-                <span class="title">Prénom / Nom</span>
-                <p>Attaque <br> 08</p>
-            </li>
-            <li class="collection-item avatar">
-                <i class="material-icons circle red">folder</i>
-                <span class="title">Prénom / Nom</span>
-                <p>Attaque <br> 08</p>
-            </li>
-            <li class="collection-item avatar">
-                <i class="material-icons circle red">folder</i>
-                <span class="title">Prénom / Nom</span>
-                <p>Attaque <br> 08</p>
-            </li>
-            <li class="collection-item avatar">
-                <i class="material-icons circle red">folder</i>
-                <span class="title">Prénom / Nom</span>
-                <p>Attaque <br> 08</p>
-            </li>
-        </ul>
+        <% @players.each do |player|%>
+            <% if(player.adult == false) %>
+                <ul class="collection">
+                    <li class="collection-item avatar">
+                        <i class="circle black"><%= image_tag( "players/#{player.lastname}.png", :alt => "picture player") %></i>
+                        <span class="title"><%= player.lastname %></span>
+                        <p><%= player.firstname %> <br><%= player.place %></p>
+                    </li>
+                </ul>
+            <% end %>
+        <% end %>
+
 
     </div>
     <div id="test3" class="col s12">Test 3</div>

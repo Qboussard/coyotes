@@ -1,7 +1,9 @@
 class ArticlesController < ApplicationController
-  def index
-  end
+    def index
+        	@news = News.order('id desc')
+        end
 
-  def show
-  end
+        def show
+        	@new = News.find(params[:id])
+        end
 end
