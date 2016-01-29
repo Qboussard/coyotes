@@ -25,10 +25,10 @@ ActiveRecord::Schema.define(version: 20160129124819) do
     t.string   "firstname",  limit: 255
     t.string   "number",     limit: 255
     t.string   "place",      limit: 255
-    t.boolean  "staff",                  default: false
+    t.string   "staff",      limit: 255
     t.boolean  "adult",                  default: true
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
   end
 
   create_table "users", force: :cascade do |t|

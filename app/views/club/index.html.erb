@@ -4,6 +4,7 @@
         <li class="tab col s4"><a href="#old">Adultes</a></li>
         <li class="tab col s4"><a href="#young">Jeunes</a></li>
         <li class="tab col s4"><a href="#training">Entrainement</a></li>
+        <li class="tab col s4"><a href="#staff">Bureau</a></li>
       </ul>
     </div>
     <div id="old" class="col s12">
@@ -12,8 +13,8 @@
                 <ul class="collection">
                     <li class="collection-item avatar">
                         <i class="circle black"><%= image_tag( "players/#{player.lastname}.png", :alt => "picture player") %></i>
-                        <span class="title"><%= player.lastname %></span>
-                        <p><%= player.firstname %> <br><%= player.place %></p>
+                        <span class="title"><%= "#{player.lastname} #{player.firstname}"%></span>
+                        <p><%= player.place %> <br><%= player.number %></p>
                     </li>
                 </ul>
             <% end %>
@@ -25,8 +26,8 @@
                 <ul class="collection">
                     <li class="collection-item avatar">
                         <i class="circle black"><%= image_tag( "players/#{player.lastname}.png", :alt => "picture player") %></i>
-                        <span class="title"><%= player.lastname %></span>
-                        <p><%= player.firstname %> <br><%= player.place %></p>
+                        <span class="title"><%= "#{player.lastname} #{player.firstname}"%></span>
+                        <p><%= player.place %> <br><%= player.number %></p>
                     </li>
                 </ul>
             <% end %>
@@ -58,18 +59,35 @@
           </div>
         </div>
         <div class="row">
-            <div class="col m6 s12 card">
-                <div class="card-content">
-                  <span class="card-title">Gymnase Colbert</span>
-                  <p>2 Rue des Carrières, 70100 GRAY </p>
+            <div class="col m6 s12">
+                <div class="card">
+                    <div class="card-content">
+                      <span class="card-title">Gymnase Colbert</span>
+                      <p>2 Rue des Carrières, 70100 GRAY </p>
+                    </div>
                 </div>
             </div>
-            <div class="col m6 s12 card">
-                <div class="card-content">
-                  <span class="card-title">Gymnase Collège Delaunay </span>
-                  <p>15 Rue Joseph Thévenin , 70100 GRAY </p>
+            <div class="col m6 s12">
+                <div class="card">
+                    <div class="card-content">
+                      <span class="card-title">Gymnase Collège Delaunay </span>
+                      <p>15 Rue Joseph Thévenin , 70100 GRAY </p>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
+    <div id="staff" class="col s12">
+        <% @players.each do |player|%>
+            <% if(player.staff != nil) %>
+                <ul class="collection">
+                    <li class="collection-item avatar">
+                        <i class="circle black"><%= image_tag( "players/#{player.lastname}.png", :alt => "picture player") %></i>
+                        <span class="title"><%= "#{player.lastname} #{player.firstname}"%></span>
+                        <p><%= player.staff %></p>
+                    </li>
+                </ul>
+            <% end %>
+        <% end %>
     </div>
   </div>
