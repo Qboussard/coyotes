@@ -12,7 +12,8 @@ end
 
 if Player.count == 0
 	Player.create!(lastname: "Boussard", firstname: "Quentin", number:"08", place: "Attaque", staff: "training")
-	Player.create!(lastname: "Boussard", firstname: "toto", number:"91", place: "Defence", adult:"false")
+	Player.create!(lastname: "Tata", firstname: "blob", number:"91", place: "Defence", adult:"false")
+	Player.create!(lastname: "Toto", firstname: "plop", number:"42", place: "Gardient")
 		puts '-> Ajoût d\'un joueur'
 end
 if News.count == 0

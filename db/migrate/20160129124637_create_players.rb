@@ -5,6 +5,7 @@ class CreatePlayers < ActiveRecord::Migration
         t.string :firstname
         t.string :number
         t.string :place
+        t.boolean :picture, default: false
         t.string :staff
         t.boolean :adult, default: true
 
