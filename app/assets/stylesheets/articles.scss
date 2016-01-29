@@ -7,7 +7,9 @@
     .card{
 
         .card-content{
-
+            .card-title{
+                cursor:default;;
+            }
         }
         .card-action{
             a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating){
