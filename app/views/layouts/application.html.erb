@@ -33,7 +33,13 @@
                 <li><%= link_to 'Adhésions', rules_index_path %></li>
                 <li><%= link_to 'Tournois', tournament_index_path %></li>
                 <li class="divider"></li>
-                <li><a href=""><%= current_user.email %></a></li>
+                <% if user_signed_in? %>
+                    <li><a href=""><%= current_user.email %></a></li>
+                    <li><%= link_to 'Déconnexion', destroy_user_session_path, :id => "logout", :method => :delete %><li>
+                <% else %>
+                    <li><%= link_to 'Connexion', new_user_session_path %></li>
+                    <li><%= link_to 'Inscription', new_user_registration_path %></li>
+                <% end %>
             </ul>
             <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
         </div>
