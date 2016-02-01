@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'sponsor/index'
+
   get 'tournament/index'
 
   get 'tournament/show'
@@ -35,6 +37,8 @@ Rails.application.routes.draw do
   resources :club, only: [:index]
   resources :rules, only: [:index]
   resources :tournament, only: [:index, :show]
+  resources :sponsor, only: [:index]
+  
   # Example resource route with options:
   #   resources :products do
   #     member do
