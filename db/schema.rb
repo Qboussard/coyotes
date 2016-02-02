@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160129124819) do
+ActiveRecord::Schema.define(version: 20160202151519) do
+
+  create_table "matches", force: :cascade do |t|
+    t.integer  "tournaments_id", limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  add_index "matches", ["tournaments_id"], name: "index_matches_on_tournaments_id", using: :btree
 
   create_table "news", force: :cascade do |t|
     t.string   "title",      limit: 255
@@ -30,6 +38,33 @@ ActiveRecord::Schema.define(version: 20160129124819) do
     t.boolean  "adult",                  default: true
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
+  end
+
+  create_table "scores", force: :cascade do |t|
+    t.integer  "matches_id", limit: 4
+    t.integer  "teams_id",   limit: 4
+    t.integer  "team2_id",   limit: 4
+    t.string   "score",      limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "scores", ["matches_id"], name: "index_scores_on_matches_id", using: :btree
+  add_index "scores", ["team2_id"], name: "index_scores_on_team2_id", using: :btree
+  add_index "scores", ["teams_id"], name: "index_scores_on_teams_id", using: :btree
+
+  create_table "teams", force: :cascade do |t|
+    t.string   "place",      limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "tournaments", force: :cascade do |t|
+    t.string   "place",        limit: 255
+    t.date     "date"
+    t.text     "link_picture", limit: 65535
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "users", force: :cascade do |t|
