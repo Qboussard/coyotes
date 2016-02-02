@@ -2,8 +2,24 @@
 
 ## Description :
 
-Refonte du site  : http://coyotes-gray.fr
+Coyotes-gray est une refonte d'un site existant : http://coyotes-gray.fr
+Les Coyotes est un club de sport de street Hockey du val de Gray
 
+##Techno utilisées :
 * Ruby on Rails
 * Materialize
 * Jquery
+
+
+##Commandes :
+| Tâches | Réalisé |
+| --- | --- |
+| Articles | X  |
+| Liste des joueurs | X  |
+| Réglement | X  |
+| Utilisateurs | X  |
+| Tournois |   |
+
+##Screenshot
+
+soon
