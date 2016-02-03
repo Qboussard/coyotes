@@ -20,7 +20,7 @@ if News.count == 0
 	News.create!(title: "Test de titre", content: "lorem ipsum")
 	News.create!(title: "Test de titre", content: "Quod opera consulta cogitabatur astute, ut hoc insidiarum genere Galli periret avunculus, ne eum ut praepotens acueret in fiduciam exitiosa coeptantem. verum navata est opera diligens hocque dilato Eusebius praepositus cubiculi missus est Cabillona aurum secum perferens, quo per turbulentos seditionum concitores occultius distributo et tumor consenuit militum et salus est in tuto locata praefecti. deinde cibo abunde perlato castra die praedicto sunt mota.")
 		puts '-> Ajoût d\'une news'
-		puts '---------------------------------------------------------------------------------------------'
+		puts '----------------------------------------------------------------------------------'
 end
 if Team.count == 0
 	Team.create!(place: "Gray")
@@ -28,6 +28,6 @@ if Team.count == 0
 		puts '-> Ajoût d\'une équipe'
 end
 if Match.count == 0
-	Match.create!(teams_id: "1", teams2_id: "2", score: "0 / 0")
+	Match.create!(tournaments_id: "1",teams_1: "Gray", teams_2: "Besançon", score: "0 / 0")
 		puts '-> Ajoût d\'un match'
 end

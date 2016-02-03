@@ -15,15 +15,15 @@ ActiveRecord::Schema.define(version: 20160202151043) do
 
   create_table "matches", force: :cascade do |t|
     t.integer  "tournaments_id", limit: 4
-    t.integer  "teams_id",       limit: 4
-    t.integer  "teams2_id",      limit: 4
+    t.string   "teams_1",        limit: 255
+    t.string   "teams_2",        limit: 255
     t.string   "score",          limit: 255
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
   end
 
-  add_index "matches", ["teams2_id"], name: "index_matches_on_teams2_id", using: :btree
-  add_index "matches", ["teams_id"], name: "index_matches_on_teams_id", using: :btree
+  add_index "matches", ["teams_1"], name: "index_matches_on_teams_1", using: :btree
+  add_index "matches", ["teams_2"], name: "index_matches_on_teams_2", using: :btree
   add_index "matches", ["tournaments_id"], name: "index_matches_on_tournaments_id", using: :btree
 
   create_table "news", force: :cascade do |t|
