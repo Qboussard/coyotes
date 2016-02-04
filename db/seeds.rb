@@ -61,7 +61,9 @@ if Match.count == 0
 		puts '-> Ajoût d\'un match'
 end
 if Presence.count == 0
-	Presence.create!(tournaments_id: "1",name: "Fred")
-	Presence.create!(tournaments_id: "1",name: "William")
+	Presence.create!(tournaments_id: "1",name: "Toto")
+	Presence.create!(tournaments_id: "1",name: "Tata")
+	Presence.create!(tournaments_id: "1",name: "Titi")
+	Presence.create!(tournaments_id: "1",name: "Tutu")
 		puts '-> Ajoût d\'un joueur dans un tournois'
 end
