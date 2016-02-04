@@ -1,2 +1,27 @@
-<h1>Tournament#index</h1>
-<p>Find me in app/views/tournament/index.html.erb</p>
+<div class="row tournament">
+    <div class="col s12 m6 l6">
+        <ul class="collection with-header">
+            <li class="collection-header"><h5>Tournois de Gray</h5></li>
+            <% @tournaments.each do |tournament|
+                if(tournament.place == "Gray")
+            %>
+
+                <li class="collection-item"><%= link_to tournament.date , tournament_path(tournament.id)%></li>
+
+                <% end %>
+            <% end %>
+        </ul>
+    </div>
+    <div class="col s12 m6 l6">
+        <ul class="collection with-header">
+            <li class="collection-header"><h5>Tournois Externe</h5></li>
+            <% @tournaments.each do |tournament|
+                if(tournament.place != "Gray")
+            %>
+
+                <li class="collection-item"><%= link_to tournament.date , tournament_path(tournament.id)%></li>
+                <% end %>
+            <% end %>
+        </ul>
+    </div>
+ </div>

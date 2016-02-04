@@ -1,3 +1,8 @@
 // Place all the styles related to the tournament controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.tournament{
+    .btn, .btn-large,.btn:focus, .btn-large:focus,.btn:hover, .btn-large:hover{
+        background-color:#c62828;
+    }
+}

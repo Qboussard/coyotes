@@ -1,2 +1,43 @@
-<h1>Tournament#show</h1>
-<p>Find me in app/views/tournament/show.html.erb</p>
+<div class="row tournament">
+    <div class="col s12 m12 l12">
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title red-text text-darken-2">Tournois de <%= @tournament.place %> le <%= @tournament.date %></span>
+                <div class="row">
+                    <div class="col s12 m12 l6">
+                        <table class="striped">
+                            <thead>
+                              <tr>
+                                  <th data-field="Place">Équipes</th>
+                                  <th data-field=""></th>
+                                  <th data-field="price">Score</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                            <% @matchs.each do |match| %>
+                            <tr>
+                              <td><%= match.teams_1 %></td>
+                              <td><%= match.teams_2 %></td>
+                              <td><%= match.score %></td>
+                            </tr>
+                            <% end %>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col s12 m12 l6">
+                        <ul class="collection">
+                        <% @prensences.each do |presence| %>
+                            <li class="collection-item"><%= presence.name %></li>
+                        <% end %>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <%= link_to 'Photos', @tournament.link_picture, :class => "right waves-effect waves-light btn" %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

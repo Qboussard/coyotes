@@ -23,10 +23,18 @@ if News.count == 0
 		puts '----------------------------------------------------------------------------'
 end
 if Tournament.count == 0
-	Tournament.create!(place: "Gray")
+	Tournament.create!(place: "Gray", date: "12/12/2016", link_picture: "http://test.com/")
+	Tournament.create!(place: "Dijon", date: "10/10/2000")
+
 		puts '-> Ajoût d\'un tournois'
 end
 if Match.count == 0
 	Match.create!(tournaments_id: "1",teams_1: "Gray", teams_2: "Besançon", score: "0 / 0")
+	Match.create!(tournaments_id: "1",teams_1: "Dijon", teams_2: "Bar", score: "3 / 1")
 		puts '-> Ajoût d\'un match'
+end
+if Presence.count == 0
+	Presence.create!(tournaments_id: "1",name: "Fred")
+	Presence.create!(tournaments_id: "1",name: "William")
+		puts '-> Ajoût d\'un joueur dans un tournois'
 end

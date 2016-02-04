@@ -1,3 +1,4 @@
 class Tournament < ActiveRecord::Base
-    has_many :match
+    has_many :matches
+    has_many :presences
 end

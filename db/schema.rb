@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160202150725) do
+ActiveRecord::Schema.define(version: 20160204100706) do
 
   create_table "matches", force: :cascade do |t|
     t.integer  "tournaments_id", limit: 4
@@ -45,9 +45,19 @@ ActiveRecord::Schema.define(version: 20160202150725) do
     t.datetime "updated_at",                             null: false
   end
 
+  create_table "presences", force: :cascade do |t|
+    t.integer  "tournaments_id", limit: 4
+    t.string   "name",           limit: 255
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  add_index "presences", ["name"], name: "index_presences_on_name", using: :btree
+  add_index "presences", ["tournaments_id"], name: "index_presences_on_tournaments_id", using: :btree
+
   create_table "tournaments", force: :cascade do |t|
     t.string   "place",        limit: 255
-    t.date     "date"
+    t.string   "date",         limit: 255
     t.text     "link_picture", limit: 65535
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
