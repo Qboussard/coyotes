@@ -18,10 +18,9 @@ Les Coyotes est un club de sport de street Hockey du val de Gray
 | Liste des joueurs | X  |
 | Réglement | X  |
 | Utilisateurs | X  |
-| Tournois |   |
+| Tournois | X  |
+| Admin |   |
 
 ##Screenshot
 
 ![alt tag](http://quentinboussard.fr/img/folio/full/obv/coyotes-pc.png)
-
-![alt tag](http://quentinboussard.fr/img/folio/full/obv/coyotes-phone.png)
