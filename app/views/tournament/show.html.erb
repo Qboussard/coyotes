@@ -8,18 +8,24 @@
                         <table class="striped">
                             <thead>
                               <tr>
-                                  <th data-field="Place">Équipes</th>
-                                  <th data-field=""></th>
+                                  <th data-field="teams_1">Équipes</th>
+                                  <th data-field="teams_2"></th>
                                   <th data-field="price">Score</th>
                               </tr>
                             </thead>
                             <tbody>
-                            <% @matchs.each do |match| %>
-                            <tr>
-                              <td><%= match.teams_1 %></td>
-                              <td><%= match.teams_2 %></td>
-                              <td><%= match.score %></td>
-                            </tr>
+                            <% if(@matchs.blank?) %>
+                                    <tr>
+                                      <td colspan="3">Aucun match pour le moment</td>
+                                    </tr>
+                            <% else %>
+                                <% @matchs.each do |match| %>
+                                    <tr>
+                                      <td><%= match.teams_1 %></td>
+                                      <td><%= match.teams_2 %></td>
+                                      <td><%= match.score %></td>
+                                    </tr>
+                                <% end %>
                             <% end %>
                             </tbody>
                         </table>
@@ -27,9 +33,13 @@
                     <div class="col s12 m12 l6">
                         <ul class="collection with-header">
                             <li class="collection-header"><h5>Joueurs présent</h5></li>
-                        <% @prensences.each do |presence| %>                            
-                                <li class="collection-item"><%= presence.name %></li>
-                        <% end %>
+                            <% if(@prensences.blank?) %>
+                                <li class="collection-item">Aucun joueur engregistré pour ce tournois</li>
+                            <% else %>
+                                <% @prensences.each do |presence| %>
+                                    <li class="collection-item"><%= presence.name %></li>
+                                <% end %>
+                            <% end %>
                         </ul>
                     </div>
                 </div>

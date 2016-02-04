@@ -23,14 +23,41 @@ if News.count == 0
 		puts '----------------------------------------------------------------------------'
 end
 if Tournament.count == 0
-	Tournament.create!(place: "Gray", date: "12/12/2016", link_picture: "http://test.com/")
-	Tournament.create!(place: "Dijon", date: "10/10/2000")
+	Tournament.create!(place: "Gray", date: "14/03/2010", link_picture: "")
+	Tournament.create!(place: "Gray", date: "05/06/2011", link_picture: "")
+	Tournament.create!(place: "Gray", date: "13/05/2012", link_picture: "")
+	Tournament.create!(place: "Gray", date: "18/11/2012", link_picture: "")
+	Tournament.create!(place: "Gray", date: "03/03/2013", link_picture: "")
+	Tournament.create!(place: "Gray", date: "28/04/2013", link_picture: "")
+	Tournament.create!(place: "Dôle", date: "12/05/2013", link_picture: "")
+	Tournament.create!(place: "Gray", date: "13/10/2013", link_picture: "")
+	Tournament.create!(place: "Gray", date: "15/12/2013", link_picture: "")
+	Tournament.create!(place: "Gray", date: "16/02/2014", link_picture: "")
+	Tournament.create!(place: "Gray", date: "14/04/2014", link_picture: "")
+	Tournament.create!(place: "Gray", date: "12/10/2014", link_picture: "")
+	Tournament.create!(place: "Gray", date: "15/02/2015", link_picture: "")
+	Tournament.create!(place: "Gray", date: "11/10/2015", link_picture: "")
+	Tournament.create!(place: "Gray", date: "22/11/2015", link_picture: "")
+	Tournament.create!(place: "Gray", date: "13/12/2015", link_picture: "")
+
 
 		puts '-> Ajoût d\'un tournois'
 end
 if Match.count == 0
-	Match.create!(tournaments_id: "1",teams_1: "Gray", teams_2: "Besançon", score: "0 / 0")
-	Match.create!(tournaments_id: "1",teams_1: "Dijon", teams_2: "Bar", score: "3 / 1")
+	Match.create!(tournaments_id: "1",teams_1: "Gray", teams_2: "Vesoul", score: "3 / 3")
+	Match.create!(tournaments_id: "1",teams_1: "Gray", teams_2: "Bar Le Duc", score: "3 / 8")
+	Match.create!(tournaments_id: "1",teams_1: "Vesoul", teams_2: "Bar Le Duc", score: "2 / 0")
+
+	Match.create!(tournaments_id: "2",teams_1: "Vesoul", teams_2: "Bar Le Duc", score: "3 / 3")
+	Match.create!(tournaments_id: "2",teams_1: "Pontarlier", teams_2: "Dijon", score: "2 / 3")
+	Match.create!(tournaments_id: "2",teams_1: "Gray", teams_2: "Bar Le Duc", score: "0 / 2")
+	Match.create!(tournaments_id: "2",teams_1: "Vesoul", teams_2: "Dijon", score: "2 / 6")
+	Match.create!(tournaments_id: "2",teams_1: "Vesoul", teams_2: "Pontarlier", score: "2 / 2")
+	Match.create!(tournaments_id: "2",teams_1: "Dijon", teams_2: "Bar Le Duc", score: "2 / 6")
+	Match.create!(tournaments_id: "2",teams_1: "Gray", teams_2: "Pontarlier", score: "1 / 6")
+	Match.create!(tournaments_id: "2",teams_1: "Vesoul", teams_2: "Gray", score: "3 / 1")
+	Match.create!(tournaments_id: "2",teams_1: "Gray", teams_2: "Dijon", score: "4 / 4")
+
 		puts '-> Ajoût d\'un match'
 end
 if Presence.count == 0

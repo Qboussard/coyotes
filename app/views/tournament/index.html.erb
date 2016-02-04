@@ -18,8 +18,7 @@
             <% @tournaments.each do |tournament|
                 if(tournament.place != "Gray")
             %>
-
-                <li class="collection-item"><%= link_to tournament.date , tournament_path(tournament.id)%></li>
+                <li class="collection-item"><%= link_to tournament.date+' : '+tournament.place , tournament_path(tournament.id)%></li>
                 <% end %>
             <% end %>
         </ul>
