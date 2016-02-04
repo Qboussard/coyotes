@@ -1,3 +1,17 @@
-<div class="col l3 hide-on-med-and-down">
-toto
+<div class="col l3 hide-on-med-and-down LayRight">
+    <div class="row">
+        <div class="col s12">
+            <ul class="collection with-header">
+                <li class="collection-header"><span>Dernier tournois</span></li>
+                <% @tournaments.first(3).each do |tournament|%>
+                    <li class="collection-item"><%= link_to tournament.place+" le "+tournament.date , tournament_path(tournament.id)%></li>
+                <% end %>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <a target="_blank" rel="nofollow" href="https://www.facebook.com/groups/218483188241910/?fref=ts" rel="nofollow"><%= image_tag('coyotes-facebook.png', :class => "") %></a>
+        </div>
+    </div>
 </div>

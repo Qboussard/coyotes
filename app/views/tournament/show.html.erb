@@ -25,10 +25,10 @@
                         </table>
                     </div>
                     <div class="col s12 m12 l6">
-                        <ul class="collection">
-                            <li class="collection-item"><h5>Joueurs présent</h5></li>
-                        <% @prensences.each do |presence| %>
-                            <li class="collection-item"><%= presence.name %></li>
+                        <ul class="collection with-header">
+                            <li class="collection-header"><h5>Joueurs présent</h5></li>
+                        <% @prensences.each do |presence| %>                            
+                                <li class="collection-item"><%= presence.name %></li>
                         <% end %>
                         </ul>
                     </div>
