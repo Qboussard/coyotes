@@ -26,6 +26,7 @@
                     </div>
                     <div class="col s12 m12 l6">
                         <ul class="collection">
+                            <li class="collection-item"><h5>Joueurs présent</h5></li>
                         <% @prensences.each do |presence| %>
                             <li class="collection-item"><%= presence.name %></li>
                         <% end %>
@@ -34,7 +35,9 @@
                 </div>
                 <div class="row">
                     <div class="col s12">
-                        <%= link_to 'Photos', @tournament.link_picture, :class => "right waves-effect waves-light btn" %>
+                        <% if(@tournament.link_picture != nil) %>
+                            <%= link_to 'Photos', @tournament.link_picture, :class => "right waves-effect waves-light btn" %>
+                        <% end %>
                     </div>
                 </div>
             </div>
