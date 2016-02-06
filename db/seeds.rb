@@ -67,3 +67,4 @@ if Presence.count == 0
 	Presence.create!(tournaments_id: "1",name: "Tutu")
 		puts '-> Ajoût d\'un joueur dans un tournois'
 end
+User.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password', admin: true)

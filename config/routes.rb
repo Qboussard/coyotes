@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  devise_for :users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   get 'sponsor/index'
 
   get 'tournament/index'
@@ -8,9 +11,6 @@ Rails.application.routes.draw do
   get 'rules/index'
 
   get 'club/index'
-
-  devise_for :users
-  devise_for :models
 
   get 'articles/index'
 
