@@ -45,8 +45,8 @@
                 </div>
                 <div class="row">
                     <div class="col s12">
-                        <% if(@tournament.link_picture != nil) %>
-                            <%= link_to 'Photos', @tournament.link_picture, :class => "right waves-effect waves-light btn" %>
+                        <% if(@tournament.link_picture.present?) %>
+                            <%= link_to 'Photos', @tournament.link_picture, :rel => "nofollow" , :target => "_blank", :class => "right waves-effect waves-light btn" %>
                         <% end %>
                     </div>
                 </div>
