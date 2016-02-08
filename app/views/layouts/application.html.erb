@@ -20,7 +20,7 @@
                 <ul class="right hide-on-med-and-down ">
                     <% if user_signed_in? %>
                         <% if(current_user.admin) %>
-                            <li><a href="#admin"><%= current_user.email %></a></li>
+                            <li><%= link_to current_user.email, admin_path %></li>
                         <% else %>
                             <li><a href=""><%= current_user.email %></a></li>
                         <% end %>
@@ -39,7 +39,7 @@
                     <li class="divider"></li>
                     <% if user_signed_in? %>
                         <% if(current_user.admin) %>
-                            <li><a href="#admin"><%= current_user.email %></a></li>
+                            <li><%= link_to current_user.email, admin_path %></li>
                         <% else %>
                             <li><a href=""><%= current_user.email %></a></li>
                         <% end %>

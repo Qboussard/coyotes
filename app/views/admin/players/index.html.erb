@@ -1,0 +1,38 @@
+<div class="row">
+	<div class="col s12">
+		<table class="striped">
+			<thead>
+				<tr>
+					<th data-field="id">Id</th>
+					<th data-field="lastname">lastname</th>
+                    <th data-field="firstname">firstname</th>
+                    <th data-field="number">number</th>
+                    <th data-field="place">place</th>
+                    <th data-field="staff">staff</th>
+                    <th data-field="adult">adult</th>
+
+					<th  class="right" data-field="price">Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @players.each do |player| %>
+					<tr>
+						<td><%= player.id %></td>
+                        <td><%= player.lastname %></td>
+                        <td><%= player.firstname %></td>
+                        <td><%= player.number %></td>
+                        <td><%= player.place %></td>
+                        <td><%= player.staff %></td>
+                        <td><%= player.adult %></td>
+
+						<td class="right">
+                            <%= link_to admin_player_path(player.id), :class => "waves-effect waves-light btn red darken-3", :method => :delete,  :data => {:confirm => 'Tu est sur ???  ☜(ﾟヮﾟ☜)' } do %>
+								<i class="material-icons small">delete</i>
+				        	<% end %>
+						</td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>

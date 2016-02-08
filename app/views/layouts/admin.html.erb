@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Coyotes</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="BCc9FCVB9jTzBLvcIfrjDViEPYSGN-6o9l-zR9hUrb4" />
+    <%= stylesheet_link_tag    'application' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+</head>
+<body class="admin">
+	<header>
+		<nav class="top-nav">
+			<div class="container">
+				<div class="nav-wrapper"><a class="page-title"><%= controller_name.capitalize %></a></div>
+			</div>
+		</nav>
+
+		<div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="mdi-navigation-menu"></i></a></div>
+
+		<ul id="nav-mobile" class="side-nav fixed collapsible" style="left: 0px;">
+            <li class="logo">
+				<%= link_to root_path, { :class => "brand-logo", :id=> "logo-container" } do %>
+					<%= image_tag('Logo2.png', class: 'admin-page-logo', alt: "logo") %>
+	        	<% end %>
+	        </li>
+			<li class="bold">
+				<a class="collapsible-header <%= 'active' if controller_name == 'articles' %>">Articles</a>
+				<div class="collapsible-body" style="display: none;">
+					<ul>
+                        <li><%= link_to 'Tous les articles', admin_articles_path %></li>
+						<li><%= link_to 'Ajouter', new_admin_article_path %></li>
+					</ul>
+				</div>
+			</li>
+            <li class="bold">
+                <%= link_to 'Utilisateurs', admin_users_path %>
+			</li>
+            <li class="bold">
+				<a class="collapsible-header <%= 'active' if controller_name == 'articles' %>">Joueurs</a>
+				<div class="collapsible-body" style="display: none;">
+					<ul>
+                        <li><%= link_to 'Tous les Joueurs', admin_players_path %></li>
+                        <li><%= link_to 'Ajouter', new_admin_player_path %></li>
+					</ul>
+				</div>
+			</li>
+            <li class="bold">
+				<a class="collapsible-header <%= 'active' if controller_name == 'articles' %>">Tournois</a>
+				<div class="collapsible-body" style="display: none;">
+					<ul>
+                        <li><%= link_to 'Tous les tournois', admin_tournaments_path %></li>
+					</ul>
+				</div>
+			</li>
+            <li class="bold">
+                <a class="collapsible-header <%= 'active' if controller_name == 'articles' %>">Matches</a>
+                <div class="collapsible-body" style="display: none;">
+                    <ul>
+                        <li><%= link_to 'Tous les matches', admin_matches_path %></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="bold">
+                <a class="collapsible-header <%= 'active' if controller_name == 'articles' %>">Presences</a>
+                <div class="collapsible-body" style="display: none;">
+                    <ul>
+                        <li><%= link_to 'Tous les Presences', admin_presences_path %></li>
+                    </ul>
+                </div>
+            </li>
+
+		</ul>
+	</header>
+	<main>
+		<div class="container">
+			<% if notice %>
+            <script type="text/javascript">
+	            $( document ).ready(function() {
+	                Materialize.toast('<%= notice %>', 4000);
+	            });
+	            </script>
+	        <% end %>
+	        <% if alert %>
+	            <script type="text/javascript">
+	            $( document ).ready(function() {
+	                Materialize.toast('<%= alert %>', 4000);
+	            });
+	            </script>
+	        <% end %>
+
+			<%= yield %>
+		</div>
+	</main>
+</body>
+</html>

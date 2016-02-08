@@ -1,0 +1,30 @@
+<div class="row">
+	<div class="col s12">
+		<table class="striped">
+			<thead>
+				<tr>
+					<th data-field="id">Id</th>
+					<th data-field="email">Lieux</th>
+                    <th data-field="date">date</th>
+                    <th data-field="admin">Lien photo</th>
+					<th  class="right" data-field="price">Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @tournaments.each do |tournament| %>
+					<tr>
+						<td><%= tournament.id %></td>
+						<td><%= tournament.place %></td>
+                        <td><%= tournament.date%></td>
+						<td><%= tournament.link_picture %></td>
+						<td class="right">
+							<%= link_to admin_tournament_path(tournament.id), :class => "waves-effect waves-light btn red darken-3", :method => :delete,  :data => {:confirm => 'Tu est sur ???  ☜(ﾟヮﾟ☜)' } do %>
+								<i class="material-icons small">delete</i>
+							<% end %>
+						</td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>
