@@ -1,0 +1,33 @@
+<div class="row">
+	<div class="col s12">
+		<%= form_for(@tournament, url: admin_tournaments_path, html: { method: :post }, id: 'new_tournaments') do |f| %>
+
+			<% @tournament.errors.full_messages.each do |msg| %>
+				<%= msg %>
+			<% end %>
+
+			<div class="field input-field">
+				<%= f.label :place, "Lieux" %>
+				<%= f.text_field :place, :class => "validate" %>
+			</div>
+
+			<div class="field input-field">
+				<%= f.label :date, "Date" %>
+				<%= f.text_field :date, :class => "validate"  %>
+			</div>
+            <div class="field input-field">
+				<%= f.label :link_picture, "Photos" %>
+				<%= f.text_field :link_picture, :class => "validate"  %>
+			</div>
+
+
+			<div class="btnlog actions">
+				<%= button_tag(type: 'submit', class: "btn") do %>
+					Publier <i class='material-icons right'>send</i>
+				<% end %>
+			</div>
+		<% end %>
+
+		<%= link_to 'Retour', admin_articles_path %>
+	</div>
+</div>

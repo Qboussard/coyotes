@@ -1,5 +1,47 @@
 <div class="row">
 	<div class="col s12">
+		<%= form_for(@player, url: admin_players_path, html: { method: :post }, id: 'new_player') do |f| %>
 
+			<% @player.errors.full_messages.each do |msg| %>
+				<%= msg %>
+			<% end %>
+
+			<div class="field input-field">
+				<%= f.label :lastname, "Nom de famille" %>
+				<%= f.text_field :lastname, :class => "validate" %>
+			</div>
+			<div class="field input-field">
+				<%= f.label :firstname, "Prénom" %>
+				<%= f.text_field :firstname, :class => "validate" %>
+			</div>
+			<div class="field input-field">
+				<%= f.label :number, "Numéro" %>
+				<%= f.text_field :number, :class => "validate" %>
+			</div>
+			<div class="field input-field">
+				<%= f.label :place, "Rôle" %>
+				<%= f.text_field :place, :class => "validate" %>
+			</div>
+			<div class="field input-field">
+				<%= f.label :picture, "Photo (1 => true / 0 => false)" %>
+				<%= f.text_field :picture, :class => "validate" %>
+			</div>
+			<div class="field input-field">
+				<%= f.label :staff, "Bureau" %>
+				<%= f.text_field :staff, :class => "validate" %>
+			</div>
+			<div class="field input-field">
+				<%= f.label :adult, "Adult ou jeune" %>
+				<%= f.text_field :adult, :class => "validate" %>
+			</div>
+
+			<div class="btnlog actions">
+				<%= button_tag(type: 'submit', class: "btn") do %>
+					Publier <i class='material-icons right'>send</i>
+				<% end %>
+			</div>
+		<% end %>
+
+		<%= link_to 'Retour', admin_articles_path %>
 	</div>
 </div>

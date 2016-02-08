@@ -3,24 +3,24 @@ class Admin::PlayersController < Admin::DashboardController
         @players = Player.order('id desc')
     end
 
-  def edit
-  end
+    def new
+      @player = Player.new
+    end
+    def create
+      @player = Player.new(new_params)
 
-  def new
-      @new = News.new
-  end
-  def create
-      @new = News.new(new_params)
-
-      if @new.save
-          redirect_to admin_articles_path, notice: 'Votre article a bien été créé'
+      if @player.save
+          redirect_to admin_players_path, notice: 'Votre Joueur a bien été créé'
       else
           render 'new'
       end
-  end
+    end
 
   def destroy
       Player.destroy(params[:id])
-      redirect_to admin_players_path, notice: 'Utilisateur a bien été supprimé'
+      redirect_to admin_players_path, notice: 'L\'utilisateur a bien été supprimé'
+  end
+  def new_params
+    params.require(:player).permit(:lastname, :firstname, :number, :place, :picture, :staff, :adult)
   end
 end

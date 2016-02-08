@@ -1,0 +1,36 @@
+<div class="row">
+	<div class="col s12">
+		<%= form_for(@match, url: admin_matches_path, html: { method: :post }, id: 'new_match') do |f| %>
+
+			<% @match.errors.full_messages.each do |msg| %>
+				<%= msg %>
+			<% end %>
+
+			<div class="field input-field">
+				<%= f.label :tournaments_id, "Id du tournois" %>
+				<%= f.text_field :tournaments_id, :class => "validate" %>
+			</div>
+            <div class="field input-field">
+				<%= f.label :teams_1, "Team 1" %>
+				<%= f.text_field :teams_1, :class => "validate" %>
+			</div>
+            <div class="field input-field">
+				<%= f.label :teams_2, "Team 2" %>
+				<%= f.text_field :teams_2, :class => "validate" %>
+			</div>
+            <div class="field input-field">
+				<%= f.label :score, "Score" %>
+				<%= f.text_field :score, :class => "validate" %>
+			</div>
+
+
+			<div class="btnlog actions">
+				<%= button_tag(type: 'submit', class: "btn") do %>
+					Publier <i class='material-icons right'>send</i>
+				<% end %>
+			</div>
+		<% end %>
+
+		<%= link_to 'Retour', admin_articles_path %>
+	</div>
+</div>
