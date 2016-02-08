@@ -61,7 +61,7 @@ Rails.application.routes.draw do
 
 
   namespace :admin do
-    get '/' => 'dashboard#index'
+    get '/' => 'articles#index'
     resources :dashboard, only: [:index]
     resources :articles, except: [:show]
     resources :users, except: [:show]

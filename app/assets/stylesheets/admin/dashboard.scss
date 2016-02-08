@@ -13,4 +13,14 @@
     .admin-page-logo{
         height:100%;
     }
+    nav .button-collapse i{
+        margin-right: 20px;
+    }
+
+
+}
+@media screen and (max-width: 992px) {
+    .admin{
+        padding-left:0px; 
+    }
 }

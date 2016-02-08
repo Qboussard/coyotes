@@ -13,11 +13,12 @@
 	<header>
 		<nav class="top-nav">
 			<div class="container">
+                <a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="mdi-navigation-menu"></i></a>
 				<div class="nav-wrapper"><a class="page-title"><%= controller_name.capitalize %></a></div>
 			</div>
 		</nav>
 
-		<div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="mdi-navigation-menu"></i></a></div>
+		<div class="container"></div>
 
 		<ul id="nav-mobile" class="side-nav fixed collapsible" style="left: 0px;">
             <li class="logo">
@@ -25,9 +26,6 @@
 					<%= image_tag('Logo2.png', class: 'admin-page-logo', alt: "logo") %>
 	        	<% end %>
 	        </li>
-            <li class="bold">
-                <%= link_to 'Dashboard', admin_dashboard_index_path %>
-			</li>
 			<li class="bold">
 				<a class="collapsible-header <%= 'active' if controller_name == 'articles' %>">Articles</a>
 				<div class="collapsible-body" style="display: none;">
