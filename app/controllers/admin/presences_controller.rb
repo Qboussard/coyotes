@@ -11,7 +11,7 @@ class Admin::PresencesController < Admin::DashboardController
     def new
       @presence = Presence.new
       @tournaments = Tournament.order('id desc')
-      @players = Player.order('id desc')
+      @players = Player.order('lastname asc')
     end
     def create
       @presence = Presence.new(new_params)

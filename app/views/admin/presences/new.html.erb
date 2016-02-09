@@ -18,9 +18,11 @@
 			<div class="field input-field">
 			    <%= f.select(:name) do %>
 			        <% @players.each do |player| %>
-			            <% [[player.lastname+" "+player.firstname, player.lastname+" "+player.firstname]].each do |c| -%>
-			                <%= content_tag(:option, c.first, value: c.last) %>
-			            <% end %>
+						<% if(player.lastname.present? && player.firstname.present?) %>
+				            <% [[player.lastname+" "+player.firstname, player.lastname+" "+player.firstname]].each do |c| -%>
+				                <%= content_tag(:option, c.first, value: c.last) %>
+				            <% end %>
+						<% end %>
 			        <% end %>
 			    <% end %>
 			</div>

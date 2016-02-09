@@ -10,7 +10,7 @@ class Admin::MatchesController < Admin::DashboardController
     def new
       @match = Match.new
       @tournaments = Tournament.order('id desc')
-      @teams = Team.order('id desc')
+      @teams = Team.order('city asc')
     end
     def create
       @match = Match.new(new_params)
