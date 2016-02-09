@@ -7,9 +7,15 @@
 			<% end %>
 
 			<div class="field input-field">
-				<%= f.label :tournaments_id, "Id du tournois" %>
-				<%= f.text_field :tournaments_id, :class => "validate" %>
+			    <%= f.select(:tournaments_id) do %>
+			        <% @tournaments.each do |tournament| %>
+			            <% [[tournament.date, tournament.id]].each do |c| -%>
+			                <%= content_tag(:option, c.first, value: c.last) %>
+			            <% end %>
+			        <% end %>
+			    <% end %>
 			</div>
+
             <div class="field input-field">
 				<%= f.label :teams_1, "Team 1" %>
 				<%= f.text_field :teams_1, :class => "validate" %>

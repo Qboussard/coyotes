@@ -3,8 +3,12 @@
         <% @news.each do |new| %>
             <div class="card">
                 <div class="card-content">
-                    <span class="card-title red-text text-darken-2"><%= new.title.capitalize%></span>
-                    <p class='truncate'><%= new.summary%></p>
+                    <% if(new.title.present?)%>
+                        <span class="card-title red-text text-darken-2"><%= new.title.capitalize%></span>
+                    <% else %>
+                        <span class="card-title red-text text-darken-2">Pas de titre pour cet article</span>
+                    <% end %>
+                    <p><%= new.summary%></p>
                 </div>
                 <div class="card-action right-align">
                     <%= link_to 'Lire la suite', article_path(new.id)%>

@@ -9,6 +9,7 @@ class Admin::MatchesController < Admin::DashboardController
 
     def new
       @match = Match.new
+      @tournaments = Tournament.order('id desc')
     end
     def create
       @match = Match.new(new_params)

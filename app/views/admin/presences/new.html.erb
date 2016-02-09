@@ -7,14 +7,23 @@
 			<% end %>
 
 			<div class="field input-field">
-				<%= f.label :tournaments_id, "Id du tournois" %>
-				<%= f.text_field :tournaments_id, :class => "validate" %>
+			    <%= f.select(:tournaments_id) do %>
+			        <% @tournaments.each do |tournament| %>
+			            <% [[tournament.date, tournament.id]].each do |c| -%>
+			                <%= content_tag(:option, c.first, value: c.last) %>
+			            <% end %>
+			        <% end %>
+			    <% end %>
 			</div>
-            <div class="field input-field">
-				<%= f.label :name, "Nom du joueur" %>
-				<%= f.text_field :name, :class => "validate" %>
+			<div class="field input-field">
+			    <%= f.select(:name) do %>
+			        <% @players.each do |player| %>
+			            <% [[player.lastname+" "+player.firstname, player.lastname+" "+player.firstname]].each do |c| -%>
+			                <%= content_tag(:option, c.first, value: c.last) %>
+			            <% end %>
+			        <% end %>
+			    <% end %>
 			</div>
-
 
 			<div class="btnlog actions">
 				<%= button_tag(type: 'submit', class: "btn") do %>
