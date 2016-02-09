@@ -4,64 +4,384 @@
   <title>The page you were looking for doesn't exist (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
+  @import url(http://fonts.googleapis.com/css?family=Raleway:300);
+  *, *:before, *:after {
+    box-sizing: border-box;
+  }
+
+  html {
+    height: 100%;
+  }
+
   body {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
+    background: url(http://i.imgur.com/CZdBKjO.gif) no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Raleway', sans-serif;
+    background-color: #342643;
+    height: 100%;
   }
 
-  div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
+  .text-wrapper {
+    height: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 
-  div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  .title {
+    font-size: 9em;
+    font-weight: 700;
+    color: white;
+    position: relative;
   }
 
-  h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
+  .subtitle {
+    font-size: 40px;
+    font-weight: 700;
+    color: white;
+    position: relative;
   }
 
-  div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  .buttons {
+    margin: 30px;
   }
+  .buttons a.button {
+    background-color: #342643;
+    font-weight: 700;
+    border: 2px solid white;
+    text-decoration: none;
+    padding: 15px;
+    text-transform: uppercase;
+    color: white;
+    border-radius: 26px;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+  .buttons a.button:hover {
+    background-color: #4d3864;
+    color: white;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+
+  @-webkit-keyframes noise-anim {
+    0% {
+      clip: rect(12px, 9999px, 169px, 0);
+    }
+    5% {
+      clip: rect(83px, 9999px, 152px, 0);
+    }
+    10% {
+      clip: rect(40px, 9999px, 200px, 0);
+    }
+    15% {
+      clip: rect(24px, 9999px, 44px, 0);
+    }
+    20% {
+      clip: rect(25px, 9999px, 43px, 0);
+    }
+    25% {
+      clip: rect(178px, 9999px, 100px, 0);
+    }
+    30% {
+      clip: rect(91px, 9999px, 8px, 0);
+    }
+    35% {
+      clip: rect(87px, 9999px, 14px, 0);
+    }
+    40% {
+      clip: rect(180px, 9999px, 122px, 0);
+    }
+    45% {
+      clip: rect(101px, 9999px, 30px, 0);
+    }
+    50% {
+      clip: rect(30px, 9999px, 176px, 0);
+    }
+    55% {
+      clip: rect(154px, 9999px, 169px, 0);
+    }
+    60% {
+      clip: rect(10px, 9999px, 158px, 0);
+    }
+    65% {
+      clip: rect(3px, 9999px, 102px, 0);
+    }
+    70% {
+      clip: rect(40px, 9999px, 122px, 0);
+    }
+    75% {
+      clip: rect(79px, 9999px, 9px, 0);
+    }
+    80% {
+      clip: rect(181px, 9999px, 166px, 0);
+    }
+    85% {
+      clip: rect(91px, 9999px, 196px, 0);
+    }
+    90% {
+      clip: rect(146px, 9999px, 33px, 0);
+    }
+    95% {
+      clip: rect(124px, 9999px, 89px, 0);
+    }
+    100% {
+      clip: rect(118px, 9999px, 84px, 0);
+    }
+  }
+
+  @keyframes noise-anim {
+    0% {
+      clip: rect(12px, 9999px, 169px, 0);
+    }
+    5% {
+      clip: rect(83px, 9999px, 152px, 0);
+    }
+    10% {
+      clip: rect(40px, 9999px, 200px, 0);
+    }
+    15% {
+      clip: rect(24px, 9999px, 44px, 0);
+    }
+    20% {
+      clip: rect(25px, 9999px, 43px, 0);
+    }
+    25% {
+      clip: rect(178px, 9999px, 100px, 0);
+    }
+    30% {
+      clip: rect(91px, 9999px, 8px, 0);
+    }
+    35% {
+      clip: rect(87px, 9999px, 14px, 0);
+    }
+    40% {
+      clip: rect(180px, 9999px, 122px, 0);
+    }
+    45% {
+      clip: rect(101px, 9999px, 30px, 0);
+    }
+    50% {
+      clip: rect(30px, 9999px, 176px, 0);
+    }
+    55% {
+      clip: rect(154px, 9999px, 169px, 0);
+    }
+    60% {
+      clip: rect(10px, 9999px, 158px, 0);
+    }
+    65% {
+      clip: rect(3px, 9999px, 102px, 0);
+    }
+    70% {
+      clip: rect(40px, 9999px, 122px, 0);
+    }
+    75% {
+      clip: rect(79px, 9999px, 9px, 0);
+    }
+    80% {
+      clip: rect(181px, 9999px, 166px, 0);
+    }
+    85% {
+      clip: rect(91px, 9999px, 196px, 0);
+    }
+    90% {
+      clip: rect(146px, 9999px, 33px, 0);
+    }
+    95% {
+      clip: rect(124px, 9999px, 89px, 0);
+    }
+    100% {
+      clip: rect(118px, 9999px, 84px, 0);
+    }
+  }
+  .subtitle:after, .title:after {
+    content: attr(data-content);
+    position: absolute;
+    left: 2px;
+    text-shadow: -1px 0 red;
+    top: 0;
+    color: white;
+    overflow: hidden;
+    clip: rect(0, 900px, 0, 0);
+    -webkit-animation: noise-anim 2s infinite linear alternate-reverse;
+            animation: noise-anim 2s infinite linear alternate-reverse;
+  }
+
+  @-webkit-keyframes noise-anim-2 {
+    0% {
+      clip: rect(74px, 9999px, 37px, 0);
+    }
+    5% {
+      clip: rect(143px, 9999px, 106px, 0);
+    }
+    10% {
+      clip: rect(35px, 9999px, 121px, 0);
+    }
+    15% {
+      clip: rect(74px, 9999px, 191px, 0);
+    }
+    20% {
+      clip: rect(93px, 9999px, 152px, 0);
+    }
+    25% {
+      clip: rect(139px, 9999px, 66px, 0);
+    }
+    30% {
+      clip: rect(50px, 9999px, 127px, 0);
+    }
+    35% {
+      clip: rect(181px, 9999px, 71px, 0);
+    }
+    40% {
+      clip: rect(4px, 9999px, 21px, 0);
+    }
+    45% {
+      clip: rect(60px, 9999px, 192px, 0);
+    }
+    50% {
+      clip: rect(3px, 9999px, 57px, 0);
+    }
+    55% {
+      clip: rect(94px, 9999px, 71px, 0);
+    }
+    60% {
+      clip: rect(186px, 9999px, 104px, 0);
+    }
+    65% {
+      clip: rect(67px, 9999px, 46px, 0);
+    }
+    70% {
+      clip: rect(169px, 9999px, 9px, 0);
+    }
+    75% {
+      clip: rect(55px, 9999px, 20px, 0);
+    }
+    80% {
+      clip: rect(150px, 9999px, 56px, 0);
+    }
+    85% {
+      clip: rect(153px, 9999px, 139px, 0);
+    }
+    90% {
+      clip: rect(32px, 9999px, 131px, 0);
+    }
+    95% {
+      clip: rect(115px, 9999px, 172px, 0);
+    }
+    100% {
+      clip: rect(187px, 9999px, 185px, 0);
+    }
+  }
+
+  @keyframes noise-anim-2 {
+    0% {
+      clip: rect(74px, 9999px, 37px, 0);
+    }
+    5% {
+      clip: rect(143px, 9999px, 106px, 0);
+    }
+    10% {
+      clip: rect(35px, 9999px, 121px, 0);
+    }
+    15% {
+      clip: rect(74px, 9999px, 191px, 0);
+    }
+    20% {
+      clip: rect(93px, 9999px, 152px, 0);
+    }
+    25% {
+      clip: rect(139px, 9999px, 66px, 0);
+    }
+    30% {
+      clip: rect(50px, 9999px, 127px, 0);
+    }
+    35% {
+      clip: rect(181px, 9999px, 71px, 0);
+    }
+    40% {
+      clip: rect(4px, 9999px, 21px, 0);
+    }
+    45% {
+      clip: rect(60px, 9999px, 192px, 0);
+    }
+    50% {
+      clip: rect(3px, 9999px, 57px, 0);
+    }
+    55% {
+      clip: rect(94px, 9999px, 71px, 0);
+    }
+    60% {
+      clip: rect(186px, 9999px, 104px, 0);
+    }
+    65% {
+      clip: rect(67px, 9999px, 46px, 0);
+    }
+    70% {
+      clip: rect(169px, 9999px, 9px, 0);
+    }
+    75% {
+      clip: rect(55px, 9999px, 20px, 0);
+    }
+    80% {
+      clip: rect(150px, 9999px, 56px, 0);
+    }
+    85% {
+      clip: rect(153px, 9999px, 139px, 0);
+    }
+    90% {
+      clip: rect(32px, 9999px, 131px, 0);
+    }
+    95% {
+      clip: rect(115px, 9999px, 172px, 0);
+    }
+    100% {
+      clip: rect(187px, 9999px, 185px, 0);
+    }
+  }
+  .subtitle:before, .title:before {
+    content: attr(data-content);
+    position: absolute;
+    left: -2px;
+    text-shadow: 1px 0 blue;
+    top: 0;
+    color: white;
+    overflow: hidden;
+    clip: rect(0, 900px, 0, 0);
+    -webkit-animation: noise-anim-2 3s infinite linear alternate-reverse;
+            animation: noise-anim-2 3s infinite linear alternate-reverse;
+  }
+
   </style>
 </head>
 
 <body>
-  <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
+    <div class="text-wrapper">
+        <div class="title" data-content="404">
+            404
+        </div>
+
+        <div class="subtitle" data-content="Oops, the page you're looking for doesn't exist">
+            Oops, the page you're looking for doesn't exist.
+        </div>
+
+        <div class="buttons">
+            <a class="button" href="#Home">Go to homepage</a>
+        </div>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
-  </div>
 </body>
 </html>

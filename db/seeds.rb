@@ -67,3 +67,9 @@ if Presence.count == 0
 	Presence.create!(tournaments_id: "1",name: "Tutu")
 		puts '-> Ajoût d\'un joueur dans un tournois'
 end
+if Team.count == 0
+	Team.create!(city: "Gray")
+	Team.create!(city: "Besac")
+	Team.create!(city: "Dijon")
+		puts '-> Ajoût d\'une team'
+end

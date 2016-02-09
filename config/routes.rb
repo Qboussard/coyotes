@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
   namespace :admin do
+  get 'teams/index'
+  end
+
+  namespace :admin do
+  get 'teams/new'
+  end
+
+  namespace :admin do
   get 'players/index'
   end
 
@@ -69,6 +77,7 @@ Rails.application.routes.draw do
     resources :tournaments, except: [:show]
     resources :matches, except: [:show]
     resources :presences, except: [:show]
+    resources :teams, except: [:show]
   end
   # Example resource route with options:
   #   resources :products do

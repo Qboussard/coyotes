@@ -53,52 +53,25 @@
 	        	<% end %>
 	        </li>
 			<li class="bold">
-				<a class="collapsible-header <%= 'active' if controller_name == 'articles' %>">Articles</a>
-				<div class="collapsible-body" style="display: none;">
-					<ul>
-                        <li><%= link_to 'Tous les articles', admin_articles_path %></li>
-						<li><%= link_to 'Ajouter', new_admin_article_path %></li>
-					</ul>
-				</div>
+				<%= link_to 'Articles', admin_articles_path %>
 			</li>
             <li class="bold">
                 <%= link_to 'Utilisateurs', admin_users_path %>
 			</li>
             <li class="bold">
-				<a class="collapsible-header <%= 'active' if controller_name == 'players' %>">Joueurs</a>
-				<div class="collapsible-body" style="display: none;">
-					<ul>
-                        <li><%= link_to 'Tous les Joueurs', admin_players_path %></li>
-                        <li><%= link_to 'Ajouter', new_admin_player_path %></li>
-					</ul>
-				</div>
+				<%= link_to 'Joueurs', admin_players_path %>
 			</li>
             <li class="bold">
-				<a class="collapsible-header <%= 'active' if controller_name == 'tournaments' %>">Tournois</a>
-				<div class="collapsible-body" style="display: none;">
-					<ul>
-                        <li><%= link_to 'Tous les tournois', admin_tournaments_path %></li>
-                        <li><%= link_to 'Ajouter', new_admin_tournament_path %></li>
-					</ul>
-				</div>
+				<%= link_to 'Tournois', admin_tournaments_path %>
 			</li>
             <li class="bold">
-                <a class="collapsible-header <%= 'active' if controller_name == 'matches' %>">Matches</a>
-                <div class="collapsible-body" style="display: none;">
-                    <ul>
-                        <li><%= link_to 'Tous les matches', admin_matches_path %></li>
-                        <li><%= link_to 'Ajouter', new_admin_match_path %></li>
-                    </ul>
-                </div>
+                <%= link_to 'Matchs', admin_matches_path %>
             </li>
             <li class="bold">
-                <a class="collapsible-header <%= 'active' if controller_name == 'presences' %>">Presences</a>
-                <div class="collapsible-body" style="display: none;">
-                    <ul>
-                        <li><%= link_to 'Tous les Presences', admin_presences_path %></li>
-                        <li><%= link_to 'Ajouter', new_admin_presence_path %></li>
-                    </ul>
-                </div>
+                <%= link_to 'Presences', admin_presences_path %>
+            </li>
+            <li class="bold">
+                <%= link_to 'Équipes', admin_teams_path %>
             </li>
 
 		</ul>

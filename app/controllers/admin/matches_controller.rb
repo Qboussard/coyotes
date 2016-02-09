@@ -10,12 +10,13 @@ class Admin::MatchesController < Admin::DashboardController
     def new
       @match = Match.new
       @tournaments = Tournament.order('id desc')
+      @teams = Team.order('id desc')
     end
     def create
       @match = Match.new(new_params)
 
       if @match.save
-          redirect_to admin_matches_path, notice: 'Votre match a bien été créé'
+          redirect_to new_admin_match_path, notice: 'Votre match a bien été créé'
       else
           render 'new'
       end

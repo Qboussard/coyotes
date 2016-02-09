@@ -16,14 +16,26 @@
 			    <% end %>
 			</div>
 
-            <div class="field input-field">
-				<%= f.label :teams_1, "Team 1" %>
-				<%= f.text_field :teams_1, :class => "validate" %>
+			<div class="field input-field">
+			    <%= f.select(:teams_1) do %>
+			        <% @teams.each do |team| %>
+			            <% [[team.city, team.city]].each do |c| -%>
+			                <%= content_tag(:option, c.first, value: c.last) %>
+			            <% end %>
+			        <% end %>
+			    <% end %>
 			</div>
-            <div class="field input-field">
-				<%= f.label :teams_2, "Team 2" %>
-				<%= f.text_field :teams_2, :class => "validate" %>
+			
+			<div class="field input-field">
+			    <%= f.select(:teams_2) do %>
+			        <% @teams.each do |team| %>
+			            <% [[team.city, team.city]].each do |c| -%>
+			                <%= content_tag(:option, c.first, value: c.last) %>
+			            <% end %>
+			        <% end %>
+			    <% end %>
 			</div>
+
             <div class="field input-field">
 				<%= f.label :score, "Score" %>
 				<%= f.text_field :score, :class => "validate" %>
