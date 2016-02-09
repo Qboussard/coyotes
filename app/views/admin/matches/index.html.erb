@@ -3,8 +3,6 @@
 		<table class="striped">
 			<thead>
 				<tr>
-					<th data-field="id">Id</th>
-                    <th data-field="id-tournament">Id tournois</th>
 					<th data-field="team_1">Équipe 1</th>
                     <th data-field="team_2">Équipe 2</th>
                     <th data-field="score">Score</th>
@@ -14,8 +12,6 @@
 			<tbody>
 				<% @matches.each do |match| %>
 					<tr>
-						<td><%= match.id %></td>
-						<td><%= match.tournaments_id %></td>
                         <td><%= match.teams_1%></td>
                         <td><%= match.teams_2%></td>
 						<td><%= match.score %></td>

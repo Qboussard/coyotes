@@ -3,7 +3,6 @@
 		<table class="striped">
 			<thead>
 				<tr>
-					<th data-field="id">Id</th>
 					<th data-field="email">Id tournois</th>
                     <th data-field="admin">Nom du joueur présent</th>
 					<th  class="right" data-field="price">Action</th>
@@ -12,7 +11,6 @@
 			<tbody>
 				<% @presences.each do |presence| %>
 					<tr>
-						<td><%= presence.id %></td>
 						<td><%= presence.tournaments_id %></td>
 						<td><%= presence.name %></td>
 						<td class="right">

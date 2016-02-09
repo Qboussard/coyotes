@@ -17,7 +17,7 @@ if Player.count == 0
 		puts '-> Ajoût de joueurs'
 end
 if News.count == 0
-	News.create!(title: "Test de titre", content: "lorem ipsum")
+	News.create!(title: "Test de titre", summary: "Hello summary test",content: "lorem ipsum")
 	News.create!(title: "Test de titre", content: "Quod opera consulta cogitabatur astute, ut hoc insidiarum genere Galli periret avunculus, ne eum ut praepotens acueret in fiduciam exitiosa coeptantem. verum navata est opera diligens hocque dilato Eusebius praepositus cubiculi missus est Cabillona aurum secum perferens, quo per turbulentos seditionum concitores occultius distributo et tumor consenuit militum et salus est in tuto locata praefecti. deinde cibo abunde perlato castra die praedicto sunt mota.")
 		puts '-> Ajoût d\'une news'
 		puts '----------------------------------------------------------------------------'

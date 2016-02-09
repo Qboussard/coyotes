@@ -3,15 +3,13 @@
 		<table class="striped">
 			<thead>
 				<tr>
-					<th data-field="id">Id</th>
 					<th data-field="name">Titre</th>
-					<th  class="right" data-field="price">Action</th>
+					<th class="right" data-field="price">Action</th>
 				</tr>
 			</thead>
 			<tbody>
 				<% @news.each do |new| %>
 					<tr>
-						<td><%= new.id %></td>
 						<td><%= new.title %></td>
 						<td class="right">
 							<!-- <%= link_to edit_admin_article_path(id: new.id), { :class => "waves-effect waves-light btn"} do %>

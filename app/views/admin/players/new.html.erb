@@ -18,21 +18,45 @@
 				<%= f.label :number, "Numéro" %>
 				<%= f.text_field :number, :class => "validate" %>
 			</div>
-			<div class="field input-field">
-				<%= f.label :place, "Rôle" %>
-				<%= f.text_field :place, :class => "validate" %>
+			<div class="radioForm">
+				<p>Rôle :</p>
+				<p>
+					<%= f.radio_button :place, "Gardien", :id => 'PlaceGoal'%>
+	  			  	<label for="PlaceGoal">Gardien</label>
+			    </p>
+			    <p>
+					<%= f.radio_button :place, "Attaquant", :id => 'PlaceAt'%>
+	  				<label for="PlaceAt">Attaquant</label>
+			    </p>
+				<p>
+					<%= f.radio_button :place, "Défenseur", :id => 'PlaceDef'%>
+	  				<label for="PlaceDef">Défenseur</label>
+			    </p>
 			</div>
-			<div class="field input-field">
-				<%= f.label :picture, "Photo (1 => true / 0 => false)" %>
-				<%= f.text_field :picture, :class => "validate" %>
+			<div class="radioForm">
+				<p>Photo :</p>
+				<p>
+					<%= f.radio_button :picture, false, :id => 'PhotoN'%>
+	  			  	<label for="PhotoN">Non</label>
+			    </p>
+			    <p>
+					<%= f.radio_button :picture, true, :id => 'PhotoY'%>
+	  				<label for="PhotoY">Oui</label>
+			    </p>
 			</div>
 			<div class="field input-field">
 				<%= f.label :staff, "Bureau" %>
 				<%= f.text_field :staff, :class => "validate" %>
 			</div>
-			<div class="field input-field">
-				<%= f.label :adult, "Adult ou jeune" %>
-				<%= f.text_field :adult, :class => "validate" %>
+			<div class="radioForm">
+				<p>
+					<%= f.radio_button :adult, false, :id => 'young'%>
+	  			  	<label for="young">Jeune</label>
+			    </p>
+			    <p>
+					<%= f.radio_button :adult, true, :id => 'adult'%>
+	  				<label for="adult">Adult</label>
+			    </p>
 			</div>
 
 			<div class="btnlog actions">

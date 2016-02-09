@@ -36,6 +36,6 @@ class Admin::ArticlesController < Admin::DashboardController
 	private
 
     def new_params
-      params.require(:news).permit(:title, :content)
+      params.require(:news).permit(:title, :summary, :content)
     end
 end

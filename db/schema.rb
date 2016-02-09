@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20160204100706) do
   create_table "news", force: :cascade do |t|
     t.string   "title",      limit: 255
     t.text     "content",    limit: 65535
+    t.text     "summary",    limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end

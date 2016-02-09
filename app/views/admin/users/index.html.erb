@@ -3,7 +3,6 @@
 		<table class="striped">
 			<thead>
 				<tr>
-					<th data-field="id">Id</th>
 					<th data-field="email">Email</th>
                     <th data-field="admin">Admin</th>
 					<th  class="right" data-field="price">Action</th>
@@ -12,7 +11,6 @@
 			<tbody>
 				<% @users.each do |user| %>
 					<tr>
-						<td><%= user.id %></td>
 						<td><%= user.email %></td>
 						<td><%= user.admin %></td>
 						<td class="right">

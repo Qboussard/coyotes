@@ -16,11 +16,25 @@
     nav .button-collapse i{
         margin-right: 20px;
     }
-
-
+    #nav-mobile{
+        background: #242424;
+        border: none;
+        .collapsible-body{
+            background-color: #3A3838;
+        }
+    }
+    .side-nav.fixed a{
+        color: #f4f4f4;
+    }
+    .side-nav.fixed a:hover{
+        background-color: rgba(0, 0, 0, 0.09)
+    }
+    .radioForm{
+        margin-bottom: 25px;
+    }
 }
 @media screen and (max-width: 992px) {
     .admin{
-        padding-left:0px; 
+        padding-left:0px;
     }
 }

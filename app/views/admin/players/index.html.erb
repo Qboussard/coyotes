@@ -3,12 +3,12 @@
 		<table class="striped">
 			<thead>
 				<tr>
-					<th data-field="id">Id</th>
-					<th data-field="lastname">Nom de famille</th>
+					<th data-field="lastname">Nom</th>
                     <th data-field="firstname">Prénom</th>
-                    <th data-field="number">Numéro</th>
-                    <th data-field="place">Rôle</th>
-                    <th data-field="staff">Bureau</th>
+                    <th class="hide-on-med-and-down" data-field="number">Numéro</th>
+                    <th class="hide-on-med-and-down" data-field="place">Rôle</th>
+					<th class="hide-on-med-and-down" data-field="place">Photo</th>
+                    <th class="hide-on-med-and-down" data-field="staff">Bureau</th>
                     <th data-field="adult">Adulte</th>
 
 					<th  class="right" data-field="price">Action</th>
@@ -17,12 +17,12 @@
 			<tbody>
 				<% @players.each do |player| %>
 					<tr>
-						<td><%= player.id %></td>
                         <td><%= player.lastname %></td>
                         <td><%= player.firstname %></td>
-                        <td><%= player.number %></td>
-                        <td><%= player.place %></td>
-                        <td><%= player.staff %></td>
+                        <td class="hide-on-med-and-down" ><%= player.number %></td>
+                        <td class="hide-on-med-and-down" ><%= player.place %></td>
+						<td class="hide-on-med-and-down" ><%= player.picture %></td>
+                        <td class="hide-on-med-and-down" ><%= player.staff %></td>
                         <td><%= player.adult %></td>
 
 						<td class="right">
