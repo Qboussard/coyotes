@@ -21,4 +21,26 @@
             }
         }
     }
+    .pagination{
+        margin-top: 10px;
+        .previous_page, .next_page{
+            display: none;
+        }
+        a{
+            padding: 5px;
+            color:#C62828;
+        }
+        a:hover{
+            color:#de6868;
+        }
+        em{
+            padding: 5px;
+            background-color:#C62828;
+            color: #fff;
+            padding: 5px;
+            padding-right: 8px;
+            border-radius: 3px;
+            cursor: default;
+        }
+    }
 }

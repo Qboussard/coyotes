@@ -17,4 +17,7 @@
         <% end %>
     </div>
     <%= render :template => 'layouts/right' %>
+    <div class="col s12 m12 l9 center-align">
+        <%= will_paginate @news %>
+    </div>
  </div>
