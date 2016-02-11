@@ -12,7 +12,11 @@
 				<% @users.each do |user| %>
 					<tr>
 						<td><%= user.email %></td>
-						<td><%= user.admin %></td>
+						<% if(user.admin)%>
+							<td>Oui</td>
+						<% else %>
+							<td>Non</td>
+						<% end %>
 						<td class="right">
 							<%= link_to admin_user_path(user.id), :class => "waves-effect waves-light btn red darken-3", :method => :delete,  :data => {:confirm => 'Tu est sur ???  ☜(ˆ▽ˆ)' } do %>
 								<i class="material-icons small">delete</i>
