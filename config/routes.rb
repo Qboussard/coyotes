@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'easter/index'
+
   namespace :admin do
   get 'teams/index'
   end
@@ -66,6 +68,7 @@ Rails.application.routes.draw do
   resources :rules, only: [:index]
   resources :tournament, only: [:index, :show]
   resources :sponsor, only: [:index]
+  resources :easter, only: [:index]
 
 
   namespace :admin do
