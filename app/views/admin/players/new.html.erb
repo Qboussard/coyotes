@@ -44,10 +44,6 @@
 	  				<label for="PhotoY">Oui</label>
 			    </p>
 			</div>
-			<div class="field input-field">
-				<%= f.label :staff, "Bureau" %>
-				<%= f.text_field :staff, :class => "validate" %>
-			</div>
 			<div class="radioForm">
 				<p>
 					<%= f.radio_button :adult, false, :id => 'young'%>
@@ -57,6 +53,10 @@
 					<%= f.radio_button :adult, true, :id => 'adult'%>
 	  				<label for="adult">Adult</label>
 			    </p>
+			</div>
+			<div class="field input-field">
+				<%= f.label :staff, "Bureau" %>
+				<%= f.text_field :staff, :class => "validate" %>
 			</div>
 
 			<div class="btnlog actions">
