@@ -23,6 +23,10 @@
                         <td><%= tournament.date%></td>
 						<td><%= tournament.link_picture.slice!(0, 50) %></td>
 						<td class="right">
+							<%= link_to edit_admin_tournament_path(id: tournament.id), { :class => "waves-effect waves-light btn"} do %>
+								<i class="material-icons small">mode_edit</i>
+							<% end %>
+
 							<%= link_to admin_tournament_path(tournament.id), :class => "waves-effect waves-light btn red darken-3", :method => :delete,  :data => {:confirm => 'Tu est sur ???  ☜(ˆ▽ˆ)' } do %>
 								<i class="material-icons small">delete</i>
 							<% end %>

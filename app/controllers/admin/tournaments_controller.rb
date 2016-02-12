@@ -16,6 +16,21 @@ class Admin::TournamentsController < Admin::DashboardController
 		end
 	end
 
+    def edit
+            @tournament = Tournament.find(params[:id])
+        end
+
+    def update
+        @tournament = Tournament.find(params[:id])
+
+        if @tournament.update_attributes(new_params)
+          # Handle a successful update.
+          redirect_to admin_tournaments_path, notice: 'Votre tournois a bien été modifié'
+        else
+          render 'edit'
+        end
+    end
+
     def destroy
         Tournament.destroy(params[:id])
         redirect_to admin_tournaments_path, notice: 'Le tournois a bien été supprimé'
