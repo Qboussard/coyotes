@@ -38,6 +38,10 @@
 							<td>Non</td>
 						<% end %>
 						<td class="right">
+							<%= link_to edit_admin_player_path(id: player.id), { :class => "waves-effect waves-light btn"} do %>
+								<i class="material-icons small">mode_edit</i>
+				        	<% end %>
+
                             <%= link_to admin_player_path(player.id), :class => "waves-effect waves-light btn red darken-3", :method => :delete,  :data => {:confirm => 'Tu est sur ???  ☜(ˆ▽ˆ)' } do %>
 								<i class="material-icons small">delete</i>
 				        	<% end %>

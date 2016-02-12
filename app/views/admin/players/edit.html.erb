@@ -1,2 +1,71 @@
-<h1>Admin::Players#edit</h1>
-<p>Find me in app/views/admin/players/edit.html.erb</p>
+<div class="row">
+	<div class="col s12">
+		<%= form_for(@player, url: admin_player_path(@player.id), html: { method: :put }, id: 'edit_player_{@player.id}') do |f| %>
+
+			<% @player.errors.full_messages.each do |msg| %>
+				<%= msg %>
+			<% end %>
+
+            <div class="field input-field">
+				<%= f.label :lastname, "Nom de famille" %>
+				<%= f.text_field :lastname, :class => "validate" %>
+			</div>
+			<div class="field input-field">
+				<%= f.label :firstname, "Prénom" %>
+				<%= f.text_field :firstname, :class => "validate" %>
+			</div>
+			<div class="field input-field">
+				<%= f.label :number, "Numéro" %>
+				<%= f.text_field :number, :class => "validate" %>
+			</div>
+			<div class="radioForm">
+				<p>Rôle :</p>
+				<p>
+					<%= f.radio_button :place, "Gardien", :id => 'PlaceGoal'%>
+	  			  	<label for="PlaceGoal">Gardien</label>
+			    </p>
+			    <p>
+					<%= f.radio_button :place, "Attaquant", :id => 'PlaceAt'%>
+	  				<label for="PlaceAt">Attaquant</label>
+			    </p>
+				<p>
+					<%= f.radio_button :place, "Défenseur", :id => 'PlaceDef'%>
+	  				<label for="PlaceDef">Défenseur</label>
+			    </p>
+			</div>
+			<div class="radioForm">
+				<p>Photo :</p>
+				<p>
+					<%= f.radio_button :picture, false, :id => 'PhotoN'%>
+	  			  	<label for="PhotoN">Non</label>
+			    </p>
+			    <p>
+					<%= f.radio_button :picture, true, :id => 'PhotoY'%>
+	  				<label for="PhotoY">Oui</label>
+			    </p>
+			</div>
+			<div class="field input-field">
+				<%= f.label :staff, "Bureau" %>
+				<%= f.text_field :staff, :class => "validate" %>
+			</div>
+			<div class="radioForm">
+				<p>
+					<%= f.radio_button :adult, false, :id => 'young'%>
+	  			  	<label for="young">Jeune</label>
+			    </p>
+			    <p>
+					<%= f.radio_button :adult, true, :id => 'adult'%>
+	  				<label for="adult">Adult</label>
+			    </p>
+			</div>
+
+			<div class="btnlog actions">
+				<%= button_tag(type: 'submit', class: "btn") do %>
+					Publier <i class='material-icons right'>send</i>
+				<% end %>
+			</div>
+		<% end %>
+
+		<%= link_to 'Retour', admin_players_path %>
+	</div>
+</div>

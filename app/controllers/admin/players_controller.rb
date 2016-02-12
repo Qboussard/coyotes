@@ -16,9 +16,26 @@ class Admin::PlayersController < Admin::DashboardController
       end
     end
 
+
+    def edit
+            @player = Player.find(params[:id])
+        end
+
+    def update
+        @player = Player.find(params[:id])
+
+        if @player.update_attributes(new_params)
+          # Handle a successful update.
+          redirect_to admin_players_path, notice: 'Votre joueur a bien été modifié'
+        else
+          render 'edit'
+        end
+    end
+
+
   def destroy
       Player.destroy(params[:id])
-      redirect_to admin_players_path, notice: 'L\'utilisateur a bien été supprimé'
+      redirect_to admin_players_path, notice: 'Le joueur a bien été supprimé'
   end
   def new_params
     params.require(:player).permit(:lastname, :firstname, :number, :place, :picture, :staff, :adult)
