@@ -16,7 +16,7 @@ class Admin::MatchesController < Admin::DashboardController
       @match = Match.new(new_params)
 
       if @match.save
-          redirect_to new_admin_match_path, notice: 'Votre match a bien été créé'
+          redirect_to admin_matches_path, notice: 'Votre match a bien été créé'
       else
           render 'new'
       end

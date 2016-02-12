@@ -26,7 +26,7 @@ class Admin::ArticlesController < Admin::DashboardController
 
 	    if @new.update_attributes(new_params)
 	      # Handle a successful update.
-	      redirect_to edit_admin_article_path(@new.id), notice: 'Votre article a bien été modifié'
+	      redirect_to admin_articles_path(@new.id), notice: 'Votre article a bien été modifié'
 	    else
 	      render 'edit'
 	    end

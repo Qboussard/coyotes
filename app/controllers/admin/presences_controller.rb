@@ -17,7 +17,7 @@ class Admin::PresencesController < Admin::DashboardController
       @presence = Presence.new(new_params)
 
       if @presence.save
-          redirect_to new_admin_presence_path, notice: 'Votre présence a bien été créé'
+          redirect_to admin_presences_path, notice: 'Votre présence a bien été créé'
       else
           render 'new'
       end
