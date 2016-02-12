@@ -1,4 +1,4 @@
-<!-- <div class="row">
+<div class="row">
 	<div class="col s12">
 		<%= form_for(@new, url: admin_article_path(@new.id), html: { method: :put }, id: 'edit_new_{@new.id}') do |f| %>
 
@@ -12,8 +12,13 @@
 			</div>
 
 			<div class="field">
+				<%= f.label :summary, "Résumé" %>
+				<%= f.text_area :summary, :class => "materialize-textarea"  %>
+			</div>
+			
+			<div class="field">
 				<%= f.label :content, "Contenu" %>
-				<%= f.cktext_area :content, class: 'form-control', :class => "" %>
+				<%= f.text_area :content, class: 'form-control', :class => "" ,:id => "newContent"%>
 			</div>
 
 			<div class="actions btnlog">
@@ -23,4 +28,4 @@
 			</div>
 		<% end %>
 	</div>
-</div> -->
+</div>

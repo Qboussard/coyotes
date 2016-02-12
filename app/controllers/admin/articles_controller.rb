@@ -17,12 +17,16 @@ class Admin::ArticlesController < Admin::DashboardController
 		end
 	end
 
-    def update
+    def edit
+    		@new = News.find(params[:id])
+    	end
+
+	def update
 		@new = News.find(params[:id])
 
 	    if @new.update_attributes(new_params)
 	      # Handle a successful update.
-	      redirect_to admin_articles_path, notice: 'Votre article a bien été modifié'
+	      redirect_to edit_admin_article_path(@new.id), notice: 'Votre article a bien été modifié'
 	    else
 	      render 'edit'
 	    end
