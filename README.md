@@ -11,7 +11,7 @@ Les Coyotes est un club de sport de street Hockey du val de Gray
 * Jquery
 
 
-##Commandes :
+##Tâches minimum :
 | Tâches | Réalisé |
 | --- | --- |
 | Articles | X  |
