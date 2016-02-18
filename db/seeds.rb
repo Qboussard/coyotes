@@ -1,6 +1,7 @@
 if User.count == 0
 	User.create!(email: 'test@test.fr', password: '123456', password_confirmation: "123456", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2015-02-06 14:02:10", last_sign_in_at: "2015-02-06 14:02:10", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1")
 		puts '-> Ajoût de l\'utilisateur test@test.fr avec le mot de passe suivant : 123456'
+	User.create!(email: 'cle@lebg.fr', password: 'clelebg', password_confirmation: "clelebg", admin: true)
 end
 if Player.count == 0
 	Player.create!(lastname: "Boussard", firstname: "Quentin", number:"08", place: "Attaque", staff: "training", picture: "1")
