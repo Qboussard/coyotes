@@ -15,7 +15,7 @@
 				<%= f.label :summary, "Résumé" %>
 				<%= f.text_area :summary, :class => "materialize-textarea"  %>
 			</div>
-			
+
 			<div class="field">
 				<%= f.label :content, "Contenu" %>
 				<%= f.text_area :content, class: 'form-control', :class => "" ,:id => "newContent"%>
@@ -23,7 +23,7 @@
 
 			<div class="actions btnlog">
 				<%= button_tag(type: 'submit', class: "btn") do %>
-					Editer <i class='material-icons right'>send</i>
+					Valider <i class='material-icons right'>done</i>
 				<% end %>
 			</div>
 		<% end %>
