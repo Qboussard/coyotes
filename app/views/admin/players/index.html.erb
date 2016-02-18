@@ -10,11 +10,11 @@
 				<tr>
 					<th data-field="lastname">Nom</th>
                     <th data-field="firstname">Prénom</th>
-                    <th data-field="number">Numéro</th>
+                    <th data-field="number" class='hide-on-small-only'>Numéro</th>
                     <th data-field="place">Rôle</th>
-					<th data-field="place">Photo</th>
-                    <th data-field="staff">Bureau</th>
-                    <th data-field="adult">Adulte</th>
+					<th data-field="place" class='hide-on-small-only'>Photo</th>
+                    <th data-field="staff" class='hide-on-small-only'>Bureau</th>
+                    <th data-field="adult" class='hide-on-small-only'>Adulte</th>
 
 					<th  class="right" data-field="price">Action</th>
 				</tr>
@@ -24,18 +24,18 @@
 					<tr>
                         <td><%= player.lastname %></td>
                         <td><%= player.firstname %></td>
-                        <td><%= player.number %></td>
+                        <td class='hide-on-small-only'><%= player.number %></td>
                         <td><%= player.place %></td>
 						<% if(player.picture)%>
-							<td>Oui</td>
+							<td class='hide-on-small-only'>Oui</td>
 						<% else %>
-							<td>Non</td>
+							<td class='hide-on-small-only'>Non</td>
 						<% end %>
-                        <td><%= player.staff %></td>
+                        <td class='hide-on-small-only'><%= player.staff %></td>
 						<% if(player.adult)%>
-							<td>Oui</td>
+							<td class='hide-on-small-only'>Oui</td>
 						<% else %>
-							<td>Non</td>
+							<td class='hide-on-small-only'>Non</td>
 						<% end %>
 						<td class="right">
 							<%= link_to edit_admin_player_path(id: player.id), { :class => "waves-effect waves-light btn"} do %>

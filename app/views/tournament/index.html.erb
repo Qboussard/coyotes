@@ -3,7 +3,7 @@
         <ul class="collection with-header">
             <li class="collection-header"><h5>Tournois de Gray</h5></li>
             <% @tournaments.each do |tournament|
-                if(tournament.place == "Gray")
+                if(tournament.place == "Gray" || tournament.place == "gray")
             %>
 
                 <li class="collection-item"><%= link_to tournament.date , tournament_path(tournament.id)%></li>
@@ -16,7 +16,7 @@
         <ul class="collection with-header">
             <li class="collection-header"><h5>Tournois Externe</h5></li>
             <% @tournaments.each do |tournament|
-                if(tournament.place != "Gray")
+                if(tournament.place != "Gray" && tournament.place != "gray")
             %>
                 <li class="collection-item"><%= link_to tournament.date+' : '+tournament.place , tournament_path(tournament.id)%></li>
                 <% end %>
