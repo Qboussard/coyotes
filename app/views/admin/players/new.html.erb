@@ -14,10 +14,18 @@
 				<%= f.label :firstname, "Prénom" %>
 				<%= f.text_field :firstname, :class => "validate" %>
 			</div>
+	</div>
+	<div class="col s6">
 			<div class="field input-field">
 				<%= f.label :number, "Numéro" %>
-				<%= f.text_field :number, :class => "validate" %>
+				<%= f.number_field :number, :class => "validate" %>
 			</div>
+	</div>
+	<div class="col s6">
+		<div class="field input-field">
+			<%= f.label :staff, "Bureau ( vide ou nom du rôle )" %>
+			<%= f.text_field :staff, :class => "validate" %>
+		</div>
 	</div>
 	<div class="col s6">
 			<div class="radioForm">
@@ -65,10 +73,6 @@
 			</div>
 	</div>
 	<div class="col s12">
-			<div class="field input-field">
-				<%= f.label :staff, "Bureau ( vide ou nom du rôle )" %>
-				<%= f.text_field :staff, :class => "validate" %>
-			</div>
 			<div class="btnlog actions">
 				<%= button_tag(type: 'submit', class: "btn") do %>
 					Publier <i class='material-icons right'>send</i>

@@ -4,7 +4,7 @@ class CreatePlayers < ActiveRecord::Migration
         t.string :lastname
         t.string :firstname
         t.string :number
-        t.string :place
+        t.string :place, default: 'Polyvalent'
         t.boolean :picture, default: false
         t.string :staff
         t.boolean :adult, default: true

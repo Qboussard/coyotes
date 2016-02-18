@@ -38,12 +38,12 @@ ActiveRecord::Schema.define(version: 20160209135743) do
     t.string   "lastname",   limit: 255
     t.string   "firstname",  limit: 255
     t.string   "number",     limit: 255
-    t.string   "place",      limit: 255
+    t.string   "place",      limit: 255, default: "Polyvalent"
     t.boolean  "picture",                default: false
     t.string   "staff",      limit: 255
     t.boolean  "adult",                  default: true
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
   end
 
   create_table "presences", force: :cascade do |t|
