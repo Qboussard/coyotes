@@ -1,0 +1,39 @@
+<div class="row">
+	<div class="col s12">
+		<%= link_to new_admin_tournament_path, :class => "waves-effect waves-light btn right " do %>
+			<i class="material-icons small">add</i>
+		<% end %>
+	</div>
+	<div class="col s12">
+		<table class="striped">
+			<thead>
+				<tr>
+					<th data-field="id">ID</th>
+					<th data-field="email">Lieux</th>
+                    <th data-field="date">date</th>
+                    <th data-field="admin" class="hide-on-med-and-down">Lien photo</th>
+					<th  class="right" data-field="price">Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @tournaments.each do |tournament| %>
+					<tr>
+						<td><%= tournament.id %></td>
+						<td><%= tournament.place %></td>
+                        <td><%= tournament.date%></td>
+						<td class="hide-on-med-and-down"><%= tournament.link_picture.slice!(0, 50) %></td>
+						<td class="right">
+							<%= link_to edit_admin_tournament_path(id: tournament.id), { :class => "waves-effect waves-light btn"} do %>
+								<i class="material-icons small">mode_edit</i>
+							<% end %>
+
+							<%= link_to admin_tournament_path(tournament.id), :class => "waves-effect waves-light btn red darken-3", :method => :delete,  :data => {:confirm => 'Tu est sur ?' } do %>
+								<i class="material-icons small">delete</i>
+							<% end %>
+						</td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>

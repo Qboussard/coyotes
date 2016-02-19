@@ -1,0 +1,31 @@
+<div class="row">
+	<div class="col s12">
+		<%= link_to new_admin_presence_path, :class => "waves-effect waves-light btn right " do %>
+			<i class="material-icons small">add</i>
+		<% end %>
+	</div>
+	<div class="col s12">
+		<table class="striped">
+			<thead>
+				<tr>
+					<th data-field="email">Id tournois</th>
+                    <th data-field="admin">Nom du joueur présent</th>
+					<th  class="right" data-field="price">Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @presences.each do |presence| %>
+					<tr>
+						<td><%= presence.tournaments_id %></td>
+						<td><%= presence.name %></td>
+						<td class="right">
+                            <%= link_to admin_presence_path(presence.id), :class => "waves-effect waves-light btn red darken-3", :method => :delete,  :data => {:confirm => 'Tu est sur ?' } do %>
+                                <i class="material-icons small">delete</i>
+                            <% end %>
+						</td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>

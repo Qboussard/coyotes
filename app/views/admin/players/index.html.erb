@@ -1,0 +1,54 @@
+<div class="row">
+	<div class="col s12">
+		<%= link_to new_admin_player_path, :class => "waves-effect waves-light btn right " do %>
+			<i class="material-icons small">add</i>
+		<% end %>
+	</div>
+	<div class="col s12">
+		<table class="striped">
+			<thead>
+				<tr>
+					<th data-field="lastname">Nom</th>
+                    <th data-field="firstname">Prénom</th>
+                    <th data-field="number" class='hide-on-small-only'>Numéro</th>
+                    <th data-field="place">Rôle</th>
+					<th data-field="place" class='hide-on-small-only'>Photo</th>
+                    <th data-field="staff" class='hide-on-small-only'>Bureau</th>
+                    <th data-field="adult" class='hide-on-small-only'>Adulte</th>
+
+					<th  class="right" data-field="price">Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @players.each do |player| %>
+					<tr>
+                        <td><%= player.lastname %></td>
+                        <td><%= player.firstname %></td>
+                        <td class='hide-on-small-only'><%= player.number %></td>
+                        <td><%= player.place %></td>
+						<% if(player.picture)%>
+							<td class='hide-on-small-only'>Oui</td>
+						<% else %>
+							<td class='hide-on-small-only'>Non</td>
+						<% end %>
+                        <td class='hide-on-small-only'><%= player.staff %></td>
+						<% if(player.adult)%>
+							<td class='hide-on-small-only'>Oui</td>
+						<% else %>
+							<td class='hide-on-small-only'>Non</td>
+						<% end %>
+						<td class="right">
+							<%= link_to edit_admin_player_path(id: player.id), { :class => "waves-effect waves-light btn"} do %>
+								<i class="material-icons small">mode_edit</i>
+				        	<% end %>
+
+                            <%= link_to admin_player_path(player.id), :class => "waves-effect waves-light btn red darken-3", :method => :delete,  :data => {:confirm => 'Tu est sur ?' } do %>
+								<i class="material-icons small">delete</i>
+				        	<% end %>
+						</td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>

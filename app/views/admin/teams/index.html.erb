@@ -1,0 +1,29 @@
+<div class="row">
+	<div class="col s12">
+		<%= link_to new_admin_team_path, :class => "waves-effect waves-light btn right " do %>
+			<i class="material-icons small">add</i>
+		<% end %>
+	</div>
+	<div class="col s12">
+		<table class="striped">
+			<thead>
+				<tr>
+                    <th data-field="admin">Ville</th>
+					<th  class="right" data-field="price">Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @teams.each do |team| %>
+					<tr>
+						<td><%= team.city %></td>
+						<td class="right">
+                            <%= link_to admin_team_path(team.id), :class => "waves-effect waves-light btn red darken-3", :method => :delete,  :data => {:confirm => 'Tu est sur ?' } do %>
+                                <i class="material-icons small">delete</i>
+                            <% end %>
+						</td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>

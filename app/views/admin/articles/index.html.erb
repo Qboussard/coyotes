@@ -1,0 +1,33 @@
+<div class="row">
+	<div class="col s12">
+		<%= link_to new_admin_article_path, :class => "waves-effect waves-light btn right" do %>
+			<i class="material-icons">add</i>
+		<% end %>
+	</div>
+	<div class="col s12">
+		<table class="striped">
+			<thead>
+				<tr>
+					<th data-field="name">Titre</th>
+					<th class="right" data-field="price">Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @news.each do |new| %>
+					<tr>
+						<td><%= new.title %></td>
+						<td class="right">
+							<%= link_to edit_admin_article_path(id: new.id), { :class => "waves-effect waves-light btn"} do %>
+								<i class="material-icons small">mode_edit</i>
+				        	<% end %>
+
+							<%= link_to admin_article_path(new.id), :class => "waves-effect waves-light btn red darken-3", :method => :delete,  :data => {:confirm => 'Tu est sur ?' } do %>
+								<i class="material-icons small">delete</i>
+				        	<% end %>
+						</td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>

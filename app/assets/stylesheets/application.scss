@@ -25,7 +25,7 @@
     width: 100%;
     height: 225px;
     background: #eeeeee;
-    background-image: url(asset-path('head.png'));
+    background-image: url(asset-path('header4.2.jpg'));
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -46,7 +46,6 @@ body{
 main{
    flex: 1 0 auto;
 }
-
 .mydevise{
     input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]){
         border-bottom: 1px solid #c62828;
@@ -55,4 +54,25 @@ main{
     .btn, .btn-large{
         background-color:#c62828;
     }
+}
+.LayRight{
+    margin-top: 7px;
+    a{
+        color:#c62828;
+    }
+    img{
+        width:100%;
+    }
+    .collection{
+        margin-top: 0px;
+    }
+    .collection-header{
+        span{
+            font-weight: bold;
+            color:#787878;
+        }
+    }
+}
+.waves-effect input[type="button"], .waves-effect input[type="reset"], .waves-effect input[type="submit"]{
+    outline: none;
 }

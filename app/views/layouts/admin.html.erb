@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Coyotes</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="BCc9FCVB9jTzBLvcIfrjDViEPYSGN-6o9l-zR9hUrb4" />
+    <%= stylesheet_link_tag    'application' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+    <script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
+    <script type="text/javascript">
+        tinymce.init({
+            selector: "#newContent",
+            theme: "modern",
+            plugins: [
+                 "advlist autolink link image lists charmap hr anchor pagebreak spellchecker",
+                 "searchreplace wordcount visualblocks visualchars code insertdatetime media nonbreaking",
+                 "table contextmenu directionality template textcolor"
+           ],
+           toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons",
+           style_formats: [
+                {title: 'Bold text', inline: 'b'},
+                {title: 'Red text', inline: 'span', styles: {color: '#ff0000'}},
+                {title: 'Red header', block: 'h1', styles: {color: '#ff0000'}},
+                {title: 'Example 1', inline: 'span', classes: 'example1'},
+                {title: 'Example 2', inline: 'span', classes: 'example2'},
+                {title: 'Table styles'},
+                {title: 'Table row 1', selector: 'tr', classes: 'tablerow1'}
+            ]
+        });
+
+        $(document).ready(function() {
+            $('select').material_select();
+        });
+    </script>
+</head>
+<body class="admin">
+	<header>
+		<nav class="top-nav">
+			<div class="container">
+                <a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="mdi-navigation-menu"></i></a>
+				<div class="nav-wrapper"><a class="page-title"><%= controller_name.capitalize %></a></div>
+			</div>
+		</nav>
+
+		<div class="container"></div>
+
+		<ul id="nav-mobile" class="side-nav fixed collapsible" style="left: 0px;">
+            <li class="logo">
+				<%= link_to root_path, { :class => "brand-logo", :id=> "logo-container" } do %>
+					<%= image_tag('Logo2.png', class: 'admin-page-logo', alt: "logo") %>
+	        	<% end %>
+	        </li>
+			<li class="bold">
+				<%= link_to 'Articles', admin_articles_path %>
+			</li>
+            <li class="bold">
+                <%= link_to 'Utilisateurs', admin_users_path %>
+			</li>
+            <li class="bold">
+				<%= link_to 'Tournois', admin_tournaments_path %>
+			</li>
+            <li class="bold">
+                <%= link_to 'Matchs', admin_matches_path %>
+            </li>
+            <li class="bold">
+                <%= link_to 'Équipes', admin_teams_path %>
+            </li>
+            <li class="bold">
+				<%= link_to 'Joueurs', admin_players_path %>
+			</li>
+            <li class="bold">
+                <%= link_to 'Presences', admin_presences_path %>
+            </li>
+
+		</ul>
+	</header>
+	<main>
+		<div class="container">
+			<% if notice %>
+            <script type="text/javascript">
+	            $( document ).ready(function() {
+	                Materialize.toast('<%= notice %>', 1000);
+	            });
+	            </script>
+	        <% end %>
+	        <% if alert %>
+	            <script type="text/javascript">
+	            $( document ).ready(function() {
+	                Materialize.toast('<%= alert %>', 1000);
+	            });
+	            </script>
+	        <% end %>
+
+			<%= yield %>
+            <div class="col s12">
+                <p class="version grey-text text-darken-1 right-align">
+                    v1.0
+                </p>
+            </div>
+		</div>
+	</main>
+</body>
+</html>

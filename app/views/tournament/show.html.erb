@@ -1,2 +1,56 @@
-<h1>Tournament#show</h1>
-<p>Find me in app/views/tournament/show.html.erb</p>
+<div class="row tournament">
+    <div class="col s12 m12 l12">
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title red-text text-darken-2">Tournois de <%= @tournament.place %> le <%= @tournament.date %></span>
+                <div class="row">
+                    <div class="col s12 m12 l6">
+                        <table class="striped">
+                            <thead>
+                              <tr>
+                                  <th data-field="teams_1">Équipes</th>
+                                  <th data-field="teams_2"></th>
+                                  <th data-field="price">Score</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                            <% if(@matchs.blank?) %>
+                                    <tr>
+                                      <td colspan="3">Aucun match pour le moment</td>
+                                    </tr>
+                            <% else %>
+                                <% @matchs.each do |match| %>
+                                    <tr>
+                                      <td><%= match.teams_1 %></td>
+                                      <td><%= match.teams_2 %></td>
+                                      <td><%= match.score %></td>
+                                    </tr>
+                                <% end %>
+                            <% end %>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col s12 m12 l6">
+                        <ul class="collection with-header">
+                            <li class="collection-header"><h5>Joueurs présent</h5></li>
+                            <% if(@prensences.blank?) %>
+                                <li class="collection-item">Aucun joueur engregistré pour ce tournois</li>
+                            <% else %>
+                                <% @prensences.each do |presence| %>
+                                    <li class="collection-item"><%= presence.name %></li>
+                                <% end %>
+                            <% end %>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <% if(@tournament.link_picture.present?) %>
+                            <%= link_to 'Photos', @tournament.link_picture, :rel => "nofollow" , :target => "_blank", :class => "right waves-effect waves-light btn" %>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

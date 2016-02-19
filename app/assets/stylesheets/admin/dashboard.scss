@@ -1,0 +1,49 @@
+// Place all the styles related to the admin/dashboard controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.admin{
+    padding-left:110px;
+    position: relative;
+
+    .logo{
+        text-align: center;
+    }
+    main{
+        padding-top: 20px;
+    }
+    .admin-page-logo{
+        height:100%;
+    }
+    nav .button-collapse i{
+        margin-right: 20px;
+    }
+    #nav-mobile{
+        background: #242424;
+        border: none;
+        .collapsible-body{
+            background-color: #3A3838;
+        }
+    }
+    .side-nav.fixed a{
+        color: #f4f4f4;
+    }
+    .side-nav.fixed a:hover{
+        background-color: rgba(0, 0, 0, 0.3)
+    }
+    .radioForm{
+        margin-bottom: 25px;
+    }
+    .mce-container{
+        margin-bottom: 20px;
+    }
+    .version{
+        position: absolute;
+        bottom: 0px;
+        right: 20px;
+    }
+}
+@media screen and (max-width: 992px) {
+    .admin{
+        padding-left:0px;
+    }
+}

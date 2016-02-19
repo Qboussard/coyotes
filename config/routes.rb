@@ -1,4 +1,36 @@
 Rails.application.routes.draw do
+  get 'easter/index'
+
+  namespace :admin do
+  get 'teams/index'
+  end
+
+  namespace :admin do
+  get 'teams/new'
+  end
+
+  namespace :admin do
+  get 'players/index'
+  end
+
+  namespace :admin do
+  get 'players/edit'
+  end
+
+  namespace :admin do
+  get 'players/new'
+  end
+
+  namespace :admin do
+  get 'users/index'
+  end
+
+  namespace :admin do
+  get 'users/edit'
+  end
+
+  get 'sponsor/index'
+
   get 'tournament/index'
 
   get 'tournament/show'
@@ -35,6 +67,21 @@ Rails.application.routes.draw do
   resources :club, only: [:index]
   resources :rules, only: [:index]
   resources :tournament, only: [:index, :show]
+  resources :sponsor, only: [:index]
+  resources :easter, only: [:index]
+
+
+  namespace :admin do
+    get '/' => 'articles#index'
+    resources :dashboard, only: [:index]
+    resources :articles, except: [:show]
+    resources :users, except: [:show]
+    resources :players, except: [:show]
+    resources :tournaments, except: [:show]
+    resources :matches, except: [:show]
+    resources :presences, except: [:show]
+    resources :teams, except: [:show]
+  end
   # Example resource route with options:
   #   resources :products do
   #     member do
