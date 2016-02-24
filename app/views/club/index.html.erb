@@ -13,7 +13,7 @@
                 <ul class="collection">
                     <li class="collection-item avatar">
                         <% if(player.picture == true) %>
-                            <i class="circle picture"><%= image_tag("players/#{player.lastname}.png", :alt => "picture player") %></i>
+                            <i class="circle picture"><%= image_tag(I18n.transliterate("players/#{player.lastname}_#{player.firstname}.png"), :alt => "picture player") %></i>
                             <% else %>
                             <i class="circle grey darken-2"><%= player.number %></i>
                         <% end %>
