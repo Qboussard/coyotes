@@ -7,8 +7,7 @@ if Player.count == 0
 		puts '-> Ajoût de joueurs'
 end
 if News.count == 0
-	News.create!(title: "Test de titre", summary: "Hello summary test",content: "lorem ipsum")
-	News.create!(title: "Test de titre", content: "Quod opera consulta cogitabatur astute, ut hoc insidiarum genere Galli periret avunculus, ne eum ut praepotens acueret in fiduciam exitiosa coeptantem. verum navata est opera diligens hocque dilato Eusebius praepositus cubiculi missus est Cabillona aurum secum perferens, quo per turbulentos seditionum concitores occultius distributo et tumor consenuit militum et salus est in tuto locata praefecti. deinde cibo abunde perlato castra die praedicto sunt mota.")
+	News.create!(title: "Entrainements des Coyotes !",summary: "Voici l'organisation des séances d'entrainement :", content: "Salut &agrave; tous !<br /><br />Voici l'organisation des s&eacute;ances d'entrainement :<br />- Mardi de 20h 30 &agrave; 22h : Initiation roller pour les jeunes et roller hockey pour les adultes.<br /> - Vendredi de 20h 30 &agrave; 21h30 : initiation roller hockey pour les jeunes (encadrement des adultes).<br /> - Vendredi a partir de 21h30 : entra&icirc;nement roller hockey pour les adultes UNIQUEMENT.<br /> - Samedi de 17h &agrave; 20h : entra&icirc;nements roller hockey pour les adultes et jeunes.<br /> <br /> * Pour int&eacute;grer les entra&icirc;nements ""adultes"" un niveau de base en roller et maniement sera &agrave; valider.<br /> <br /> * A partir de mardi 16 f&eacute;vrier et pour tous les entra&icirc;nements &agrave; venir : APPORTEZ UNE PAIRE DE BASKETS ET JOGGING POUR L ENTRA&Icirc;NEMENT !")
 		puts '-> Ajoût de news'
 end
 if Tournament.count == 0
