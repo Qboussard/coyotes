@@ -14,9 +14,16 @@
             }
             .picture{
                 img{
-                    width: 100%;
+                    min-width: 100%;
+                    min-height: 100%;
+                    max-width: 150%;
+                    max-height: 150%;
                 }
             }
+        }
+        .collection-item.avatar i.circle{
+            font-size: 25px;
+            line-height: 55px;
         }
     }
     #staff{
@@ -47,5 +54,12 @@
                 list-style: circle;
             }
         }
+    }
+    .collection .collection-item.avatar .circle{
+        width:55px;
+        height:55px;
+    }
+    .collection .collection-item.avatar{
+        padding-left: 85px;
     }
 }
