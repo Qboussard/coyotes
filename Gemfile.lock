@@ -171,11 +171,10 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   materialize-sass
-  mysql2 (~> 0.3.18)
+  mysql2 (>= 0.3.13, < 0.5)
   puma
   rails (= 4.2.6)
   rails_12factor
-  sass
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring
