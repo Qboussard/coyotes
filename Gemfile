@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '2.3.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
@@ -9,6 +9,8 @@ gem 'mysql2', '~> 0.3.18'
 gem 'sass'
 gem 'sass-rails', '~> 5.0'
 gem 'font-awesome-sass', '~> 4.4.0'
+
+gem 'puma'
 
 gem 'materialize-sass'
 # Use Uglifier as compressor for JavaScript assets
@@ -41,6 +43,7 @@ gem 'will_paginate'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'factory_girl_rails'
 end
 
 group :development do
@@ -49,4 +52,8 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+end
+
+group :production do
+  gem 'rails_12factor'
 end
