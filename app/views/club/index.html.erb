@@ -1,19 +1,61 @@
 <div class="row club">
     <div class="col s12">
-      <ul class="tabs">
+      <ul class="tabs hide-on-large-only">
         <li class="tab col s4" onclick="Materialize.showStaggeredList('#old')"><a href="#old">Adultes</a></li>
         <li class="tab col s4" onclick="Materialize.showStaggeredList('#young')"><a href="#young">Jeunes</a></li>
         <li class="tab col s4"><a href="#training">Entrainement</a></li>
         <li class="tab col s4" onclick="Materialize.showStaggeredList('#staff')"><a href="#staff">Bureau</a></li>
       </ul>
+      <ul class="tabs hide-on-med-and-down">
+        <li class="tab col s4" onclick="Materialize.showStaggeredList('#all')"><a href="#all">Joueurs</a></li>
+        <li class="tab col s4"><a href="#training">Entrainement</a></li>
+        <li class="tab col s4" onclick="Materialize.showStaggeredList('#staff')"><a href="#staff">Bureau</a></li>
+      </ul>
     </div>
-    <div id="old" class="col s12">
+    <div id="all" class="col s12 hide-on-med-and-down">
+        <div class="col s6">
+            <% @players.each do |player|%>
+                <% if(player.adult == true) %>
+                    <ul class="collection">
+                        <li class="collection-item avatar">
+                            <% if(player.picture == true) %>
+                                <i class="circle picture"><%= image_tag(I18n.transliterate("players/#{player.lastname}_#{player.firstname}.png"), :alt => "picture player") %></i>
+                                <% else %>
+                                <i class="circle grey darken-2"><%= player.number %></i>
+                            <% end %>
+                            <span class="title"><%= "#{player.lastname} #{player.firstname}"%></span>
+                            <p>Rôle : <%= player.place %><br>Numéro : <%= player.number %></p>
+                        </li>
+                    </ul>
+                <% end %>
+            <% end %>
+        </div>
+        <div class="col s6">
+            <% @players.each do |player|%>
+                <% if(player.adult == false) %>
+                    <ul class="collection">
+                        <li class="collection-item avatar">
+                            <% if(player.picture == true) %>
+                                <i class="circle picture"><%= image_tag(I18n.transliterate("players/#{player.lastname}_#{player.firstname}.png"), :alt => "picture player") %></i>
+                                <% else %>
+                                <i class="circle grey darken-2"><%= player.number %></i>
+                            <% end %>
+                            <span class="title"><%= "#{player.lastname} #{player.firstname}"%></span>
+                            <p>Rôle : <%= player.place %><br>Numéro : <%= player.number %></p>
+                        </li>
+                    </ul>
+                <% end %>
+            <% end %>
+        </div>
+
+    </div>
+    <div id="old" class="col s12 hide-on-large-only">
         <% @players.each do |player|%>
             <% if(player.adult == true) %>
                 <ul class="collection">
                     <li class="collection-item avatar">
                         <% if(player.picture == true) %>
-                            <i class="circle picture"><%= image_tag("players/#{player.lastname}.png", :alt => "picture player") %></i>
+                            <i class="circle picture"><%= image_tag(I18n.transliterate("players/#{player.lastname}_#{player.firstname}.png"), :alt => "picture player") %></i>
                             <% else %>
                             <i class="circle grey darken-2"><%= player.number %></i>
                         <% end %>
@@ -24,13 +66,13 @@
             <% end %>
         <% end %>
     </div>
-    <div id="young" class="col s12">
+    <div id="young" class="col s12 hide-on-large-only">
         <% @players.each do |player|%>
             <% if(player.adult == false) %>
                 <ul class="collection">
                     <li class="collection-item avatar">
                         <% if(player.picture == true) %>
-                            <i class="circle picture"><%= image_tag("players/#{player.lastname}.png", :alt => "picture player") %></i>
+                            <i class="circle picture"><%= image_tag(I18n.transliterate("players/#{player.lastname}_#{player.firstname}.png"), :alt => "picture player") %></i>
                             <% else %>
                             <i class="circle grey darken-2"><%= player.number %></i>
                         <% end %>
@@ -87,11 +129,11 @@
     </div>
     <div id="staff" class="col s12">
         <% @players.each do |player|%>
-            <% if(player.staff != nil) %>
+            <% if(player.staff != nil && player.staff != "") %>
                 <ul class="collection">
                     <li class="collection-item avatar">
                         <% if(player.picture == true) %>
-                            <i class="circle picture"><%= image_tag("players/#{player.lastname}.png", :alt => "picture player") %></i>
+                            <i class="circle picture"><%= image_tag(I18n.transliterate("players/#{player.lastname}_#{player.firstname}.png"), :alt => "picture player") %></i>
                             <% else %>
                             <i class="circle grey darken-2"><%= player.number %></i>
                         <% end %>
