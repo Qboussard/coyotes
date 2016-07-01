@@ -2,5 +2,9 @@ test/
 log/
 tmp/
 vendor/
-public/
+.DS_Store
+log
+tmp
+.env
+public/uploads
 
