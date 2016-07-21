@@ -12,7 +12,7 @@
         <li class="tab col s4" onclick="Materialize.showStaggeredList('#staff')"><a href="#staff">Bureau</a></li>
       </ul>
     </div>
-    <div id="all" class="col s12 hide-on-med-and-down">
+    <!-- <div id="all" class="col s12 hide-on-med-and-down">
         <div class="col s6">
             <span class='nameSection'>
                 Section Adultes
@@ -54,8 +54,8 @@
             <% end %>
         </div>
 
-    </div>
-    <div id="old" class="col s12 hide-on-large-only">
+    </div> -->
+    <div id="old" class="col s12">
         <% @players.each do |player|%>
             <% if(player.adult == true) %>
                 <ul class="collection">
@@ -72,7 +72,7 @@
             <% end %>
         <% end %>
     </div>
-    <div id="young" class="col s12 hide-on-large-only">
+    <div id="young" class="col s12">
         <% @players.each do |player|%>
             <% if(player.adult == false) %>
                 <ul class="collection">
