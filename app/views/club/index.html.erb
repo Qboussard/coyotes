@@ -14,6 +14,9 @@
     </div>
     <div id="all" class="col s12 hide-on-med-and-down">
         <div class="col s6">
+            <span class='nameSection'>
+                Section Adultes
+            </span>
             <% @players.each do |player|%>
                 <% if(player.adult == true) %>
                     <ul class="collection">
@@ -31,6 +34,9 @@
             <% end %>
         </div>
         <div class="col s6">
+            <span class='nameSection'>
+                Section Jeunes
+            </span>
             <% @players.each do |player|%>
                 <% if(player.adult == false) %>
                     <ul class="collection">

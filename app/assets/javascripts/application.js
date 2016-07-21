@@ -18,5 +18,5 @@
 $(document).ready(function(){
     $(".button-collapse").sideNav();
     $('ul.tabs').tabs();
-    Materialize.showStaggeredList('#old');
+    // Materialize.showStaggeredList('#old');
 });
