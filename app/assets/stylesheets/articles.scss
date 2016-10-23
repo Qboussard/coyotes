@@ -11,6 +11,12 @@
             .card-title{
                 cursor:default;;
             }
+            p{
+                img{
+                    max-width: 100%;
+                    height: auto;
+                }
+            }
         }
         .card-action{
             a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating){

@@ -8,6 +8,16 @@
         margin-bottom: 20px;
     }
     .collection{
+        width: 49%;
+        margin: 0px;
+        display: inline-block;
+
+        @media screen and (max-width: 800px) {
+           width: 100%;
+           display: block;
+           margin-bottom: 5px;
+        }
+
         .avatar{
             .circle{
                 font-style: normal;
