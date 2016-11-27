@@ -30,6 +30,7 @@ gem 'devise'
 gem 'will_paginate'
 
 gem 'rails-i18n'
+gem 'devise-i18n'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
