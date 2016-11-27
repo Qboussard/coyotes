@@ -8,115 +8,105 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Coyotes</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-  <!-- Chrome, Firefox OS and Opera -->
-  <meta name="theme-color" content="#c62828">
-  <!-- Windows Phone -->
-  <meta name="msapplication-navbutton-color" content="#c62828">
-  <!-- iOS Safari -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <%= render 'layouts/head' %>
 </head>
 <body>
-    <main>
-        <nav>
-            <div class="container">
-                <ul class="left hide-on-med-and-down">
-                    <li><%= link_to 'Article', root_path %></li>
-                    <li><%= link_to 'Club', club_index_path %></li>
-                    <li><%= link_to 'Adhésions', rules_index_path %></li>
-                    <li><%= link_to 'Tournois', tournament_index_path %></li>
-                </ul>
-                <ul class="right hide-on-med-and-down ">
-                    <% if user_signed_in? %>
-                        <% if(current_user.admin) %>
-                            <li><%= link_to current_user.email, admin_path %></li>
-                        <% else %>
-                            <li><a href=""><%= current_user.email %></a></li>
-                        <% end %>
-                        <li><%= link_to 'Déconnexion', destroy_user_session_path, :id => "logout", :method => :delete %><li>
-                    <% else %>
-                        <li><%= link_to 'Connexion', new_user_session_path %></li>
-                        <li><%= link_to 'Inscription', new_user_registration_path %></li>
-                    <% end %>
+  <main>
+      <nav>
+          <div class="container">
+              <ul class="left hide-on-med-and-down">
+                  <li><%= link_to 'Article', root_path %></li>
+                  <li><%= link_to 'Club', club_index_path %></li>
+                  <li><%= link_to 'Adhésions', rules_index_path %></li>
+                  <li><%= link_to 'Tournois', tournament_index_path %></li>
+              </ul>
+              <ul class="right hide-on-med-and-down ">
+                  <% if user_signed_in? %>
+                      <% if(current_user.admin) %>
+                          <li><%= link_to current_user.email, admin_path %></li>
+                      <% else %>
+                          <li><a href=""><%= current_user.email %></a></li>
+                      <% end %>
+                      <li><%= link_to 'Déconnexion', destroy_user_session_path, :id => "logout", :method => :delete %><li>
+                  <% else %>
+                      <li><%= link_to 'Connexion', new_user_session_path %></li>
+                      <li><%= link_to 'Inscription', new_user_registration_path %></li>
+                  <% end %>
 
-                </ul>
-                <ul id="slide-out" class="side-nav">
-                    <li><%= link_to 'Article', root_path %></li>
-                    <li><%= link_to 'Club', club_index_path %></li>
-                    <li><%= link_to 'Adhésions', rules_index_path %></li>
-                    <li><%= link_to 'Tournois', tournament_index_path %></li>
-                    <li class="divider"></li>
-                    <% if user_signed_in? %>
-                        <% if(current_user.admin) %>
-                            <li><%= link_to current_user.email, admin_path %></li>
-                        <% else %>
-                            <li><a href=""><%= current_user.email %></a></li>
-                        <% end %>
-                        <li><%= link_to 'Déconnexion', destroy_user_session_path, :id => "logout", :method => :delete %><li>
-                    <% else %>
-                        <li><%= link_to 'Connexion', new_user_session_path %></li>
-                        <li><%= link_to 'Inscription', new_user_registration_path %></li>
-                    <% end %>
-                </ul>
-                <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
-            </div>
-        </nav>
-        <div class="header valign-wrapper z-depth-1">
-            <%= image_tag("Logo_coyotes.png", :alt => "rss feed", :class =>"valign") %>
-        </div>
+              </ul>
+              <ul id="slide-out" class="side-nav">
+                  <li><%= link_to 'Article', root_path %></li>
+                  <li><%= link_to 'Club', club_index_path %></li>
+                  <li><%= link_to 'Adhésions', rules_index_path %></li>
+                  <li><%= link_to 'Tournois', tournament_index_path %></li>
+                  <li class="divider"></li>
+                  <% if user_signed_in? %>
+                      <% if(current_user.admin) %>
+                          <li><%= link_to current_user.email, admin_path %></li>
+                      <% else %>
+                          <li><a href=""><%= current_user.email %></a></li>
+                      <% end %>
+                      <li><%= link_to 'Déconnexion', destroy_user_session_path, :id => "logout", :method => :delete %><li>
+                  <% else %>
+                      <li><%= link_to 'Connexion', new_user_session_path %></li>
+                      <li><%= link_to 'Inscription', new_user_registration_path %></li>
+                  <% end %>
+              </ul>
+              <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+          </div>
+      </nav>
+      <div class="header valign-wrapper z-depth-1">
+          <%= image_tag("Logo_coyotes.png", :alt => "rss feed", :class =>"valign") %>
+      </div>
 
-        <div class="container">
-            <% if notice %>
-                <script type="text/javascript">
-                    $( document ).ready(function() {
-                        Materialize.toast('<%= notice %>', 4000);
-                    });
-                </script>
-            <% end %>
-            <% if alert %>
-                <script type="text/javascript">
-                    $( document ).ready(function() {
-                        Materialize.toast('<%= alert %>', 4000);
-                    });
-                </script>
-            <% end %>
+      <div class="container">
+          <% if notice %>
+              <script type="text/javascript">
+                  $( document ).ready(function() {
+                      Materialize.toast('<%= notice %>', 4000);
+                  });
+              </script>
+          <% end %>
+          <% if alert %>
+              <script type="text/javascript">
+                  $( document ).ready(function() {
+                      Materialize.toast('<%= alert %>', 4000);
+                  });
+              </script>
+          <% end %>
 
-        <%= yield %>
-        </div>
-    </main>
-    <footer class="page-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">Les Coyotes</h5>
-                    <p class="grey-text text-lighten-4">Les Coyotes de Gray vous accueillent, enfants (à partir de 10 ans) et adultes, débutants et confirmés, pour découvrir et pratiquer le Roller Hockey ! Séances sportives et conviviales les mardis et vendredis. Rejoignez nous !</p>
-                </div>
-                <div class="col l4 offset-l2 s12">
-                    <h5 class="white-text">Liens utiles</h5>
-                    <ul>
-                        <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/groups/218483188241910/?fref=ts">Facebook</a></li>
-                        <!-- <li><%= link_to 'Sponsor', sponsor_index_path, :class => "grey-text text-lighten-3" %></li> -->
-                        <li><a class="grey-text text-lighten-3" href="http://boutique.ok-patinage.com/epages/183602.sf/fr_FR/?ObjectPath=/Shops/183602/Categories/%22HOCKEY%20SUR%20GLACE%22">Achat de matériel</a></li>
-                        <li><a class="grey-text text-lighten-3" href="mailto:contact.coyotesgray@gmail.com">Nous contacter</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="footer-copyright">
-            <div class="container">
-                © Copyright 2016 - Coyotes-gray
-                <a class='grey-text text-lighten-4 right' href="http://quentinboussard.fr" target="_blank">Crée avec <i class='material-icons tiny'>favorite_border</i> par Quentin Boussard</a>
-            </div>
-        </div>
-    </footer>
+      <%= yield %>
+      </div>
+  </main>
+  <footer class="page-footer">
+      <div class="container">
+          <div class="row">
+              <div class="col l6 s12">
+                  <h5 class="white-text">Les Coyotes</h5>
+                  <p class="grey-text text-lighten-4">Les Coyotes de Gray vous accueillent, enfants (à partir de 10 ans) et adultes, débutants et confirmés, pour découvrir et pratiquer le Roller Hockey ! Séances sportives et conviviales les mardis et vendredis. Rejoignez nous !</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                  <h5 class="white-text">Liens utiles</h5>
+                  <ul>
+                      <li>
+                          <a class="grey-text text-lighten-3" href="https://www.facebook.com/groups/218483188241910/?fref=ts" target="_blank">Facebook</a>
+                      </li>
+                      <!-- <li><%= link_to 'Sponsor', sponsor_index_path, :class => "grey-text text-lighten-3" %></li> -->
+                      <li>
+                          <a class="grey-text text-lighten-3" href="http://boutique.ok-patinage.com/epages/183602.sf/fr_FR/?ObjectPath=/Shops/183602/Categories/%22HOCKEY%20SUR%20GLACE%22" target="_blank">Achat de matériel</a>
+                      </li>
+                      <li><a class="grey-text text-lighten-3" href="mailto:contact.coyotesgray@gmail.com">Nous contacter</a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <div class="footer-copyright">
+          <div class="container">
+              © Copyright 2016 - Coyotes-gray
+              <a class='grey-text text-lighten-4 right' href="http://quentinboussard.fr" target="_blank">Crée avec <i class='material-icons tiny'>favorite_border</i> par Quentin Boussard</a>
+          </div>
+      </div>
+  </footer>
 
 </body>
 </html>
