@@ -9,22 +9,19 @@
 			<div class="field input-field">
 			    <%= f.select(:tournaments_id) do %>
 			        <% @tournaments.each do |tournament| %>
-			            <% [[tournament.date, tournament.id]].each do |c| -%>
+			            <% [["#{tournament.date} - #{tournament.place}", tournament.id]].each do |c| -%>
 			                <%= content_tag(:option, c.first, value: c.last) %>
 			            <% end %>
 			        <% end %>
 			    <% end %>
 			</div>
 			<div class="field input-field">
-			    <%= f.select(:name) do %>
-			        <% @players.each do |player| %>
-						<% if(player.lastname.present? && player.firstname.present?) %>
-				            <% [[player.lastname+" "+player.firstname, player.lastname+" "+player.firstname]].each do |c| -%>
-				                <%= content_tag(:option, c.first, value: c.last) %>
-				            <% end %>
-						<% end %>
-			        <% end %>
-			    <% end %>
+        <% @players.each do |player| %>
+          <div>
+            <input type="checkbox" id="presence[player][<%= player.id %>]" name="presence[player][<%= player.id %>]" value="<%= player.firstname %> <%= player.lastname %>" />
+            <label for="presence[player][<%= player.id %>]"><%= player.lastname %></label>
+          </div>
+        <% end %>
 			</div>
 
 			<div class="btnlog actions">

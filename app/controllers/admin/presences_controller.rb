@@ -1,29 +1,29 @@
 class Admin::PresencesController < Admin::DashboardController
-    def index
-        @presences = Presence.order('id desc')
-    end
+  def index
+    @presences = Presence.order('id desc')
+  end
 
-    def destroy
-        Presence.destroy(params[:id])
-        redirect_to admin_presences_path, notice: 'La présence à bien été supprimé'
-    end
 
-    def new
-      @presence = Presence.new
-      @tournaments = Tournament.order('id desc')
-      @players = Player.order('lastname asc')
-    end
-    def create
-      @presence = Presence.new(new_params)
+  def new
+    @presence = Presence.new
+    @tournaments = Tournament.order('id desc')
+    @players = Player.order('lastname asc')
+  end
 
-      if @presence.save
-          redirect_to admin_presences_path, notice: 'Votre présence a bien été créé'
-      else
-          render 'new'
-      end
+  def create
+    params[:presence][:player].each_with_index do |player|
+      Presence.create! tournaments_id: params[:presence][:tournaments_id], name: "#{player[1]}"
     end
+    
+    redirect_to admin_presences_path, notice: 'Votre présence a bien été créé'
+  end
 
-    def new_params
-      params.require(:presence).permit(:tournaments_id, :name)
-    end
+  def destroy
+    Presence.destroy(params[:id])
+    redirect_to admin_presences_path, notice: 'La présence à bien été supprimé'
+  end
+
+  def new_params
+    params.require(:presence).permit(:tournaments_id, :name)
+  end
 end
