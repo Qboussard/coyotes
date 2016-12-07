@@ -19,7 +19,7 @@
         <% @players.each do |player| %>
           <div>
             <input type="checkbox" id="presence[player][<%= player.id %>]" name="presence[player][<%= player.id %>]" value="<%= player.firstname %> <%= player.lastname %>" />
-            <label for="presence[player][<%= player.id %>]"><%= player.lastname %></label>
+            <label for="presence[player][<%= player.id %>]"><%= player.lastname+ " " +player.firstname %></label>
           </div>
         <% end %>
 			</div>
