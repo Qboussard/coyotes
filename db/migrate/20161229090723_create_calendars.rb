@@ -1,6 +1,6 @@
-class CreateCalendars < ActiveRecord::Migration
+class CreateEvents < ActiveRecord::Migration
   def change
-    create_table :calendars do |t|
+    create_table :events do |t|
 
 			t.date :date
 			t.text :event

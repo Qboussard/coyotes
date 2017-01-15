@@ -1,5 +1,5 @@
 FactoryGirl.define do
-	factory :calendar do
+	factory :event do
 		date Date.today
 		event "24h roller"
 	end

@@ -1,4 +1,4 @@
-class Calendar < ActiveRecord::Base
+class Event < ActiveRecord::Base
 	validates_presence_of :date, :event
 	validates_length_of :event, maximum: 160
 end

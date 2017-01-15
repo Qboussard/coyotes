@@ -1,4 +1,4 @@
 fr:
   date:
     formats:
-      calendar: "%d %B %Y"
+      event: "%d %B %Y"
