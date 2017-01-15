@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161110154019) do
+ActiveRecord::Schema.define(version: 20161229090723) do
 
   create_table "calendars", force: :cascade do |t|
-    t.string   "event",      limit: 255
     t.date     "date"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.text     "event",      limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "matches", force: :cascade do |t|

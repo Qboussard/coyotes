@@ -26,3 +26,9 @@ if Team.count == 0
 	Team.create!(city: "Gray")
 		puts '-> Ajoût d\'une team'
 end
+if Calendar.count == 0
+	Calendar.create!(date: "13/12/2015", event: "Tournois !!!")
+	Calendar.create!(date: "13/10/2015", event: "24H")
+	Calendar.create!(date: "1/12/2015", event: "Tournois 2")
+		puts '-> Ajoût d\'un event'
+end

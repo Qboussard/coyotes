@@ -2,31 +2,13 @@ Rails.application.routes.draw do
   get 'easter/index'
 
   namespace :admin do
-  get 'teams/index'
-  end
-
-  namespace :admin do
-  get 'teams/new'
-  end
-
-  namespace :admin do
-  get 'players/index'
-  end
-
-  namespace :admin do
-  get 'players/edit'
-  end
-
-  namespace :admin do
-  get 'players/new'
-  end
-
-  namespace :admin do
-  get 'users/index'
-  end
-
-  namespace :admin do
-  get 'users/edit'
+  	get 'teams/index'
+		get 'teams/new'
+		get 'players/index'
+		get 'players/edit'
+		get 'players/new'
+		get 'users/index'
+		get 'users/edit'
   end
 
   get 'sponsor/index'
@@ -45,6 +27,8 @@ Rails.application.routes.draw do
   get 'articles/index'
 
   get 'articles/show'
+
+	resources :calendars, only: :index
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -69,6 +53,7 @@ Rails.application.routes.draw do
   resources :tournament, only: [:index, :show]
   resources :sponsor, only: [:index]
   resources :easter, only: [:index]
+  resources :calendar, only: [:index]
 
 
   namespace :admin do
