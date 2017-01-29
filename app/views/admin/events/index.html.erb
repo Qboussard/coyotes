@@ -8,7 +8,8 @@
 		<table class="striped">
 			<thead>
 				<tr>
-					<th data-field="name">Titre</th>
+					<th data-field="name">Nom de l'événement</th>
+					<th data-field="name">Date</th>
 					<th class="right" data-field="price">Action</th>
 				</tr>
 			</thead>
@@ -16,6 +17,7 @@
 				<% @events.each do |event| %>
 					<tr>
 						<td><%= event.event %></td>
+						<td><%= event.date %></td>
 						<td class="right">
 							<%= link_to edit_admin_article_path(id: event.id), { class: "waves-effect waves-light btn"} do %>
 								<i class="material-icons small">mode_edit</i>
