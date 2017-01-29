@@ -21,4 +21,7 @@ class Admin::EventsController < Admin::DashboardController
 		end
 	end
 
+	def new_params
+			params.require(:event).permit(:date, :event)
+	end
 end
