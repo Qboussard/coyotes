@@ -5,12 +5,14 @@ describe 'Events', type: :feature do
 		@user = create :user, admin: true
 		create_user_and_log_in @user
 	end
-  scenario "affiche les evenements" do
+
+ 	scenario "affiche les evenements" do
 		event = create :event, event: "la tarte a mamie"
     visit admin_events_path
     expect(page).to have_content 'la tarte a mamie'
   end
-	scenario "creer un evenement", focus: true do
+
+	scenario "creer un evenement" do
 		visit admin_events_path
 		page.find("#create-event").click
 		expect {
@@ -21,5 +23,15 @@ describe 'Events', type: :feature do
 			Event.count
 	 	}.by(1)
 		expect(Event.last.event).to eq "24H roller"
+	end
+
+	scenario "supprime un évènement" do
+		create :event
+		visit admin_events_path
+		expect {
+			page.find("#remove-event").click
+		}.to change {
+			Event.count
+	 	}.by(-1)
 	end
 end

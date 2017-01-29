@@ -4,7 +4,7 @@ tmp/
 vendor/
 .DS_Store
 log
-tmp
+tmp/
 .env
 public/uploads
 

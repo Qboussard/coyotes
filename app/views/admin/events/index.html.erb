@@ -17,13 +17,13 @@
 					<tr>
 						<td><%= event.event %></td>
 						<td class="right">
-							<%= link_to edit_admin_article_path(id: event.id), { :class => "waves-effect waves-light btn"} do %>
+							<%= link_to edit_admin_article_path(id: event.id), { class: "waves-effect waves-light btn"} do %>
 								<i class="material-icons small">mode_edit</i>
 				        	<% end %>
 
-							<%= link_to admin_event_path(event.id), :class => "waves-effect waves-light btn red darken-3", :method => :delete,  :data => {:confirm => 'Tu est sur ?' } do %>
+							<%= link_to admin_event_path(event.id), class: "waves-effect waves-light btn red darken-3", id: 'remove-event' , method: :delete,  data: { confirm: 'Tu est sur ?' } do %>
 								<i class="material-icons small">delete</i>
-				        	<% end %>
+				      <% end %>
 						</td>
 					</tr>
 				<% end %>
