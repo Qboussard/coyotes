@@ -22,6 +22,21 @@ class Admin::EventsController < Admin::DashboardController
 		redirect_to admin_events_path, notice: 'L événement a bien été supprimé'
 	end
 
+  def edit
+      @event = Event.find(params[:id])
+  end
+
+  def update
+    @event = Event.find(params[:id])
+
+      if @event.update_attributes(new_params)
+        # Handle a successful update.
+        redirect_to admin_events_path(@event.id), notice: 'Votre event a bien été modifié'
+      else
+        render 'edit'
+      end
+  end
+
 private
 
 	def new_params

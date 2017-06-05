@@ -34,4 +34,18 @@ describe 'Events', type: :feature do
 			Event.count
 	 	}.by(-1)
 	end
+
+	scenario "edit un évènement" do
+		event = create :event, event: "Le tournois du dimanche"
+		visit admin_events_path
+		page.find("#edit-event").click
+		expect{
+			fill_in :event_event, width: "24h c'est partit"
+			fill_in :event_date, width: "2017/01/01"
+			click_button "Enregistrer"
+		}.to change {
+			expect(event.reload.event).to eq "24h c'est partit"
+	 	}
+	end
+
 end

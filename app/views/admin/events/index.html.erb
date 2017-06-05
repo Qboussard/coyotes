@@ -19,7 +19,7 @@
 						<td><%= event.event %></td>
 						<td><%= event.date %></td>
 						<td class="right">
-							<%= link_to edit_admin_article_path(id: event.id), { class: "waves-effect waves-light btn"} do %>
+							<%= link_to edit_admin_event_path(id: event.id), { class: "waves-effect waves-light btn", id: 'edit-event'} do %>
 								<i class="material-icons small">mode_edit</i>
 				        	<% end %>
 
