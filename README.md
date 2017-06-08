@@ -5,13 +5,14 @@
 Coyotes-gray est une refonte d'un site existant : http://coyotes-gray.fr
 Les Coyotes est un club de sport de street Hockey du val de Gray
 
-##Techno utilisées :
+## Techno utilisées :
 * Ruby on Rails
 * Materialize
 * Jquery
 
 
-##Tâches minimum :
+## Tâches minimum :
+
 | Tâches | Réalisé |
 | --- | --- |
 | Articles | X  |
