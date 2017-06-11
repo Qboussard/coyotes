@@ -25,7 +25,7 @@ describe 'Events', type: :feature do
 		expect(Event.last.event).to eq "24H roller"
 	end
 
-	xscenario "supprime un évènement" do
+	scenario "supprime un évènement" do
 		create :event
 		visit admin_events_path
 		expect {
@@ -35,7 +35,7 @@ describe 'Events', type: :feature do
 	 	}.by(-1)
 	end
 
-	scenario "edit un évènement" do
+	xscenario "edit un évènement" do
 		event = create :event, event: "Le tournois du dimanche"
 		visit admin_events_path
 		page.find("#edit-event").click
