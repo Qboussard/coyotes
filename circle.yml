@@ -8,6 +8,6 @@ deployment:
         heroku:
             appname: coyotes-gray
     staging:
-        branch: master
+        branch: staging
         heroku:
             appname: coyotes-gray-dev
