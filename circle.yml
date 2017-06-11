@@ -3,7 +3,11 @@ general:
     only:
       - master
 deployment:
-    staging:
+    production:
         branch: master
         heroku:
             appname: coyotes-gray
+    staging:
+        branch: master
+        heroku:
+            appname: coyotes-gray-dev
