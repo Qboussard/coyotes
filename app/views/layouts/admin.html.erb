@@ -9,6 +9,8 @@
 		<%= javascript_include_tag 'application' %>
 		<%= csrf_meta_tags %>
 		<script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js">
+
 		<script type="text/javascript">
 			tinymce.init({
 				selector: "#newContent",
@@ -76,6 +78,9 @@
 					<%= link_to root_path, { :class => "brand-logo", :id=> "logo-container" } do %>
 					<%= image_tag('Logo_coyotes.png', class: 'admin-page-logo', alt: "logo") %>
 					<% end %>
+				</li>
+        <li class="bold">
+					<%= link_to 'Dashboard', admin_path %>
 				</li>
 				<li class="bold">
 					<%= link_to 'Articles', admin_articles_path %>
