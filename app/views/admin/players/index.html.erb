@@ -9,12 +9,12 @@
 			<thead>
 				<tr>
 					<th data-field="lastname">Nom</th>
-                    <th data-field="firstname">Prénom</th>
-                    <th data-field="number" class='hide-on-small-only'>Numéro</th>
-                    <th data-field="place">Rôle</th>
-					<th data-field="place" class='hide-on-small-only'>Photo</th>
-                    <th data-field="staff" class='hide-on-small-only'>Bureau</th>
-                    <th data-field="adult" class='hide-on-small-only'>Adulte</th>
+          <th data-field="firstname">Prénom</th>
+          <th data-field="number" class='hide-on-small-only'>Numéro</th>
+          <th data-field="place" class='hide-on-small-only'>Rôle</th>
+          <th data-field="place" class='hide-on-small-only'>Photo</th>
+          <th data-field="adult" class='hide-on-small-only'>Adulte</th>
+          <th data-field="staff" class='hide-on-small-only'>Bureau</th>
 
 					<th  class="right" data-field="price">Action</th>
 				</tr>
@@ -22,21 +22,22 @@
 			<tbody>
 				<% @players.each do |player| %>
 					<tr>
-                        <td><%= player.lastname %></td>
-                        <td><%= player.firstname %></td>
-                        <td class='hide-on-small-only'><%= player.number %></td>
-                        <td><%= player.place %></td>
+            <td><%= player.lastname %></td>
+            <td><%= player.firstname %></td>
+            <td class='hide-on-small-only'><span class="mybadge orange"><%= player.number %></span></td>
+            <td class='hide-on-small-only'><%= player.place %></td>
 						<% if(player.picture)%>
-							<td class='hide-on-small-only'>Oui</td>
+							<td class='hide-on-small-only'><span class="mybadge green">Oui</span></td>
 						<% else %>
-							<td class='hide-on-small-only'>Non</td>
+							<td class='hide-on-small-only'><span class="mybadge blue">Non</span></td>
 						<% end %>
-                        <td class='hide-on-small-only'><%= player.staff %></td>
-						<% if(player.adult)%>
-							<td class='hide-on-small-only'>Oui</td>
-						<% else %>
-							<td class='hide-on-small-only'>Non</td>
-						<% end %>
+            <% if(player.adult)%>
+              <td class='hide-on-small-only'><span class="mybadge green">Oui</span></td>
+            <% else %>
+              <td class='hide-on-small-only'><span class="mybadge blue">Non</span></td>
+            <% end %>
+            <td class='hide-on-small-only'><%= player.staff %></td>
+
 						<td class="right">
 							<%= link_to edit_admin_player_path(id: player.id), { :class => "waves-effect waves-light btn"} do %>
 								<i class="material-icons small">mode_edit</i>
