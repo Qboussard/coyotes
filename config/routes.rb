@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 		get 'users/index'
 		get 'users/edit'
 
-		resources :dashboard, only: [:index]
+		resource :dashboard, only: [:index]
 		resources :articles, except: [:show]
 		resources :users, except: [:show]
 		resources :players, except: [:show]

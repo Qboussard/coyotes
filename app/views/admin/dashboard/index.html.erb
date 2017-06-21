@@ -1,6 +1,99 @@
 <div class="row">
-	<div class="col s12">
-		<canvas id="myChart" width="400" height="100"></canvas>
-
+  <div class="col s12">
+      <div class="row">
+        <div class="col s10 m4 offset-s1">
+          <div class="card card-stats">
+            <div class="card-content">
+              <p class='center-align card_info card-red'><%= @news_number %></p>
+              <p class='center-align card_info_title'>Articles crées</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s10 m4 offset-s1">
+          <div class="card card-stats">
+            <div class="card-content">
+              <p class='center-align card_info card-red'><%= @tournament_number %></p>
+              <p class='center-align card_info_title'>Tournois enregistré</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s10 m4 offset-s1">
+          <div class="card card-stats">
+            <div class="card-content">
+              <p class='center-align card_info card-red'><%= @match_coyotes %></p>
+              <p class='center-align card_info_title'>Articles crées</p>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+	<div class="col m4 s6 offset-m2">
+    <h6 class="center-align">Joueurs Adultes/Jeunes</h6>
+    <canvas class='pie_charts' id="age_charts"></canvas>
+  </div>
+  <div class="col m4 s6">
+    <h6 class="center-align">Joueurs par role</h6>
+    <canvas class='pie_charts' id="place_player"></canvas>
 	</div>
 </div>
+<script>
+
+var ctx = document.getElementById('age_charts').getContext('2d');
+var ctx2 = document.getElementById('place_player').getContext('2d');
+
+var chart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: ["Jeunes", "Adultes"],
+        datasets: [{
+            backgroundColor: [
+                '#FE5457',
+                '#55A1E8'
+            ],
+            borderColor: [
+                '#FE5457',
+                '#55A1E8'
+            ],
+            data: <%= @data_players %>,
+        }]
+    },
+    options: {
+      legend: {
+            display: false
+         },
+         tooltips: {
+            enabled: true
+         }
+    }
+});
+
+
+var chart2 = new Chart(ctx2, {
+    type: 'doughnut',
+    data: {
+        labels: ["Attaquant", "Défenseur","Goal", "Polyvalent"],
+        datasets: [{
+            backgroundColor: [
+                '#64C297',
+                '#FE5457',
+                '#55A1E8',
+                '#FEFC6D'
+            ],
+            borderColor: [
+                '#64C297',
+                '#FE5457',
+                '#55A1E8',
+                '#FEFC6D'
+            ],
+            data: <%= @players_place %>,
+        }]
+    },
+    options: {
+      legend: {
+            display: false
+         },
+         tooltips: {
+            enabled: true
+         }}
+});
+</script>
