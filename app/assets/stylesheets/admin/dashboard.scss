@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .admin{
-    padding-left:110px;
+    padding-left: 240px;
     position: relative;
 
     .logo{
@@ -45,6 +45,9 @@
 		.btnmargintop{
 			margin-top: 25px;
 		}
+    .container{
+      width: 90% !important
+    }
 }
 @media screen and (max-width: 992px) {
     .admin{
@@ -53,4 +56,20 @@
 }
 .btn-add{
   margin-top: -50px;
+}
+select{
+  display: block !important;
+}
+.card .card_info{
+  font-size: 70px;
+  margin-top: 25px !important;
+}
+.card .card_info_title{
+  margin-top: 20px !important;
+}
+.card.card-stats{
+  height: 220px;
+}
+.card-red{
+  color:#FE5457 !important;
 }
