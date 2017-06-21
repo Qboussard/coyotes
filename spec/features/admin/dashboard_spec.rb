@@ -6,7 +6,7 @@ describe 'dashboard', type: :feature do
 		create_user_and_log_in @user
 	end
 
- 	scenario "dashboard ready" do
+ 	xscenario "dashboard ready" do
     visit admin_dashboard_index_path
     expect(page.status).to eq 200
   end
