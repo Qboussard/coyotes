@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row card-panel">
 	<div class="col s12">
 		<table class="striped">
 			<thead>
@@ -18,7 +18,7 @@
 							<td><span class="mybadge blue">Non</span></td>
 						<% end %>
 						<td class="right">
-							<%= link_to admin_user_path(user.id), :class => "waves-effect waves-light btn red darken-3", :method => :delete,  :data => {:confirm => 'Tu est sur ?' } do %>
+							<%= link_to admin_user_path(user.id), :class => "waves-effect waves-light btn red", :method => :delete,  :data => {:confirm => 'Tu est sur ?' } do %>
 								<i class="material-icons small">delete</i>
 							<% end %>
 						</td>

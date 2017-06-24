@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row card-panel">
 	<div class="col s12">
 		<%= form_for(@presence, url: admin_presences_path, html: { method: :post }, id: 'new_match') do |f| %>
 
@@ -24,13 +24,13 @@
         <% end %>
 			</div>
 
-			<div class="btnlog actions btnmargintop">
+			<div class="btnlog actions btnmargintop right">
 				<%= button_tag(type: 'submit', class: "btn") do %>
 					Valider <i class='material-icons right'>send</i>
 				<% end %>
 			</div>
 		<% end %>
 
-		<%= link_to 'Retour', admin_presences_path %>
+      <%= link_to 'Retour', admin_presences_path, :class => "btnmargintop waves-effect waves-light btn red" %>
 	</div>
 </div>

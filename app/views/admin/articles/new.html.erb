@@ -1,5 +1,5 @@
-<div class="row">
-	<div class="col s12">
+<div class="row card-panel">
+  <div class="col s12">
 		<%= form_for(@new, url: admin_articles_path, html: { method: :post }, id: 'new_news') do |f| %>
 
 			<% @new.errors.full_messages.each do |msg| %>
@@ -21,13 +21,12 @@
 				<%= f.text_area :content, :class => "materialize-textarea", :id => "newContent"  %>
 			</div>
 
-			<div class="btnlog actions">
+			<div class="btnlog actions right">
 				<%= button_tag(type: 'submit', class: "btn") do %>
 					Publier <i class='material-icons right'>send</i>
 				<% end %>
 			</div>
 		<% end %>
-
-		<%= link_to 'Retour', admin_articles_path %>
-	</div>
+    <%= link_to 'Retour', admin_articles_path, :class => "waves-effect waves-light btn red" %>
+	 </div>
 </div>
