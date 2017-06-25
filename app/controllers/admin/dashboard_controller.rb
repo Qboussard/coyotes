@@ -7,6 +7,7 @@ class Admin::DashboardController < ApplicationController
     @players_place = Player.group(:place).count.values
     @news_number = News.count
     @tournament_number = Tournament.count
+		@players_number = Player.count
 
     @match_coyotes = Match.where(["teams_1 = ? or teams_2 = ?", 'Gray', 'Gray']).count
   end
