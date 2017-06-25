@@ -4,7 +4,11 @@
 .admin{
     padding-left: 240px;
     position: relative;
+    background: #F3F5F5;
 
+    .card-panel{
+      margin-top: 20px;
+    }
     .logo{
         text-align: center;
     }
@@ -18,17 +22,31 @@
         margin-right: 20px;
     }
     #nav-mobile{
-        background: #242424;
+        background:#2A2E2F;
         border: none;
         .collapsible-body{
-            background-color: #3A3838;
+            background-color: rgba(0,0,0,0.2);
         }
+
+    }
+    nav{
+      background: #fff !important;
+
+      a{
+        color: #949494 !important;
+        font-weight: 500;
+        font-size: 18px;
+      }
+      a.right:hover{
+        color: #E57373 !important;
+      }
     }
     .side-nav.fixed a{
         color: #f4f4f4;
     }
     .side-nav.fixed a:hover{
-        background-color: rgba(0, 0, 0, 0.3)
+       background-color: rgba(0, 0, 0, 0.3)
+
     }
     .radioForm{
         margin-bottom: 25px;
@@ -72,4 +90,55 @@ select{
 }
 .card-red{
   color:#FE5457 !important;
+}
+
+span.mybadge{
+    position: initial !important;
+    color:#fff !important;
+    padding: 0 8px !important;
+    border-radius: 5px !important;
+    min-width: 3rem;
+    text-align: center;
+    font-size: 1rem;
+    line-height: inherit;
+    box-sizing: border-box;
+}
+
+
+.side-nav::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #242424;
+}
+
+.side-nav::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #242424;
+}
+
+.side-nav::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #404040;
+}
+span.blue, a.blue{
+  background-color:#64B5F6 !important;
+}
+span.red, a.red{
+  background-color: #E57373 !important;
+}
+span.green{
+    background-color: #81C884 !important;
+}
+span.orange {
+    background-color: #FFD54F !important;
+}
+a.btn, a.btn-large,button.btn, button.btn-large{
+  background-color: #81C884;
+}
+a.btn:hover, a.btn-large:hover,button.btn:hover, button.btn-large:hover{
+  background-color: #81C884;
 }

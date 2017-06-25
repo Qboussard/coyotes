@@ -1,26 +1,33 @@
-<div class="row">
+<div class="row card-panel">
 	<div class="col s12">
+    <div class="row">
 		<%= form_for(@player, url: admin_player_path(@player.id), html: { method: :put }, id: 'edit_player_{@player.id}') do |f| %>
 
 			<% @player.errors.full_messages.each do |msg| %>
 				<%= msg %>
 			<% end %>
 
-            <div class="field input-field">
+      <div class="field input-field col s12 m6">
 				<%= f.label :lastname, "Nom de famille" %>
 				<%= f.text_field :lastname, :class => "validate" %>
 			</div>
-			<div class="field input-field">
+			<div class="field input-field col s12 m6">
 				<%= f.label :firstname, "Prénom" %>
 				<%= f.text_field :firstname, :class => "validate" %>
 			</div>
-			<div class="field input-field">
+			<div class="field input-field col s12 m6">
 				<%= f.label :number, "Numéro" %>
 				<%= f.number_field :number, :class => "validate" %>
 			</div>
+      <div class="field input-field col s12 m6">
+				<%= f.label :staff, "Bureau ( vide ou nom du rôle )" %>
+				<%= f.text_field :staff, :class => "validate" %>
+			</div>
+		</div>
 	</div>
-	<div class="col s6">
-			<div class="radioForm">
+	<div class="col s12 m6">
+    <div class="row">
+			<div class="radioForm col s12 m6">
 				<p>Rôle :</p>
 				<p>
 					<%= f.radio_button :place, "Gardien", :id => 'PlaceGoal'%>
@@ -40,8 +47,10 @@
 				</p>
 			</div>
 	</div>
-	<div class="col s6">
-			<div class="radioForm">
+	</div>
+	<div class="col s12 m6">
+    <div class="row">
+			<div class="radioForm col s12 m6">
 				<p>Photo :</p>
 				<p>
 					<%= f.radio_button :picture, false, :id => 'PhotoN'%>
@@ -52,7 +61,7 @@
 	  				<label for="PhotoY">Oui</label>
 			    </p>
 			</div>
-			<div class="radioForm">
+			<div class="radioForm col s12 m6">
 				<p>Section :</p>
 				<p>
 					<%= f.radio_button :adult, false, :id => 'young'%>
@@ -64,18 +73,15 @@
 			    </p>
 			</div>
 	</div>
+	</div>
 	<div class="col s12">
-			<div class="field input-field">
-				<%= f.label :staff, "Bureau ( vide ou nom du rôle )" %>
-				<%= f.text_field :staff, :class => "validate" %>
-			</div>
-			<div class="btnlog actions">
+			<div class="btnlog actions right">
 				<%= button_tag(type: 'submit', class: "btn") do %>
 					Valider <i class='material-icons right'>done</i>
 				<% end %>
 			</div>
 		<% end %>
 
-		<%= link_to 'Retour', admin_players_path %>
+    <%= link_to 'Retour', admin_players_path, :class => "waves-effect waves-light btn red" %>
 	</div>
 </div>

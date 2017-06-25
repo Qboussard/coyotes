@@ -63,10 +63,14 @@
 			<nav class="top-nav">
 				<div class="container">
 					<a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only">
-						<i class="mdi-navigation-menu"></i>
+						<i class="material-icons">menu</i>
 					</a>
 					<div class="nav-wrapper">
 						<a class="page-title"><%= controller_name.capitalize %></a>
+
+            <%= link_to root_path, { :class => "right"} do %>
+  					     <i class='material-icons'>power_settings_new</i>
+  					<% end %>
 					</div>
 				</div>
 			</nav>
@@ -74,41 +78,32 @@
 			<div class="container"></div>
 
 			<ul id="nav-mobile" class="side-nav fixed collapsible" style="left: 0px;">
-				<li class="logo">
-					<%= link_to root_path, { :class => "brand-logo", :id=> "logo-container" } do %>
-					<%= image_tag('Logo_coyotes.png', class: 'admin-page-logo', alt: "logo") %>
-					<% end %>
-				</li>
-        <li class="bold">
-					<%= link_to 'Dashboard', admin_path %>
-				</li>
 				<li class="bold">
 					<%= link_to 'Articles', admin_articles_path %>
 				</li>
 				<li class="bold">
 					<%= link_to 'Utilisateurs', admin_users_path %>
 				</li>
-				<li class="bold">
-					<%= link_to 'Tournois', admin_tournaments_path %>
-				</li>
-				<li class="bold">
-					<%= link_to 'Matchs', admin_matches_path %>
-				</li>
-				<li class="bold">
-					<%= link_to 'Équipes', admin_teams_path %>
-				</li>
-				<li class="bold">
-					<%= link_to 'Joueurs', admin_players_path %>
-				</li>
-				<li class="bold">
-					<%= link_to 'Presences', admin_presences_path %>
-				</li>
-				<li class="bold">
-					<%= link_to 'Evenements', admin_events_path %>
-				</li>
+        <li class="bold no-padding">
+          <ul class="collapsible collapsible-accordion">
+            <li>
+              <a class="collapsible-header">Club<i class="right material-icons">arrow_drop_down</i></a>
+              <div class="collapsible-body">
+                <ul>
+                  <li><%= link_to 'Tournois', admin_tournaments_path %></li>
+                  <li><%= link_to 'Matchs', admin_matches_path %></li>
+                  <li><%= link_to 'Équipes', admin_teams_path %></li>
+                  <li><%= link_to 'Joueurs', admin_players_path %></li>
+                  <li><%= link_to 'Presences', admin_presences_path %></li>
+                  <li><%= link_to 'Evenements', admin_events_path %></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </li>
 
         <li class="bold">
-          <a href="https://coyotes-gray-dev.herokuapp.com">Serveur de test</a>
+          <a href="https://coyotes-gray-dev.herokuapp.com">Serveur de test <i style="vertical-align:middle; margin-left: 10px;" class=" material-icons">vpn_key</i></a>
         </li>
 			</ul>
 		</header>

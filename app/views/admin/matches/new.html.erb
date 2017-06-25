@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row card-panel">
 	<div class="col s12">
 		<%= form_for(@match, url: admin_matches_path, html: { method: :post }, id: 'new_match') do |f| %>
 
@@ -6,7 +6,7 @@
 				<%= msg %>
 			<% end %>
 
-			<div class="field input-field">
+			<div class="field input-field col s12 m12">
 			    <%= f.select(:tournaments_id) do %>
 			        <% @tournaments.each do |tournament| %>
 			            <% [[tournament.date, tournament.id]].each do |c| -%>
@@ -16,7 +16,7 @@
 			    <% end %>
 			</div>
 
-			<div class="field input-field">
+			<div class="field input-field col s12 m6">
 			    <%= f.select(:teams_1) do %>
 			        <% @teams.each do |team| %>
 			            <% [[team.city, team.city]].each do |c| -%>
@@ -26,7 +26,7 @@
 			    <% end %>
 			</div>
 
-			<div class="field input-field">
+			<div class="field input-field col s12 m6">
 			    <%= f.select(:teams_2) do %>
 			        <% @teams.each do |team| %>
 			            <% [[team.city, team.city]].each do |c| -%>
@@ -36,19 +36,19 @@
 			    <% end %>
 			</div>
 
-            <div class="field input-field">
+      <div class="field input-field col s12 m12">
 				<%= f.label :score, "Score" %>
 				<%= f.text_field :score, :class => "validate" %>
 			</div>
 
 
-			<div class="btnlog actions">
+			<div class="btnlog actions right">
 				<%= button_tag(type: 'submit', class: "btn") do %>
 					Valider <i class='material-icons right'>send</i>
 				<% end %>
 			</div>
 		<% end %>
 
-		<%= link_to 'Retour', admin_matches_path %>
+    <%= link_to 'Retour', admin_matches_path, :class => "waves-effect waves-light btn red" %>
 	</div>
 </div>

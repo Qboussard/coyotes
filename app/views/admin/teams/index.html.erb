@@ -1,10 +1,8 @@
-<div class="row">
+<div class="row card-panel">
 	<div class="col s12">
-		<%= link_to new_admin_team_path, :class => "right btn-add btn-floating btn-large waves-effect waves-light blue" do %>
+    <%= link_to new_admin_team_path, :class => "right btn-add btn-floating btn-large waves-effect waves-light blue" do %>
 			<i class="material-icons small">add</i>
 		<% end %>
-	</div>
-	<div class="col s12">
 		<table class="striped">
 			<thead>
 				<tr>
@@ -17,9 +15,9 @@
 					<tr>
 						<td><%= team.city %></td>
 						<td class="right">
-                            <%= link_to admin_team_path(team.id), :class => "waves-effect waves-light btn red darken-3", :method => :delete,  :data => {:confirm => 'Tu est sur ?' } do %>
-                                <i class="material-icons small">delete</i>
-                            <% end %>
+              <%= link_to admin_team_path(team.id), :class => "waves-effect waves-light btn red", :method => :delete,  :data => {:confirm => 'Tu est sur ?' } do %>
+                  <i class="material-icons small">delete</i>
+              <% end %>
 						</td>
 					</tr>
 				<% end %>

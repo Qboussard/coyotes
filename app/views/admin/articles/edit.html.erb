@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row card-panel">
 	<div class="col s12">
 		<%= form_for(@new, url: admin_article_path(@new.id), html: { method: :put }, id: 'edit_new_{@new.id}') do |f| %>
 
@@ -21,11 +21,14 @@
 				<%= f.text_area :content, class: 'form-control', :class => "" ,:id => "newContent"%>
 			</div>
 
-			<div class="actions btnlog">
+			<div class="actions btnlog right">
 				<%= button_tag(type: 'submit', class: "btn") do %>
 					Valider <i class='material-icons right'>done</i>
 				<% end %>
 			</div>
+
 		<% end %>
+    <%= link_to 'Retour', admin_articles_path, :class => "waves-effect waves-light btn red" %>
+
 	</div>
 </div>
