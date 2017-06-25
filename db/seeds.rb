@@ -15,7 +15,7 @@ if Tournament.count == 0
 		puts '-> Ajoût d\'un tournois'
 end
 if Match.count == 0
-	Match.create!(tournaments_id: "1",teams_1: "Gray", teams_2: "Vesoul", score: "3 / 3")
+	Match.create!(tournaments_id: "1", teams_1: "Gray", teams_2: "Vesoul", score: "3 / 3")
 		puts '-> Ajoût d\'un match'
 end
 if Presence.count == 0
