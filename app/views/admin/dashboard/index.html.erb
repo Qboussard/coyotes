@@ -60,12 +60,12 @@ var chart = new Chart(ctx, {
         labels: ["Jeunes", "Adultes"],
         datasets: [{
             backgroundColor: [
-                '#FE5457',
-                '#55A1E8'
+                '#E57373',
+                '#64B5F6'
             ],
             borderColor: [
-                '#FE5457',
-                '#55A1E8'
+                '#E57373',
+                '#64B5F6'
             ],
             data: <%= @data_players %>,
         }]
@@ -87,16 +87,16 @@ var chart2 = new Chart(ctx2, {
         labels: ["Attaquant", "Défenseur","Goal", "Polyvalent"],
         datasets: [{
             backgroundColor: [
-                '#64C297',
-                '#FE5457',
-                '#55A1E8',
-                '#FEFC6D'
+                '#81C884',
+                '#E57373',
+                '#64B5F6',
+                '#FFD54F'
             ],
             borderColor: [
-                '#64C297',
-                '#FE5457',
-                '#55A1E8',
-                '#FEFC6D'
+                '#81C884',
+                '#E57373',
+                '#64B5F6',
+                '#FFD54F'
             ],
             data: <%= @players_place %>,
         }]
