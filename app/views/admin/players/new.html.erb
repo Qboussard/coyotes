@@ -6,23 +6,19 @@
 				<%= msg %>
 			<% end %>
 
-			<div class="field input-field">
+			<div class="field input-field col s6">
 				<%= f.label :lastname, "Nom de famille" %>
 				<%= f.text_field :lastname, :class => "validate" %>
 			</div>
-			<div class="field input-field">
+			<div class="field input-field col s6">
 				<%= f.label :firstname, "Prénom" %>
 				<%= f.text_field :firstname, :class => "validate" %>
 			</div>
-	</div>
-	<div class="col s6">
-			<div class="field input-field">
+			<div class="field input-field col s6">
 				<%= f.label :number, "Numéro" %>
 				<%= f.number_field :number, :class => "validate" %>
 			</div>
-	</div>
-	<div class="col s6">
-		<div class="field input-field">
+		<div class="field input-field col s6">
 			<%= f.label :staff, "Bureau ( vide ou nom du rôle )" %>
 			<%= f.text_field :staff, :class => "validate" %>
 		</div>
