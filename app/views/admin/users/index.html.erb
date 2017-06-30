@@ -18,6 +18,9 @@
 							<td><span class="mybadge blue">Non</span></td>
 						<% end %>
 						<td class="right">
+							<%= link_to admin_users_edit_path(id: user.id), { :class => "waves-effect waves-light btn"} do %>
+								<i class="material-icons small">mode_edit</i>
+							<% end %>
 							<%= link_to admin_user_path(user.id), :class => "waves-effect waves-light btn red", :method => :delete,  :data => {:confirm => 'Tu est sur ?' } do %>
 								<i class="material-icons small">delete</i>
 							<% end %>

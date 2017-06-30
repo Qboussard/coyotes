@@ -1,0 +1,41 @@
+<div class="row card-panel">
+	<div class="col s12">
+		<%= form_for(@user, url: admin_user_path(@user.id), html: { method: :put }, id: 'edit_user_{@user.id}') do |f| %>
+
+			<% @user.errors.full_messages.each do |msg| %>
+				<%= msg %>
+			<% end %>
+
+
+			<div class="field input-field col s12 m6">
+				<%= f.label :email, "email" %>
+				<%= f.text_field :email, :class => "validate", :readonly => true %>
+			</div>
+			<div class="field input-field col s12 m6">
+				<%= f.label :sign_in_count, "Nombre de connexion" %>
+				<%= f.number_field :sign_in_count, :class => "validate", :readonly => true %>
+			</div>
+
+			<div class="radioForm col s12">
+				<p>Amin :</p>
+				<p>
+					<%= f.radio_button :admin, "false", :id => 'no'%>
+							<label for="no">Non</label>
+					</p>
+					<p>
+					<%= f.radio_button :admin, "true", :id => 'yes'%>
+						<label for="yes">Oui</label>
+					</p>
+			</div>
+
+			<div class="actions btnlog right">
+				<%= button_tag(type: 'submit', class: "btn") do %>
+					Valider <i class='material-icons right'>done</i>
+				<% end %>
+			</div>
+
+		<% end %>
+    <%= link_to 'Retour', admin_users_path, :class => "waves-effect waves-light btn red" %>
+
+	</div>
+</div>
