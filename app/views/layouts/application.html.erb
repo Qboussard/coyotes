@@ -19,7 +19,7 @@
                   <li><%= link_to 'Club', club_index_path %></li>
                   <li><%= link_to 'Adhésions', rules_index_path %></li>
                   <li><%= link_to 'Tournois', tournament_index_path %></li>
-                  <li><%= link_to 'Calendrier', events_path %></li>
+                  <!-- <li><%= link_to 'Calendrier', events_path %></li> -->
               </ul>
               <ul class="right hide-on-med-and-down ">
                   <% if user_signed_in? %>
@@ -40,7 +40,7 @@
                   <li><%= link_to 'Club', club_index_path %></li>
                   <li><%= link_to 'Adhésions', rules_index_path %></li>
                   <li><%= link_to 'Tournois', tournament_index_path %></li>
-									<li><%= link_to 'Calendrier', events_path %></li>
+									<!-- <li><%= link_to 'Calendrier', events_path %></li> -->
                   <li class="divider"></li>
                   <% if user_signed_in? %>
                       <% if(current_user.admin) %>
