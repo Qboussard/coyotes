@@ -4,6 +4,7 @@
 			<thead>
 				<tr>
 					<th data-field="email">Email</th>
+					<th data-field="connexion" class='hide-on-small-only'>Nombre de connexion</th>
           <th data-field="admin">Admin</th>
 					<th  class="right" data-field="price">Action</th>
 				</tr>
@@ -12,6 +13,7 @@
 				<% @users.each do |user| %>
 					<tr>
 						<td><%= user.email %></td>
+						<td class='hide-on-small-only'><%= user.sign_in_count %></td>
 						<% if(user.admin)%>
 							<td><span class="mybadge green">Oui</span></td>
 						<% else %>
