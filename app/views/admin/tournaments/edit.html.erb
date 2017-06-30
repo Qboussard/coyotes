@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row card-panel">
 	<div class="col s12">
 		<%= form_for(@tournament, url: admin_tournament_path(@tournament.id), html: { method: :put }, id: 'edit_tournament_{@tournament.id}') do |f| %>
 
@@ -21,13 +21,13 @@
 			</div>
 
 
-			<div class="btnlog actions">
+			<div class="btnlog actions right">
 				<%= button_tag(type: 'submit', class: "btn") do %>
 					Valider <i class='material-icons right'>done</i>
 				<% end %>
 			</div>
 		<% end %>
 
-		<%= link_to 'Retour', admin_tournaments_path %>
+    <%= link_to 'Retour', admin_tournaments_path, :class => "waves-effect waves-light btn red" %>
 	</div>
 </div>

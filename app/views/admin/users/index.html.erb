@@ -1,11 +1,10 @@
-<div class="row">
+<div class="row card-panel">
 	<div class="col s12">
 		<table class="striped">
 			<thead>
 				<tr>
 					<th data-field="email">Email</th>
-                    <th data-field="admin">Admin</th>
-					<th data-field="inscription">Inscription</th>
+          <th data-field="admin">Admin</th>
 					<th  class="right" data-field="price">Action</th>
 				</tr>
 			</thead>
@@ -14,13 +13,12 @@
 					<tr>
 						<td><%= user.email %></td>
 						<% if(user.admin)%>
-							<td>Oui</td>
+							<td><span class="mybadge green">Oui</span></td>
 						<% else %>
-							<td>Non</td>
+							<td><span class="mybadge blue">Non</span></td>
 						<% end %>
-						<td><%= user.created_at %></td>
 						<td class="right">
-							<%= link_to admin_user_path(user.id), :class => "waves-effect waves-light btn red darken-3", :method => :delete,  :data => {:confirm => 'Tu est sur ?' } do %>
+							<%= link_to admin_user_path(user.id), :class => "waves-effect waves-light btn red", :method => :delete,  :data => {:confirm => 'Tu est sur ?' } do %>
 								<i class="material-icons small">delete</i>
 							<% end %>
 						</td>

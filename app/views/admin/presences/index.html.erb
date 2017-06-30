@@ -1,10 +1,8 @@
-<div class="row">
+<div class="row card-panel">
 	<div class="col s12">
-		<%= link_to new_admin_presence_path, :class => "right btn-add btn-floating btn-large waves-effect waves-light blue" do %>
-			<i class="material-icons small">add</i>
-		<% end %>
-	</div>
-	<div class="col s12">
+      <%= link_to new_admin_presence_path, :class => "right btn-add btn-floating btn-large waves-effect waves-light blue" do %>
+  			<i class="material-icons small">add</i>
+  		<% end %>
 		<table class="striped">
 			<thead>
 				<tr>
@@ -19,9 +17,9 @@
 						<td><%= presence.tournaments_id %></td>
 						<td><%= presence.name %></td>
 						<td class="right">
-                            <%= link_to admin_presence_path(presence.id), :class => "waves-effect waves-light btn red darken-3", :method => :delete,  :data => {:confirm => 'Tu est sur ?' } do %>
-                                <i class="material-icons small">delete</i>
-                            <% end %>
+              <%= link_to admin_presence_path(presence.id), :class => "waves-effect waves-light btn red", :method => :delete,  :data => {:confirm => 'Tu est sur ?' } do %>
+                  <i class="material-icons small">delete</i>
+              <% end %>
 						</td>
 					</tr>
 				<% end %>

@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row card-panel">
 	<div class="col s12">
 		<%= form_for(@player, url: admin_players_path, html: { method: :post }, id: 'new_player') do |f| %>
 
@@ -73,13 +73,14 @@
 			</div>
 	</div>
 	<div class="col s12">
-			<div class="btnlog actions">
+			<div class="btnlog actions right">
 				<%= button_tag(type: 'submit', class: "btn") do %>
 					Valider <i class='material-icons right'>send</i>
 				<% end %>
 			</div>
 		<% end %>
 
-		<%= link_to 'Retour', admin_players_path %>
+    <%= link_to 'Retour', admin_players_path, :class => "waves-effect waves-light btn red" %>
+	</div>
 	</div>
 </div>

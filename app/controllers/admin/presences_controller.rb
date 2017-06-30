@@ -3,7 +3,6 @@ class Admin::PresencesController < Admin::DashboardController
     @presences = Presence.order('id desc')
   end
 
-
   def new
     @presence = Presence.new
     @tournaments = Tournament.order('id desc')

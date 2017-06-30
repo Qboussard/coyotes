@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row card-panel">
 	<div class="col s12">
 		<%= form_for(@tournament, url: admin_tournaments_path, html: { method: :post }, id: 'new_tournaments') do |f| %>
 
@@ -21,13 +21,13 @@
 			</div>
 
 
-			<div class="btnlog actions">
+			<div class="btnlog actions right">
 				<%= button_tag(type: 'submit', class: "btn") do %>
 					Publier <i class='material-icons right'>send</i>
 				<% end %>
 			</div>
 		<% end %>
 
-		<%= link_to 'Retour', admin_tournaments_path %>
+    <%= link_to 'Retour', admin_tournaments_path, :class => "waves-effect waves-light btn red" %>
 	</div>
 </div>
