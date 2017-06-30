@@ -9,7 +9,7 @@
 			<div class="field input-field col s12 m12">
 			    <%= f.select(:tournaments_id) do %>
 			        <% @tournaments.each do |tournament| %>
-			            <% [[tournament.date, tournament.id]].each do |c| -%>
+			            <% [["#{tournament.date} - #{tournament.place}", tournament.id]].each do |c| -%>
 			                <%= content_tag(:option, c.first, value: c.last) %>
 			            <% end %>
 			        <% end %>
