@@ -4,7 +4,8 @@ Rails.application.routes.draw do
 	root 'articles#index'
 
   namespace :admin do
-		get '/' => 'articles#index'
+		get '/' => 'dashboard#index'
+    get 'articles/index'
   	get 'teams/index'
 		get 'teams/new'
 		get 'players/index'
@@ -13,7 +14,7 @@ Rails.application.routes.draw do
 		get 'users/index'
 		get 'users/edit'
 
-		resources :dashboard, only: [:index]
+		resource :dashboard, only: [:index]
 		resources :articles, except: [:show]
 		resources :users, except: [:show]
 		resources :players, except: [:show]
@@ -43,8 +44,5 @@ Rails.application.routes.draw do
   resources :event, only: [:index]
 
 
-  namespace :admin do
-
-  end
 
 end

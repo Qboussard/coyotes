@@ -2,6 +2,7 @@ general:
   branches:
     only:
       - master
+      - staging
 deployment:
     production:
         branch: master

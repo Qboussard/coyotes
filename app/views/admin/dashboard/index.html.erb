@@ -1,0 +1,112 @@
+<div class="row">
+  <div class="col s12">
+      <div class="row">
+        <div class="col s6 m3">
+          <div class="card card-stats">
+            <div class="card-content">
+              <p class='center-align card_info card-red'><%= @news_number %></p>
+              <p class='center-align card_info_title'>Articles crées</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s6 m3">
+          <div class="card card-stats">
+            <div class="card-content">
+              <p class='center-align card_info card-red'><%= @tournament_number %></p>
+              <p class='center-align card_info_title'>Tournois enregistré</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s6 m3">
+          <div class="card card-stats">
+            <div class="card-content">
+              <p class='center-align card_info card-red'><%= @match_coyotes %></p>
+              <p class='center-align card_info_title'>Matchs Joués</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s6 m3">
+          <div class="card card-stats">
+            <div class="card-content">
+              <p class='center-align card_info card-red'><%= @players_number %></p>
+              <p class='center-align card_info_title'>Membres du club</p>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+	<div class="col s12">
+		<div class="row card-panel">
+			<div class="col m3 s6 offset-m2">
+		    <h6 class="center-align">Joueurs par section</h6>
+		    <canvas class='pie_charts' id="age_charts"></canvas>
+		  </div>
+		  <div class="col m3 s6 offset-m2">
+		    <h6 class="center-align">Joueurs par role</h6>
+		    <canvas class='pie_charts' id="place_player"></canvas>
+			</div>
+		</div>
+	</div>
+
+</div>
+<script>
+
+var ctx = document.getElementById('age_charts').getContext('2d');
+var ctx2 = document.getElementById('place_player').getContext('2d');
+
+var chart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: ["Jeunes", "Adultes"],
+        datasets: [{
+            backgroundColor: [
+                '#E57373',
+                '#64B5F6'
+            ],
+            borderColor: [
+                '#E57373',
+                '#64B5F6'
+            ],
+            data: <%= @data_players %>,
+        }]
+    },
+    options: {
+      legend: {
+            display: false
+         },
+         tooltips: {
+            enabled: true
+         }
+    }
+});
+
+
+var chart2 = new Chart(ctx2, {
+    type: 'doughnut',
+    data: {
+        labels: ["Attaquant", "Défenseur","Goal", "Polyvalent"],
+        datasets: [{
+            backgroundColor: [
+                '#81C884',
+                '#E57373',
+                '#64B5F6',
+                '#FFD54F'
+            ],
+            borderColor: [
+                '#81C884',
+                '#E57373',
+                '#64B5F6',
+                '#FFD54F'
+            ],
+            data: <%= @players_place %>,
+        }]
+    },
+    options: {
+      legend: {
+            display: false
+         },
+         tooltips: {
+            enabled: true
+         }}
+});
+</script>
