@@ -24,8 +24,8 @@
             <td><%= player.lastname %></td>
             <td><%= player.firstname %></td>
             <td class='hide-on-small-only'>
-              <% if player.number%>
-                  <span class="mybadge orange"><%= player.number %></span>
+              <% if player.number != ""%>
+                  <span class="mybadge orange"><%= player.number%></span>
               <% end %>
             </td>
             <td class='hide-on-small-only'><%= player.place %></td>
