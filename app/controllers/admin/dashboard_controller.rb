@@ -8,7 +8,7 @@ class Admin::DashboardController < ApplicationController
     @news_number = News.count
     @tournament_number = Tournament.count
 		@players_number = Player.count
-    @match_coyotes = Match.where(["teams_1 = ? or teams_2 = ?", '	Coyotes de Gray', '	Coyotes de Gray']).count
+    @match_coyotes = Match.where(["teams_1 = ? or teams_2 = ?", 'Coyotes de Gray', 'Coyotes de Gray']).count
   end
 
   private
