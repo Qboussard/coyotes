@@ -1,6 +1,6 @@
 class Admin::TeamsController < Admin::DashboardController
   def index
-    @teams = Team.order('id desc')
+		@teams = Team.paginate(:page => params[:page], :per_page => 20).order('id desc')
   end
 
   def destroy

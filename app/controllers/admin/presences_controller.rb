@@ -1,6 +1,6 @@
 class Admin::PresencesController < Admin::DashboardController
   def index
-    @presences = Presence.order('id desc')
+		@presences = Presence.paginate(:page => params[:page], :per_page => 20).order('id desc')
   end
 
   def new
@@ -13,7 +13,7 @@ class Admin::PresencesController < Admin::DashboardController
     params[:presence][:player].each_with_index do |player|
       Presence.create! tournaments_id: params[:presence][:tournaments_id], name: "#{player[1]}"
     end
-    
+
     redirect_to admin_presences_path, notice: 'Votre présence a bien été créé'
   end
 

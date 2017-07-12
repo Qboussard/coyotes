@@ -1,6 +1,7 @@
 class Admin::PlayersController < Admin::DashboardController
   def index
-    @players = Player.order('id desc')
+		@players = Player.paginate(:page => params[:page], :per_page => 20).order('id desc')
+
   end
 
   def new

@@ -1,6 +1,6 @@
 class Admin::TournamentsController < Admin::DashboardController
   def index
-    @tournaments = Tournament.order('id desc')
+		@tournaments = Tournament.paginate(:page => params[:page], :per_page => 20).order('id desc')
   end
 
   def new

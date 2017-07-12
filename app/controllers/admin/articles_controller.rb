@@ -1,7 +1,7 @@
 class Admin::ArticlesController < Admin::DashboardController
 
   def index
-    @news = News.order('id desc')
+		@news = News.paginate(:page => params[:page], :per_page => 20).order('id desc')
   end
 
   def new
