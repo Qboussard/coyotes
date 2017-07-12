@@ -142,3 +142,26 @@ a.btn, a.btn-large,button.btn, button.btn-large{
 a.btn:hover, a.btn-large:hover,button.btn:hover, button.btn-large:hover{
   background-color: #81C884;
 }
+
+.pagination{
+		margin-top: 10px;
+		.previous_page, .next_page{
+				display: none;
+		}
+		a{
+				padding: 5px;
+				color:#E57373;
+		}
+		a:hover{
+				color:#d00e0e;
+		}
+		em{
+				padding: 5px;
+				background-color:#E57373;
+				color: #fff;
+				padding: 5px;
+				padding-right: 8px;
+				border-radius: 3px;
+				cursor: default;
+		}
+}

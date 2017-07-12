@@ -1,8 +1,8 @@
 class Admin::MatchesController < Admin::DashboardController
   def index
-    @matches = Match.order('id desc')
+		@matches = Match.paginate(:page => params[:page], :per_page => 20).order('id desc')
   end
-  
+
   def destroy
     Match.destroy(params[:id])
     redirect_to admin_matches_path, notice: 'Le match a bien été supprimé'
