@@ -42,13 +42,15 @@
             <td class='hide-on-small-only'><%= player.staff %></td>
 
 						<td class="right">
-							<%= link_to edit_admin_player_path(id: player.id), { :class => "waves-effect waves-light btn"} do %>
-								<i class="material-icons small">mode_edit</i>
-				        	<% end %>
+							<a class="dropdown-button" href="#" data-activates="dropdown<%= player.id%>">
+						<i class="material-icons">more_vert</i>
+						</a>
 
-                <%= link_to admin_player_path(player.id), :class => "waves-effect waves-light btn red ", :method => :delete,  :data => {:confirm => 'Tu est sur ?' } do %>
-								<i class="material-icons small">delete</i>
-				        	<% end %>
+							<!-- Dropdown Structure -->
+							<ul id="dropdown<%= player.id%>" class="dropdown-content">
+								<li><%= link_to edit_admin_player_path(id: player.id), :class => "drop_edit" do %>Editer<% end %></li>
+								<li><%= link_to admin_player_path(player.id), :method => :delete, :class => "drop_remove", :data => {:confirm => 'Tu est sur ?' } do %>Supprimer<% end %></li>
+							</ul>
 						</td>
 					</tr>
 				<% end %>

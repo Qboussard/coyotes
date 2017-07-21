@@ -17,14 +17,21 @@
 				<% @matches.each do |match| %>
 					<tr>
 						<td><%= match.tournaments_id%></td>
-                        <td><%= match.teams_1%></td>
-                        <td><%= match.teams_2%></td>
+            <td><%= match.teams_1%></td>
+            <td><%= match.teams_2%></td>
 						<td><%= match.score %></td>
+
 						<td class="right">
-							<%= link_to admin_match_path(match.id), :class => "waves-effect waves-light btn red", :method => :delete,  :data => {:confirm => 'Tu est sur ?' } do %>
-								<i class="material-icons small">delete</i>
-							<% end %>
+							<a class="dropdown-button" href="#" data-activates="dropdown<%= match.id%>">
+						<i class="material-icons">more_vert</i>
+						</a>
+
+							<!-- Dropdown Structure -->
+							<ul id="dropdown<%= match.id%>" class="dropdown-content">
+								<li><%= link_to admin_match_path(match.id), :method => :delete, :class => "drop_remove",  :data => {:confirm => 'Tu est sur ?' } do %>Supprimer<% end %></li>
+							</ul>
 						</td>
+
 					</tr>
 				<% end %>
 			</tbody>

@@ -15,9 +15,13 @@
 					<tr>
 						<td><%= team.city %></td>
 						<td class="right">
-              <%= link_to admin_team_path(team.id), :class => "waves-effect waves-light btn red", :method => :delete,  :data => {:confirm => 'Tu est sur ?' } do %>
-                  <i class="material-icons small">delete</i>
-              <% end %>
+							<a class="dropdown-button" href="#" data-activates="dropdown<%= team.id%>">
+								<i class="material-icons">more_vert</i>
+							</a>
+							<!-- Dropdown Structure -->
+							<ul id="dropdown<%= team.id%>" class="dropdown-content">
+								<li><%= link_to admin_team_path(team.id), :method => :delete, :class => "drop_remove", :data => {:confirm => 'Tu est sur ?' } do %>Supprimer<% end %></li>
+							</ul>
 						</td>
 					</tr>
 				<% end %>

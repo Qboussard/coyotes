@@ -17,13 +17,15 @@
 						<td><%= event.event %></td>
 						<td><%= event.date %></td>
 						<td class="right">
-							<%= link_to edit_admin_event_path(id: event.id), { class: "waves-effect waves-light btn", id: 'edit-event'} do %>
-								<i class="material-icons small">mode_edit</i>
-				        	<% end %>
+							<a class="dropdown-button" href="#" data-activates="dropdown<%= event.id%>">
+						<i class="material-icons">more_vert</i>
+						</a>
 
-							<%= link_to admin_event_path(event.id), class: "waves-effect waves-light btn red", id: 'remove-event' , method: :delete,  data: { confirm: 'Tu est sur ?' } do %>
-								<i class="material-icons small">delete</i>
-				      <% end %>
+							<!-- Dropdown Structure -->
+							<ul id="dropdown<%= event.id%>" class="dropdown-content">
+								<li><%= link_to edit_admin_event_path(id: event.id), :class => "drop_edit" do %>Editer<% end %></li>
+								<li><%= link_to admin_event_path(event.id), :method => :delete, :class => "drop_remove", id: 'remove-event',  :data => {:confirm => 'Tu est sur ?' } do %>Supprimer<% end %></li>
+							</ul>
 						</td>
 					</tr>
 				<% end %>
