@@ -66,6 +66,11 @@
     .container{
       width: 90% !important
     }
+		.dropdown-button{
+			.material-icons{
+				color:#2A2E2F;
+			}
+		}
 }
 @media screen and (max-width: 992px) {
     .admin{
@@ -123,6 +128,12 @@ span.mybadge{
 	border-radius: 10px;
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
 	background-color: #404040;
+}
+.dropdown-content li > a.drop_edit{
+	color:#81C884 !important;
+}
+.dropdown-content li > a.drop_remove{
+	color:#E57373 !important;
 }
 span.blue, a.blue{
   background-color:#64B5F6 !important;
