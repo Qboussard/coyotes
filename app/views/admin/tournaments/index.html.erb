@@ -8,8 +8,8 @@
 				<tr>
 					<th data-field="id">ID</th>
 					<th data-field="email">Lieux</th>
-                    <th data-field="date">date</th>
-                    <th data-field="admin" class="hide-on-med-and-down">Lien photo</th>
+	        <th data-field="date">date</th>
+	        <th data-field="admin" class="hide-on-med-and-down">Lien photo</th>
 					<th  class="right" data-field="price">Action</th>
 				</tr>
 			</thead>
@@ -18,7 +18,7 @@
 					<tr>
 						<td><%= tournament.id %></td>
 						<td><%= tournament.place %></td>
-                        <td><%= tournament.date%></td>
+            <td><%= tournament.date%></td>
 						<td class="hide-on-med-and-down"><%= tournament.link_picture.slice!(0, 50) %></td>
 						<td class="right">
 							<a class="dropdown-button" href="#" data-activates="dropdown<%= tournament.id%>">
