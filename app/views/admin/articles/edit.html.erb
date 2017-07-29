@@ -6,29 +6,33 @@
 				<%= msg %>
 			<% end %>
 
-			<div class="field input-field">
+			<div class="field input-field col s12 m6">
 				<%= f.label :title, "Titre" %>
 				<%= f.text_field :title, class: 'form-control' , autofocus: true, :class => "validate" %>
 			</div>
 
-			<div class="field">
+			<div class="field input-field col s12 m6">
+					<%= f.select :category, [['Article', 'article'], ['Bipbip', 'bipbip']] %>
+			</div>
+
+			<div class="field input-field col s12">
 				<%= f.label :summary, "Résumé" %>
 				<%= f.text_area :summary, :class => "materialize-textarea"%>
 			</div>
 
-			<div class="field">
+			<div class="field input-field col s12">
 				<%= f.label :content, "Contenu" %>
 				<%= f.text_area :content, class: 'materialize-textarea form-control', :class => "" ,:id => "newContent"%>
 			</div>
 
-			<div class="actions btnlog right">
-				<%= button_tag(type: 'submit', class: "btn") do %>
+			<div class="actions btnlog col s12">
+				<%= link_to 'Retour', admin_articles_path, :class => "waves-effect waves-light btn red" %>
+				<%= button_tag(type: 'submit', class: "right btn") do %>
 					Valider <i class='material-icons right'>done</i>
 				<% end %>
 			</div>
 
 		<% end %>
-    <%= link_to 'Retour', admin_articles_path, :class => "waves-effect waves-light btn red" %>
 
 	</div>
 </div>

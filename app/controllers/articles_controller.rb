@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   def index
-    @news = News.paginate(:page => params[:page], :per_page => 5).order('id desc')
+    @news = News.where(category: 'article').paginate(:page => params[:page], :per_page => 5).order('id desc')
     @tournaments = Tournament.order('id desc')
   end
 

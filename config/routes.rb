@@ -33,6 +33,7 @@ Rails.application.routes.draw do
   get 'club/index'
 	get 'articles/index'
 	get 'articles/show'
+	get 'bipbips/index'
 
 	resources :events, only: :index
   resources :articles, only: [:index, :show]
@@ -42,6 +43,7 @@ Rails.application.routes.draw do
   resources :sponsor, only: [:index]
   resources :easter, only: [:index]
   resources :event, only: [:index]
+	resources :bipbips, only: [:index, :show]
 
 
 
