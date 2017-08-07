@@ -25,7 +25,7 @@ class Admin::EventsController < Admin::DashboardController
     @event = Event.find(params[:id])
     if @event.update_attributes(new_params)
       # Handle a successful update.
-      redirect_to admin_events_path(@event.id), notice: 'Votre event a bien été modifié'
+      redirect_to admin_events_path, notice: 'Votre event a bien été modifié'
     else
       render 'edit'
     end

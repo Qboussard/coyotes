@@ -23,14 +23,14 @@ class Admin::FeaturesController < Admin::DashboardController
 
     if @feature.update_attributes(new_params)
       # Handle a successful update.
-      redirect_to admin_features_path(@feature.id), notice: 'Votre demande a bien été modifié'
+      redirect_to admin_features_path, notice: 'Votre demande a bien été modifié'
     else
       render 'edit'
     end
   end
   def destroy
     Features.destroy(params[:id])
-    redirect_to admin_articles_path, notice: 'Votre demande a bien été supprimé'
+    redirect_to admin_features_path, notice: 'Votre demande a bien été supprimé'
   end
 private
 
