@@ -1,0 +1,40 @@
+<div class="row feature">
+  <div class="col s12 card-panel">
+    <%= link_to new_admin_feature_path, class: "right btn-add btn-floating btn-large waves-effect waves-light blue", id: 'create-feature' do %>
+      <i class="material-icons">add</i>
+    <% end %>
+    <p><span class="feature_state bug0 tooltipped"></span>Bug</p>
+    <p><span class="feature_state bug1"></span>Bug résolu</p>
+    <p><span class="feature_state feature0"></span>Demande</p>
+    <p><span class="feature_state feature1"></span>Demande en développement</p>
+    <p><span class="feature_state feature2"></span>Demande sur le serveur de dev</p>
+    <p><span class="feature_state feature3"></span>Demande en ligne</p>
+  </div>
+</div>
+
+<div class="row">
+	<div class="col s12">
+
+    <ul class="collapsible" data-collapsible="accordion">
+      <% @features.each do |feature| %>
+        <li>
+          <div class="collapsible-header"><span class="feature_state <%= feature.state %>"></span><span><%= feature.title %></span>
+            <a class="dropdown-button" href="#" data-activates="dropdown<%= feature.id%>">
+            <i class="material-icons">more_vert</i>
+            </a>
+
+            <!-- Dropdown Structure -->
+            <ul id="dropdown<%= feature.id%>" class="dropdown-content">
+              <li><%= link_to edit_admin_feature_path(id: feature.id), :class => "drop_edit" do %>Editer<% end %></li>
+              <li><%= link_to admin_feature_path(feature.id), :method => :delete, :class => "drop_remove", id: 'remove-feature',  :data => {:confirm => 'Tu est sur ?' } do %>Supprimer<% end %></li>
+            </ul>
+          </div>
+          <div class="collapsible-body">
+            <span><%= feature.content %></span>
+          </div>
+        </li>
+      <% end %>
+
+    </ul>
+	</div>
+</div>

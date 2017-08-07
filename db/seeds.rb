@@ -32,3 +32,10 @@ if Event.count == 0
 	Event.create!(date: "1/12/2015", event: "Tournois 2")
 		puts '-> Ajoût d\'un event'
 end
+
+if Features.count == 0
+	Features.create!(title: "test feature", content: "test ...", state: "bug0")
+  Features.create!(title: "test", content: "test ...", state: "bug1")
+  Features.create!(title: "test", content: "test ...", state: "feature0")
+	puts '-> Ajoût d\'une feature'
+end

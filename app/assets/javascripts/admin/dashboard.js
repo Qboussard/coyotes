@@ -12,4 +12,7 @@ $( document ).ready(function() {
 	      stopPropagation: false // Stops event propagation
 	    }
 	  );
+    $(document).ready(function(){
+        $('.collapsible').collapsible();
+    });
 });
