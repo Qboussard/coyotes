@@ -32,6 +32,9 @@
           </div>
           <div class="collapsible-body">
             <span><%= feature.content %></span>
+            <% if(feature.dev_link.present?)%>
+              <p><a href="<%= feature.dev_link%>" target='_blank' class="waves-effect waves-light btn">Serveur de dev</a></p>
+            <% end %>
           </div>
         </li>
       <% end %>
