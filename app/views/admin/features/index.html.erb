@@ -16,29 +16,37 @@
 <div class="row">
 	<div class="col s12">
 
-    <ul class="collapsible" data-collapsible="accordion">
-      <% @features.each do |feature| %>
-        <li>
-          <div class="collapsible-header"><span class="feature_state <%= feature.state %>"></span><span><%= feature.title %></span>
-            <a class="dropdown-button" href="#" data-activates="dropdown<%= feature.id%>">
-            <i class="material-icons">more_vert</i>
-            </a>
 
-            <!-- Dropdown Structure -->
-            <ul id="dropdown<%= feature.id%>" class="dropdown-content">
-              <li><%= link_to edit_admin_feature_path(id: feature.id), :class => "drop_edit" do %>Editer<% end %></li>
-              <li><%= link_to admin_feature_path(feature.id), :method => :delete, :class => "drop_remove", id: 'remove-feature',  :data => {:confirm => 'Tu est sur ?' } do %>Supprimer<% end %></li>
-            </ul>
-          </div>
-          <div class="collapsible-body">
-            <span><%= feature.content %></span>
-            <% if(feature.dev_link.present?)%>
-              <p><a href="<%= feature.dev_link%>" target='_blank' class="waves-effect waves-light btn">Serveur de dev</a></p>
-            <% end %>
-          </div>
-        </li>
-      <% end %>
+    <% if(@events.blank?) %>
+      <ul class="collapsible" data-collapsible="accordion">
+        <li><div class="collapsible-header">Aucun demande / bug pour le moment</div></li>
 
-    </ul>
+      </ul>
+    <% else %>
+      <ul class="collapsible" data-collapsible="accordion">
+        <% @features.each do |feature| %>
+          <li>
+            <div class="collapsible-header"><span class="feature_state <%= feature.state %>"></span><span><%= feature.title %></span>
+              <a class="dropdown-button" href="#" data-activates="dropdown<%= feature.id%>">
+              <i class="material-icons">more_vert</i>
+              </a>
+
+              <!-- Dropdown Structure -->
+              <ul id="dropdown<%= feature.id%>" class="dropdown-content">
+                <li><%= link_to edit_admin_feature_path(id: feature.id), :class => "drop_edit" do %>Editer<% end %></li>
+                <li><%= link_to admin_feature_path(feature.id), :method => :delete, :class => "drop_remove", id: 'remove-feature',  :data => {:confirm => 'Tu est sur ?' } do %>Supprimer<% end %></li>
+              </ul>
+            </div>
+            <div class="collapsible-body">
+              <span><%= feature.content %></span>
+              <% if(feature.dev_link.present?)%>
+                <p><a href="<%= feature.dev_link%>" target='_blank' class="waves-effect waves-light btn">Serveur de dev</a></p>
+              <% end %>
+            </div>
+          </li>
+        <% end %>
+
+      </ul>
+    <% end %>
 	</div>
 </div>
