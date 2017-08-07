@@ -12,7 +12,33 @@ $( document ).ready(function() {
 	      stopPropagation: false // Stops event propagation
 	    }
 	  );
-    $(document).ready(function(){
-        $('.collapsible').collapsible();
-    });
+  $(document).ready(function(){
+      $('.collapsible').collapsible();
+  });
+  $('.filter_bug').change(function(){
+    if(this.checked){
+      $('.filter_feature').attr('checked', false);
+      $('.feature_filter').parent().parent().show();
+      $(".feature_filter.feature0").parent().parent().hide();
+      $(".feature_filter.feature1").parent().parent().hide();
+      $(".feature_filter.feature2").parent().parent().hide();
+      $(".feature_filter.feature3").parent().parent().hide();
+
+    }
+    else{
+      $('.feature_filter').parent().parent().show();
+    }
+  });
+  $('.filter_feature').change(function(){
+    if(this.checked){
+      $('.filter_bug').attr('checked', false);
+      $('.feature_filter').parent().parent().show();
+      $(".feature_filter.bug0").parent().parent().hide();
+      $(".feature_filter.bug1").parent().parent().hide();
+
+    }
+    else{
+      $('.feature_filter').parent().parent().show();
+    }
+  });
 });

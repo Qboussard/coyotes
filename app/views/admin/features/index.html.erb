@@ -10,6 +10,21 @@
     <p><span class="feature_state feature1"></span>Demande en développement</p>
     <p><span class="feature_state feature2"></span>Demande sur le serveur de dev</p>
     <p><span class="feature_state feature3"></span>Demande en ligne</p>
+    <p class="divider"></p>
+    <div class="switch">
+      <label>
+        <input class='filter_bug' type="checkbox">
+        <span class="lever"></span>
+        Bug
+      </label>
+    </div>
+    <div class="switch">
+      <label>
+        <input class='filter_feature' type="checkbox">
+        <span class="lever"></span>
+        Demande
+      </label>
+    </div>
   </div>
 </div>
 
@@ -26,7 +41,7 @@
       <ul class="collapsible" data-collapsible="accordion">
         <% @features.each do |feature| %>
           <li>
-            <div class="collapsible-header"><span class="feature_state <%= feature.state %>"></span><span><%= feature.title %></span>
+            <div class="collapsible-header"><span class="feature_filter feature_state <%= feature.state %>"></span><span><%= feature.title %></span>
               <a class="dropdown-button" href="#" data-activates="dropdown<%= feature.id%>">
               <i class="material-icons">more_vert</i>
               </a>
