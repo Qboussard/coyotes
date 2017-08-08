@@ -8,7 +8,7 @@
 
 			<div class="field input-field col s12 m6">
 				<%= f.label :title, "Titre" %>
-				<%= f.text_field :title, class: 'form-control' , autofocus: true, :class => "validate" %>
+				<%= f.text_field :title, class: 'form-control' , :readonly => true, :class => "validate" %>
 			</div>
 
       <% if(@feature.state == "bug0" || @feature.state == "bug1")%>
@@ -17,16 +17,16 @@
         </div>
       <% else %>
         <div class="field input-field col s12 m6">
-            <%= f.select :state, [['Demande en cour', 'feature0'], ['Demande en developpement', 'feature1'], ['Demande sur le serveur dev', 'feature2'], ['Demande en ligne', 'feature3']] %>
+            <%= f.select :state, [['Fonctionnalité en cour', 'feature0'], ['Fonctionnalité en developpement', 'feature1'], ['Fonctionnalité sur le serveur dev', 'feature2'], ['Fonctionnalité en ligne', 'feature3']] %>
         </div>
       <% end %>
 
 			<div class="field input-field col s12">
 				<%= f.label :content, "Résumé" %>
-				<%= f.text_area :content, :class => "materialize-textarea"%>
+				<%= f.text_area :content, :class => "tinymce disabled materialize-textarea" , :readonly => true %>
 			</div>
       <div class="field input-field col s12">
-				<%= f.label :dev_link, "Lien serveur de dev" %>
+				<%= f.label :dev_link, "Lien serveur de test" %>
 				<%= f.text_field :dev_link, class: 'form-control', :class => "validate" %>
 			</div>
 

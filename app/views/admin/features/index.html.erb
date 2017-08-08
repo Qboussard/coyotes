@@ -1,29 +1,51 @@
 <div class="row feature">
   <div class="col s12 card-panel">
-    <%= link_to new_admin_feature_path, class: "right btn-add btn-floating btn-large waves-effect waves-light blue", id: 'create-feature' do %>
-      <i class="material-icons">add</i>
-    <% end %>
-    <p><span class="feature_state bug0 tooltipped"></span>Bug</p>
-    <p><span class="feature_state bug1"></span>Bug résolu</p>
-    <p class="divider"></p>
-    <p><span class="feature_state feature0"></span>Demande</p>
-    <p><span class="feature_state feature1"></span>Demande en développement</p>
-    <p><span class="feature_state feature2"></span>Demande sur le serveur de dev</p>
-    <p><span class="feature_state feature3"></span>Demande en ligne</p>
-    <p class="divider"></p>
-    <div class="switch">
-      <label>
-        <input class='filter_bug' type="checkbox">
-        <span class="lever"></span>
-        Bug
-      </label>
+
+    <div class="row">
+      <div class="col s12">
+        <%= link_to new_admin_feature_path, class: "right btn-add btn-floating btn-large waves-effect waves-light blue", id: 'create-feature' do %>
+          <i class="material-icons">add</i>
+        <% end %>
+      </div>
     </div>
-    <div class="switch">
-      <label>
-        <input class='filter_feature' type="checkbox">
-        <span class="lever"></span>
-        Demande
-      </label>
+    <div class="row">
+      <div class="col m6 s12">
+        <p><span class="feature_state bug0 tooltipped"></span>Bug</p>
+        <p><span class="feature_state bug1"></span>Bug résolu</p>
+      </div>
+      <div class="col m6 s12">
+        <p><span class="feature_state feature0"></span>Fonctionnalité en attente</p>
+        <p><span class="feature_state feature1"></span>Fonctionnalité en développement</p>
+        <p><span class="feature_state feature2"></span>Fonctionnalité sur le serveur de test</p>
+        <p><span class="feature_state feature3"></span>Fonctionnalité en ligne</p>
+      </div>
+      <div class="col m4 s12">
+        <div class="switch">
+          <label>
+            <input class='filter_bug' type="checkbox">
+            <span class="lever"></span>
+            Bug
+          </label>
+        </div>
+      </div>
+      <div class="col m4 s12">
+        <div class="switch">
+          <label>
+            <input class='filter_feature' type="checkbox">
+            <span class="lever"></span>
+            Demande
+          </label>
+        </div>
+      </div>
+      <div class="col m4 s12">
+        <div class="switch">
+          <label>
+            <input class='filter_wip' type="checkbox">
+            <span class="lever"></span>
+            En cours
+          </label>
+        </div>
+      </div>
     </div>
   </div>
 </div>
