@@ -1,0 +1,35 @@
+<div class="row card-panel">
+  <div class="col s12">
+		<%= form_for(@feature, url: admin_features_path, html: { method: :post }, id: 'new_features') do |f| %>
+
+			<% @feature.errors.full_messages.each do |msg| %>
+				<%= msg %>
+			<% end %>
+
+			<div class="field input-field col s12 m6">
+				<%= f.label :title, "Titre" %>
+				<%= f.text_field :title, autofocus: true, :class => "validate" %>
+			</div>
+
+			<div class="field input-field col s12 m6">
+			    <%= f.select(:state) do %>
+            <%= content_tag(:option, "Bug", value: "bug0") %>
+            <%= content_tag(:option, "Fonctionnalité", value: "feature0") %>
+			    <% end %>
+			</div>
+
+			<div class="field field input-field col s12">
+				<%= f.label :content, "Résumé" %>
+				<%= f.text_area :content, :class => "tinymce materialize-textarea"  %>
+			</div>
+
+			<div class="btnlog actions col s12">
+				<%= link_to 'Retour', admin_features_path, :class => "waves-effect waves-light btn red" %>
+				<%= button_tag(type: 'submit', class: "right btn") do %>
+					Publier <i class='material-icons right'>send</i>
+				<% end %>
+			</div>
+		<% end %>
+
+	 </div>
+</div>

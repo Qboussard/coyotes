@@ -11,13 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170729134104) do
+ActiveRecord::Schema.define(version: 20170807081520) do
 
   create_table "events", force: :cascade do |t|
     t.date     "date"
     t.text     "event",      limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+  end
+
+  create_table "features", force: :cascade do |t|
+    t.string "title",    limit: 255
+    t.text   "content",  limit: 65535
+    t.string "state",    limit: 255
+    t.text   "dev_link", limit: 65535
   end
 
   create_table "matches", force: :cascade do |t|
@@ -37,9 +44,8 @@ ActiveRecord::Schema.define(version: 20170729134104) do
     t.string   "title",      limit: 255
     t.text     "content",    limit: 65535
     t.text     "summary",    limit: 65535
-    t.datetime "created_at",                                    null: false
-    t.datetime "updated_at",                                    null: false
-    t.string   "type_news",  limit: 255,   default: "articles"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.string   "category",   limit: 255
   end
 

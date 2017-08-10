@@ -6,6 +6,7 @@ gem 'rails', '4.2.6'
 gem 'mysql2', '>= 0.3.13', '< 0.5'
 gem 'sass-rails', '~> 5.0'
 gem 'font-awesome-sass', '~> 4.4.0'
+gem 'twilio-ruby'
 
 gem 'puma'
 

@@ -7,7 +7,7 @@ if Player.count == 0
 		puts '-> Ajoût de joueurs'
 end
 if News.count == 0
-	News.create!(title: "Entrainements des Coyotes !",summary: "Voici l'organisation des séances d'entrainement :", content: "Salut &agrave; tous !<br /><br />Voici l'organisation des s&eacute;ances d'entrainement :<br />- Mardi de 20h 30 &agrave; 22h : Initiation roller pour les jeunes et roller hockey pour les adultes.<br /> - Vendredi de 20h 30 &agrave; 21h30 : initiation roller hockey pour les jeunes (encadrement des adultes).<br /> - Vendredi a partir de 21h30 : entra&icirc;nement roller hockey pour les adultes UNIQUEMENT.<br /> - Samedi de 17h &agrave; 20h : entra&icirc;nements roller hockey pour les adultes et jeunes.<br /> <br /> * Pour int&eacute;grer les entra&icirc;nements ""adultes"" un niveau de base en roller et maniement sera &agrave; valider.<br /> <br /> * A partir de mardi 16 f&eacute;vrier et pour tous les entra&icirc;nements &agrave; venir : APPORTEZ UNE PAIRE DE BASKETS ET JOGGING POUR L ENTRA&Icirc;NEMENT !")
+	News.create!(title: "Entrainements des Coyotes !",summary: "Voici l'organisation des séances d'entrainement :", content: "Salut &agrave; tous !<br /><br />Voici l'organisation des s&eacute;ances d'entrainement :<br />- Mardi de 20h 30 &agrave; 22h : Initiation roller pour les jeunes et roller hockey pour les adultes.<br /> - Vendredi de 20h 30 &agrave; 21h30 : initiation roller hockey pour les jeunes (encadrement des adultes).<br /> - Vendredi a partir de 21h30 : entra&icirc;nement roller hockey pour les adultes UNIQUEMENT.<br /> - Samedi de 17h &agrave; 20h : entra&icirc;nements roller hockey pour les adultes et jeunes.<br /> <br /> * Pour int&eacute;grer les entra&icirc;nements ""adultes"" un niveau de base en roller et maniement sera &agrave; valider.<br /> <br /> * A partir de mardi 16 f&eacute;vrier et pour tous les entra&icirc;nements &agrave; venir : APPORTEZ UNE PAIRE DE BASKETS ET JOGGING POUR L ENTRA&Icirc;NEMENT !",category: "article")
 		puts '-> Ajoût de news'
 end
 if Tournament.count == 0
@@ -31,4 +31,11 @@ if Event.count == 0
 	Event.create!(date: "13/10/2015", event: "24H")
 	Event.create!(date: "1/12/2015", event: "Tournois 2")
 		puts '-> Ajoût d\'un event'
+end
+
+if Features.count == 0
+	Features.create!(title: "test feature", content: "test ...", state: "bug0", dev_link: "http://www.google.com")
+  Features.create!(title: "test", content: "test ...", state: "bug1", dev_link: "http://www.google.com")
+  Features.create!(title: "test", content: "test ...", state: "feature0",dev_link: "http://www.google.com")
+	puts '-> Ajoût d\'une feature'
 end

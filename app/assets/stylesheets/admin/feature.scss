@@ -1,0 +1,55 @@
+.feature_state {
+    min-width: 3rem;
+    border-radius: 50%;
+    padding: 0px 9px;
+    text-align: center;
+    font-size: 1rem;
+    line-height: inherit;
+    position: inherit;
+    box-sizing: border-box;
+    margin-right: 8px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+.collapsible-header{
+  position: relative;
+
+  .material-icons{
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .dropdown-content{
+    left:auto !important;
+    right:0px !important;
+    top:22px !important;
+  }
+}
+.collapsible-body{
+  padding:8px;
+  p{
+    padding: 1rem !important;
+    text-align: right;
+  }
+}
+.feature .btn-add{
+  margin-top: -25px;
+}
+.feature_state.bug0{
+background-color: #F44336 !important;
+}
+.feature_state.bug1{
+background-color: #737373 !important;
+}
+
+.feature_state.feature0{
+background-color: #FF9800 !important;
+}
+.feature_state.feature1{
+background-color: #4CAF50 !important;
+}
+.feature_state.feature2{
+background-color: #9C27B0 !important;
+}
+.feature_state.feature3{
+background-color: #2196F3 !important;
+}

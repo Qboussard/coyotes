@@ -23,6 +23,7 @@ Rails.application.routes.draw do
 		resources :presences, except: [:show]
 		resources :teams, except: [:show]
 		resources :events, except: [:show]
+    resources :features, except: [:show]
   end
 
 	get 'easter/index'
