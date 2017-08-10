@@ -1,6 +1,15 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 $( document ).ready(function() {
+
+  $('.modal_pop').click(function(){
+    var modal = $(this).attr('data-modal');
+    $("#"+modal).css("display", "flex");
+  });
+  $('.modal_cancel').click(function(){
+    $(this).parent().parent().parent().parent().css("display", "none");
+  });
+
 	$('.dropdown-button').dropdown({
 	      inDuration: 300,
 	      outDuration: 225,
