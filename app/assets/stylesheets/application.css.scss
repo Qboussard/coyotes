@@ -76,3 +76,21 @@ main{
 .waves-effect input[type="button"], .waves-effect input[type="reset"], .waves-effect input[type="submit"]{
     outline: none;
 }
+
+.container .left .dropdown-content li > a, .dropdown-content li > span{
+  color:#fff;
+}
+.container .left .dropdown-content li > a, .dropdown-content li > span:hover, .container .left .dropdown-content li:hover, .dropdown-content li.active, .dropdown-content li.selected{
+  background: #C62828 !important;
+  background-color: rgba(0, 0, 0, 0.1) !important;
+}
+.container .left #dropdown1{
+  top:64px !important;
+  background: #C62828 !important;
+  color:#fff !important;
+}
+
+nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons{
+  height: 64px;
+  line-height: 64px;
+}

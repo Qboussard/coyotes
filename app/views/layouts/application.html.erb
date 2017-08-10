@@ -19,8 +19,11 @@
                   <li><%= link_to 'Club', club_index_path %></li>
                   <li><%= link_to 'Adhésion', rules_index_path %></li>
 									<li><%= link_to 'Bip Bip', bipbips_index_path %></li>
-                  <li><%= link_to 'Tournois', tournament_index_path %></li>
-                  <li><%= link_to 'Calendrier', events_path %></li>
+                  <li><a class="dropdown-button" data-activates="dropdown1">Événement<i class="material-icons right">arrow_drop_down</i></a></li>
+              </ul>
+              <ul id="dropdown1" class="dropdown-content">
+                <li><%= link_to 'Tournois', tournament_index_path %></li>
+                <li><%= link_to 'Calendrier', events_path %></li>
               </ul>
               <ul class="right hide-on-med-and-down ">
                   <% if user_signed_in? %>
@@ -40,7 +43,7 @@
                   <li><%= link_to 'Articles', root_path %></li>
                   <li><%= link_to 'Club', club_index_path %></li>
                   <li><%= link_to 'Adhésion', rules_index_path %></li>
-		  <li><%= link_to 'Bip Bip', bipbips_index_path %></li>
+		              <li><%= link_to 'Bip Bip', bipbips_index_path %></li>
                   <li><%= link_to 'Tournois', tournament_index_path %></li>
 									<li><%= link_to 'Calendrier', events_path %></li>
                   <li class="divider"></li>
