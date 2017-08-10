@@ -179,30 +179,30 @@ a.btn:hover, a.btn-large:hover,button.btn:hover, button.btn-large:hover{
 				cursor: default;
 		}
 }
-.modal_view{
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0,0,0,0.4);
-  z-index:999;
-  display: none;
-  justify-content:center;
-  align-items: center;
-
-  .modal_content{
-    width:40%;
-    height:200px;
-
-    .card-action a{
-      width:50%;
-      color:#E57373 !important;
-    }
-    .card-action a:first-child{
-      color:#64B5F6 !important;
-    }
-  }
-}
+// .modal_view{
+//   height: 100%;
+//   width: 100%;
+//   position: fixed;
+//   top: 0;
+//   bottom: 0;
+//   left: 0;
+//   right: 0;
+//   background: rgba(0,0,0,0.4);
+//   z-index:999;
+//   display: none;
+//   justify-content:center;
+//   align-items: center;
+//
+//   .modal_content{
+//     width:40%;
+//     height:200px;
+//
+//     .card-action a{
+//       width:50%;
+//       color:#E57373 !important;
+//     }
+//     .card-action a:first-child{
+//       color:#64B5F6 !important;
+//     }
+//   }
+// }
