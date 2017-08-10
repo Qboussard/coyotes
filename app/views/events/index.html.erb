@@ -1,17 +1,26 @@
 <div class="row event">
     <div class="col s12">
-			<% if(@events.blank?) %>
-				<span>Aucun événement pour le moment</span>
-			<% else %>
-        <ul class="collection">
-				<% @events.each do |event| %>
-
-            <li class="collection-item"><%= event.event%> le <span class='redDate'><%= l event.date, format: :event %></span></li>
-
-				<% end %>
-        </ul>
-			<% end %>
-
-
+      <div class="row">
+  			<% if(@events.blank?) %>
+        <div class="col s12">
+          <div class="card">
+            <div class="card-content">
+                  <span class="card-title">Aucun événement pour le moment</span>
+            </div>
+          </div>
+        </div>
+  			<% else %>
+  				<% @events.each do |event| %>
+            <div class="col s12 m6">
+              <div class="card">
+                <div class="card-content">
+                      <span class="card-title redDate"><%= l event.date, format: :event %></span>
+                      <p><%= event.event%></p>
+                </div>
+              </div>
+            </div>
+  				<% end %>
+  			<% end %>
+      </div>
     </div>
 </div>
