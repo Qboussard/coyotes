@@ -16,9 +16,9 @@
           <div class="container">
               <ul class="left hide-on-med-and-down">
                   <li><%= link_to 'Articles', root_path %></li>
+                  <li><%= link_to 'Bip Bip', bipbips_index_path %></li>
                   <li><%= link_to 'Club', club_index_path %></li>
                   <li><%= link_to 'Adhésion', rules_index_path %></li>
-									<li><%= link_to 'Bip Bip', bipbips_index_path %></li>
                   <li><a class="dropdown-button" data-activates="dropdown1">Événement<i class="material-icons right">arrow_drop_down</i></a></li>
               </ul>
               <ul id="dropdown1" class="dropdown-content">
@@ -28,11 +28,19 @@
               <ul class="right hide-on-med-and-down ">
                   <% if user_signed_in? %>
                       <% if(current_user.admin) %>
-                          <li><%= link_to current_user.email, admin_path %></li>
+                          <li class='icon_nav'>
+                            <%= link_to admin_path do %>
+                              <i class='material-icons'>face</i>
+                					  <% end %>
+                          </li>
                       <% else %>
-                          <li><a href=""><%= current_user.email %></a></li>
+                          <li class='icon_nav'><a href=""><i class='material-icons'>face</i></a></li>
                       <% end %>
-                      <li><%= link_to 'Déconnexion', destroy_user_session_path, :id => "logout", :method => :delete %><li>
+                      <li class='icon_nav'>
+                        <%= link_to destroy_user_session_path, :id => "logout", :method => :delete do %>
+                            <i class='material-icons'>power_settings_new</i>
+              					<% end %>
+                      <li>
                   <% else %>
                       <li><%= link_to 'Connexion', new_user_session_path %></li>
                       <li><%= link_to 'Inscription', new_user_registration_path %></li>
@@ -41,9 +49,9 @@
               </ul>
               <ul id="slide-out" class="side-nav">
                   <li><%= link_to 'Articles', root_path %></li>
+                  <li><%= link_to 'Bip Bip', bipbips_index_path %></li>
                   <li><%= link_to 'Club', club_index_path %></li>
                   <li><%= link_to 'Adhésion', rules_index_path %></li>
-		              <li><%= link_to 'Bip Bip', bipbips_index_path %></li>
                   <li><%= link_to 'Tournois', tournament_index_path %></li>
 									<li><%= link_to 'Calendrier', events_path %></li>
                   <li class="divider"></li>
