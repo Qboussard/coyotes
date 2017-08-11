@@ -1,5 +1,12 @@
 <div class="row article">
     <div class="col s12">
+      <% if(@news.blank?) %>
+      <div class="card">
+          <div class="card-content">
+              <span class="card-title red-text text-darken-2">Pas de Bipbip pour le moment</span>
+          </div>
+      </div>
+      <% else %>
         <% @news.each do |new| %>
             <div class="card">
                 <div class="card-content">
@@ -15,6 +22,7 @@
                 </div>
             </div>
         <% end %>
+      <% end %>
     </div>
     <div class="col s12 center-align">
         <%= will_paginate @news %>
